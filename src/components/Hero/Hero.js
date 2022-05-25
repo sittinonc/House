@@ -2,12 +2,38 @@ import classes from "./hero.module.scss";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleDot } from "@fortawesome/free-solid-svg-icons";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
-
+import Button from "@mui/material/Button";
+import {
+  faCircle,
+  faCircleDot as faCircleDotReg,
+} from "@fortawesome/free-regular-svg-icons";
+import PriceSlider from "../SearchForm/Slider/PriceSlider";
+import SelectOption from "../SearchForm/SelectOption/SelectOption";
+const price = [
+  {
+    value: 0,
+    label: "0",
+  },
+  {
+    value: 5,
+    label: "5ล้าน",
+  },
+  {
+    value: 10,
+    label: "10ล้าน",
+  },
+];
 const Hero = () => {
   const [selectedButton, setSelectedButton] = useState(1);
-  const [openZoneSelecting, setOpenZoneSelecting] = useState(false);
-  const [openPriceSelecting, setOpenPriceSelecting] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState([]);
+  const [selectedPrice, setSelectedPrice] = useState([]);
+  const [locationData, setLocationData] = useState([
+    "Nonthaburi",
+    "Nakorn Pathom",
+  ]);
+
+  const [priceData, setPriceData] = useState([4.99, 8.99, 10.99]);
+
   return (
     <div className={classes.container}>
       <div className={classes.left}>
@@ -47,35 +73,28 @@ const Hero = () => {
             </div>
           </div>
           <div className={classes.productProperty}>
-            <div className={classes.zoneDropdown}>
-              <div className={classes.king}>
-                <span>Location</span>
-                <div className={classes.dropdown}>
-                  <div className={classes.inDropdown}>
-                    <div className={classes.box}>
-                      <span>Nonthaburi</span>
-                      <div className={classes.icon}>
-                        <FontAwesomeIcon icon={faCircle} />
-                      </div>
-                    </div>
-                    <div className={classes.box}>
-                      <span>Nakorn Pathom</span>
-                      <div className={classes.icon}>
-                        <FontAwesomeIcon icon={faCircle} />
-                      </div>
-                    </div>
-                    <div className={classes.box}>
-                      <span>Pathum Tani</span>
-                      <div className={classes.icon}>
-                        <FontAwesomeIcon icon={faCircle} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <SelectOption
+              selectedLocation={selectedLocation}
+              setSelectedLocation={setSelectedLocation}
+              type="Location"
+              data={locationData}
+            />
+            <PriceSlider
+              selectedPrice={selectedPrice}
+              setSelectedPrice={setSelectedPrice}
+              type="Price"
+              data={price}
+            />
+            <div className={classes.search}>
+              <Button
+                className={classes.button}
+                style={{ borderRadius: "30px", backgroundColor: "darkblue" }}
+                variant="contained"
+                size="large"
+              >
+                Search
+              </Button>
             </div>
-            <div className={classes.priceDropdown}></div>
-            <div className={classes.search}></div>
           </div>
         </div>
       </div>
