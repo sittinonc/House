@@ -1,105 +1,108 @@
-.zoneDropdown{
-    width: 36%;
+.zoneDropdown {
+  width: 36%;
+  height: 100%;
+
+  .king {
+    position: relative;
+    width: 90%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
 
-    .king{
-        position: relative;
-        width: 90%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        &:hover{  
+    .spanActive {
+      font-weight: 400;
+      transition: 0.12s;
+      color: black;
+    }
+
+    span {
+      font-size: 19px;
+      color: grey;
+      font-weight: 400;
+
+      &:hover {
+        cursor: pointer;
+        transition: 0.12s;
+        color: black;
+      }
+      &:after {
+        display: block;
+        content: "";
+        border-bottom: solid 1.6px black;
+        transform: scaleY(0);
+        transition: transform 120ms ease-in-out;
+      }
+
+      &:hover:after {
+        transform: scaleY(0.8);
+      }
+    }
+  }
+  .unActive {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .dropdown {
+      visibility: hidden;
+      position: absolute;
+    }
+  }
+
+  .active {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .dropdown {
+      visibility: visible;
+      background-color: green;
+      position: absolute;
+      width: 100%;
+      animation: growDown 200ms ease-in-out forwards;
+      transform-origin: top center;
+      top: -10%;
+      background-color: rgba(224, 203, 192, 0.1);
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      display: flex;
+      justify-content: center;
+
+      .inDropdown {
+        width: 100%;
+
+        .box {
+          height: 34px;
+          width: 100%;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          position: relative;
+          background-color: rgba(245, 226, 191, 0);
+
+          &:hover {
             cursor: pointer;
-        }
+            transition: 0.19s;
+            background-color: rgba(226, 226, 223, 0.17);
+          }
+          span {
+            font-weight: 500;
+            color: rgba(7, 6, 6, 0.9);
+            font-size: 15px;
+            margin-left: 25%;
+          }
 
-        .spanActive {
-            font-weight: 400;
-            border-bottom: 1px solid rgb(61, 60, 60);
-            transition: 0.25s;
-            color: rgb(61, 60, 60);
-        }
-
-        span{
-            font-size: 19px;
-            color: grey;
-            font-weight: 400;
-            text-decoration: none;
-            transition: 0.2s;
-            border-bottom: 1px solid transparent;
-
-        &:hover{  
-            border-bottom: 1px solid rgb(61, 60, 60);
-            transition: 0.25s;
-            color: rgb(61, 60, 60);
-        } 
-    }
-
-
-        
-    }
-    .unActive{
-        position: relative;
-        width: 100%;
-        height: 100%;
-        .dropdown{
-            visibility: hidden;
+          .icon {
+            right: 60px;
             position: absolute;
+            font-size: 16px;
+            color: rgba(14, 13, 13, 0.55);
+          }
         }
+      }
     }
-
-    .active{
-        position: relative;
-        width: 100%;
-        height: 100%;
-        .dropdown{
-            visibility: visible;
-            background-color: green;
-            position: absolute;
-            width: 100%;
-            animation: growDown 200ms ease-in-out forwards;
-            transform-origin: top center;
-            top: -10%;
-            background-color: rgba(224, 203, 192, 0.1);
-            border-bottom-right-radius: 8px;
-            border-bottom-left-radius: 8px;
-            display: flex;
-            justify-content: center;
-
-            .inDropdown{
-                width: 100%;
-                
-                .box{ 
-                    height: 34px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: start;
-                    align-items: center;
-                    position: relative;
-                    background-color: rgba(245, 226, 191, 0);
-
-                    &:hover{
-                        cursor: pointer;
-                        transition: 0.19s;
-                        background-color: rgba(226, 226, 223, 0.17);
-                    }
-                    span{
-                        font-weight: 500;
-                        color: rgba(7, 6, 6, 0.9);
-                        font-size: 15px;
-                        margin-left: 25%;
-                    }
-
-                    .icon{
-                        right: 60px;
-                        position: absolute;
-                        font-size: 16px;
-                        color: rgba(14, 13, 13, 0.55);
-                    }
-            }
-        }
-            
-        }
-    }
+  }
 }

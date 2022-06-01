@@ -16,21 +16,18 @@ const price = [
   },
   {
     value: 5,
-    label: "5ล้าน",
+    label: "5 ล้าน",
   },
   {
     value: 10,
-    label: "10ล้าน",
+    label: "10 ล้าน",
   },
 ];
 const Hero = () => {
   const [selectedButton, setSelectedButton] = useState(1);
   const [selectedLocation, setSelectedLocation] = useState([]);
   const [selectedPrice, setSelectedPrice] = useState([]);
-  const [locationData, setLocationData] = useState([
-    "Nonthaburi",
-    "Nakorn Pathom",
-  ]);
+  const [locationData, setLocationData] = useState(["นนทบุรี", "นครปฐม"]);
 
   const [priceData, setPriceData] = useState([4.99, 8.99, 10.99]);
 
@@ -38,11 +35,11 @@ const Hero = () => {
     <div className={classes.container}>
       <div className={classes.left}>
         <div className={classes.greetingBox}>
-          <h1>Q-House, quality houses delivered at reasonable prices.</h1>
-          <span>
-            All of our products developed by high experiences team. We hope you
-            enjoy seeing our products and contact us whenever you want more
-            information.
+          <span className={classes.brandText}>
+            Q-House, quality houses delivered at reasonable prices.
+          </span>
+          <span className={classes.subText}>
+            All of our products developed by high experiences team.
           </span>
         </div>
         <div className={classes.searchComponent}>
@@ -57,7 +54,7 @@ const Hero = () => {
                 className={classes.FontAwesomeIcon}
                 icon={faCircleDot}
               />{" "}
-              All houses
+              <span className={classes.topic}>โครงการทั้งหมด</span>
             </div>
             <div
               className={selectedButton == 2 ? classes.active : ""}
@@ -69,7 +66,7 @@ const Hero = () => {
                 className={classes.FontAwesomeIcon}
                 icon={faCircleDot}
               />{" "}
-              New only
+              <span className={classes.topic}>โครงการใหม่</span>
             </div>
           </div>
           <div className={classes.productProperty}>
@@ -92,13 +89,15 @@ const Hero = () => {
                 variant="contained"
                 size="large"
               >
-                Search
+                ค้นหา
               </Button>
             </div>
           </div>
         </div>
       </div>
-      <div className={classes.right}></div>
+      <div className={classes.right}>
+        <div className={classes.img}></div>
+      </div>
     </div>
   );
 };

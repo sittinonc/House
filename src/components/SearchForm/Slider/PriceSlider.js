@@ -3,7 +3,8 @@ import SliderUnstyled from "@mui/material/Slider";
 import { useState } from "react";
 import classes from "./priceSlider.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSackDollar } from "@fortawesome/free-solid-svg-icons";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
+import NumberRange from "./NumberRange/NumberRange";
 
 function valuetext(value) {
   return `${value}°C`;
@@ -36,27 +37,13 @@ const PriceSlider = (props) => {
             }
           }}
         >
-          <FontAwesomeIcon icon={faSackDollar} />{" "}
+          <FontAwesomeIcon className={classes.icon} icon={faTag} />{" "}
           {"Price" + ": " + value[0] + " - " + value[1] + " ล้าน"}
         </span>
       </div>
 
       <div className={active == true ? classes.active : classes.unActive}>
-        <Box className={classes.dropdown} sx={{ width: 233 }}>
-          <SliderUnstyled
-            style={{ color: "grey" }}
-            value={value}
-            step={1}
-            min={0}
-            max={10}
-            marks={props.data}
-            defaultValue={[5, 8]}
-            onChange={handleChange}
-            valueLabelDisplay="auto"
-            getAriaValueText={valuetext}
-            disableSwap
-          />
-        </Box>
+        <NumberRange />
       </div>
     </div>
   );

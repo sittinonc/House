@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .numberInput {
+    display: flex;
+    flex-direction: row;
+
+    .from {
+    }
+    .to {
+    }
+  }
+
+  .confirmation {
+  }
+}
