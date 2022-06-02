@@ -1,14 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
 //--
-import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
+import TopSection from "./components/TopSection/TopSection";
+import MiddleSection from "./components/MiddleSection/MiddleSection";
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-    </div>
+    <>
+      <TopSection />
+      <MiddleSection />
+    </>
   );
 }
 

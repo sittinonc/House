@@ -1,0 +1,119 @@
+.container {
+  width: 42%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .king {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .king .topic {
+  font-size: 16px;
+}
+
+.container .king .icon {
+  margin-top: 1.5px;
+  margin-right: 1.5px;
+}
+
+.container .king:hover {
+  cursor: pointer;
+}
+
+.container .king .spanActive {
+  font-weight: 400;
+  -webkit-transition: 0.12s;
+  transition: 0.12s;
+  color: black;
+}
+
+.container .king span {
+  font-size: 19px;
+  color: grey;
+  font-weight: 400;
+}
+
+.container .king span:hover {
+  cursor: pointer;
+  -webkit-transition: 0.12s;
+  transition: 0.12s;
+  color: black;
+}
+
+.container .king span:after {
+  display: block;
+  content: "";
+  border-bottom: solid 1.6px black;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: -webkit-transform 120ms ease-in-out;
+  transition: -webkit-transform 120ms ease-in-out;
+  transition: transform 120ms ease-in-out;
+  transition: transform 120ms ease-in-out, -webkit-transform 120ms ease-in-out;
+}
+
+.container .king span:hover:after {
+  -webkit-transform: scaleY(0.8);
+          transform: scaleY(0.8);
+}
+
+.container .active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.container .active .dropdown {
+  max-width: 180px;
+  position: absolute;
+  background-color: rgba(224, 203, 192, 0.1);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  visibility: visible;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.container .unActive .dropdown {
+  position: absolute;
+  visibility: hidden;
+}
+/*# sourceMappingURL=priceSlider.module.css.map */

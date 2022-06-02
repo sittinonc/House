@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACb,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,KAAK;CACxB",
+    "sources": [
+        "MiddleSection.module.scss"
+    ],
+    "names": [],
+    "file": "MiddleSection.module.css"
+}

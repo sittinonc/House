@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACV,QAAQ,EAAE,QAAQ;CACnB",
+    "sources": [
+        "TopSection.mododule.scss"
+    ],
+    "names": [],
+    "file": "TopSection.mododule.css"
+}

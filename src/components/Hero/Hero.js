@@ -8,7 +8,7 @@ import {
   faCircleDot as faCircleDotReg,
 } from "@fortawesome/free-regular-svg-icons";
 import PriceSlider from "../SearchForm/Slider/PriceSlider";
-import SelectOption from "../SearchForm/SelectOption/SelectOption";
+import SelectLocation from "../SearchForm/SelectOption/SelectLocation";
 const price = [
   {
     value: 0,
@@ -29,7 +29,7 @@ const Hero = () => {
   const [selectedPrice, setSelectedPrice] = useState([]);
   const [locationData, setLocationData] = useState(["นนทบุรี", "นครปฐม"]);
 
-  const [priceData, setPriceData] = useState([4.99, 8.99, 10.99]);
+  const [priceData, setPriceData] = useState(price);
 
   return (
     <div className={classes.container}>
@@ -70,17 +70,11 @@ const Hero = () => {
             </div>
           </div>
           <div className={classes.productProperty}>
-            <SelectOption
+            <SelectLocation
               selectedLocation={selectedLocation}
               setSelectedLocation={setSelectedLocation}
               type="Location"
               data={locationData}
-            />
-            <PriceSlider
-              selectedPrice={selectedPrice}
-              setSelectedPrice={setSelectedPrice}
-              type="Price"
-              data={price}
             />
             <div className={classes.search}>
               <Button
@@ -96,7 +90,10 @@ const Hero = () => {
         </div>
       </div>
       <div className={classes.right}>
-        <div className={classes.img}></div>
+        <img
+          className={classes.heroImg}
+          src="https://images.adsttc.com/media/images/5e68/48ed/b357/658e/fb00/0441/large_jpg/AM1506.jpg?1583892706"
+        />
       </div>
     </div>
   );

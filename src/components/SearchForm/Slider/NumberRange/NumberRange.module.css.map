@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CAcvB;;AAhBD,AAIE,UAJQ,CAIR,YAAY,CAAC;EACX,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;CAMpB",
+    "sources": [
+        "NumberRange.module.scss"
+    ],
+    "names": [],
+    "file": "NumberRange.module.css"
+}
