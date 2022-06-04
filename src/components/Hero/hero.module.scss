@@ -1,278 +1,282 @@
-.container {
-  z-index: 1;
-  position: relative;
-  top: 0;
+.hero {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-
-  .left {
+  flex-direction: column;
+  position: relative;
+  .container {
+    position: absolute;
+    top: 0;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    background-color: rgb(251, 251, 253);
-    height: 97vh;
+    flex-direction: row;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 
-    .greetingBox {
-      display: flex;
-      flex-direction: column;
-      row-gap: 2%;
-      margin-left: 20%;
-      margin-top: 20.7%;
-
-      .brandText {
-        margin-top: 8px;
-        width: 88%;
-        font-size: 50px;
-        font-weight: 500;
-        line-height: 72px;
-      }
-
-      .subText {
-        margin-top: 10px;
-        line-height: 30px;
-        width: 70%;
-        color: rgba(160, 160, 160, 0.78);
-      }
-    }
-
-    .searchComponent {
-      display: flex;
-      flex-direction: column;
-      margin-top: 5%;
-      margin-left: 20%;
-      row-gap: 5%;
+    .left {
       width: 100%;
-      height: 500px;
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(251, 251, 253);
+      height: 97vh;
 
-      .newOrAll {
-        position: relative;
+      .greetingBox {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        column-gap: 1.86%;
-        width: 44%;
-        height: 66px;
-        border-radius: 105px;
-        background-color: rgba(231, 231, 231, 0.7);
+        flex-direction: column;
+        row-gap: 2%;
+        margin-left: 20%;
+        margin-top: 20.7%;
 
-        div {
-          background-color: rgb(255, 254, 254);
-          width: 46%;
-          border-radius: 105px;
-          height: 71.6%;
+        .brandText {
+          margin-top: 8px;
+          width: 88%;
+          font-size: 50px;
+          font-weight: 500;
+          line-height: 72px;
+        }
+
+        .subText {
+          margin-top: 10px;
+          line-height: 30px;
+          width: 70%;
+          color: rgba(160, 160, 160, 0.78);
+        }
+      }
+
+      .searchComponent {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+        margin-left: 20%;
+        row-gap: 5%;
+        width: 100%;
+        height: 500px;
+
+        .newOrAll {
+          position: relative;
           display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          font-weight: 600;
-          color: rgba(199, 198, 198, 0.9);
+          column-gap: 1.86%;
+          width: 44%;
+          height: 66px;
+          border-radius: 105px;
+          background-color: rgba(231, 231, 231, 0.7);
 
-          .topic {
-            font-size: 13px;
+          div {
+            background-color: rgb(255, 254, 254);
+            width: 46%;
+            border-radius: 105px;
+            height: 71.6%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            color: rgba(199, 198, 198, 0.9);
+
+            .topic {
+              font-size: 13px;
+            }
+
+            .FontAwesomeIcon {
+              font-size: 18px;
+              padding-right: 5.2%;
+            }
+
+            &:hover {
+              cursor: pointer;
+              transition: 0.15s;
+              color: rgb(224, 173, 61);
+            }
           }
 
-          .FontAwesomeIcon {
-            font-size: 18px;
-            padding-right: 5.2%;
-          }
-
-          &:hover {
-            cursor: pointer;
+          .active {
             transition: 0.15s;
             color: rgb(224, 173, 61);
           }
         }
 
-        .active {
-          transition: 0.15s;
-          color: rgb(224, 173, 61);
-        }
-      }
+        .productProperty {
+          width: 94%;
+          border-radius: 105px;
+          border: 0.5px solid rgba(1, 1, 1, 0.02);
+          box-shadow: rgba(250, 191, 115, 0.05) 0px 3px 1px,
+            rgba(247, 170, 5, 0.1) 1px 2px 88px;
+          height: 65.7px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(248, 248, 248, 0.7);
+          font-weight: 600;
+          font-size: 17px;
 
-      .productProperty {
-        z-index: 99999999;
-        width: 94%;
-        border-radius: 105px;
-        border: 0.5px solid rgba(1, 1, 1, 0.02);
-        box-shadow: rgba(250, 191, 115, 0.05) 0px 3px 1px,
-          rgba(247, 170, 5, 0.1) 1px 2px 88px;
-        height: 65.7px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(248, 248, 248, 0.7);
-        font-weight: 600;
-        font-size: 17px;
-
-        .zoneDropdown {
-          width: 36%;
-          height: 100%;
-
-          .king {
-            position: relative;
-            width: 90%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            &:hover {
-              cursor: pointer;
-              .topic {
-                transition: 0.1s;
-                box-shadow: 0 3px 3px -2px rgb(252, 195, 89, 0.6);
-              }
-              .dropdown {
-                width: 100%;
-                border-radius: 6px;
-                animation: growDown 200ms ease-in-out forwards;
-                transform-origin: top center;
-                position: absolute;
-                top: 86.5%;
-                background-color: rgba(228, 226, 225, 0.1);
-                border-bottom-right-radius: 12px;
-                border-bottom-left-radius: 12px;
-                display: flex;
-                justify-content: center;
-
-                .inDropdown {
-                  width: 100%;
-
-                  .box {
-                    height: 34px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: start;
-                    align-items: center;
-                    position: relative;
-                    background-color: rgba(245, 226, 191, 0);
-
-                    &:hover {
-                      cursor: pointer;
-                      transition: 0.19s;
-                      background-color: rgba(226, 226, 223, 0.17);
-                    }
-                    span {
-                      font-weight: 500;
-                      color: rgba(7, 6, 6, 0.9);
-                      font-size: 15px;
-                      margin-left: 25%;
-                    }
-
-                    .icon {
-                      right: 60px;
-                      position: absolute;
-                      font-size: 16px;
-                      color: rgba(14, 13, 13, 0.55);
-                    }
-                  }
-                }
-              }
-            }
-            span {
-            }
-            .dropdown {
-              display: none;
-              position: absolute;
-            }
-          }
-        }
-        .priceDropdown {
-          width: 43%;
-          height: 100%;
-
-          .priceRange {
-            width: 100%;
+          .zoneDropdown {
+            width: 36%;
             height: 100%;
 
             .king {
               position: relative;
+              width: 90%;
+              height: 100%;
               display: flex;
               flex-direction: column;
               justify-content: center;
               align-items: center;
-              width: 100%;
-              height: 100%;
-
-              .topic {
-                transition: 0.1s;
-                box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 0);
-              }
-
               &:hover {
                 cursor: pointer;
                 .topic {
                   transition: 0.1s;
-                  box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 1);
+                  box-shadow: 0 3px 3px -2px rgb(252, 195, 89, 0.6);
+                }
+                .dropdown {
+                  width: 100%;
+                  border-radius: 6px;
+                  animation: growDown 200ms ease-in-out forwards;
+                  transform-origin: top center;
+                  position: absolute;
+                  top: 86.5%;
+                  background-color: rgba(228, 226, 225, 0.1);
+                  border-bottom-right-radius: 12px;
+                  border-bottom-left-radius: 12px;
+                  display: flex;
+                  justify-content: center;
+
+                  .inDropdown {
+                    width: 100%;
+
+                    .box {
+                      height: 34px;
+                      width: 100%;
+                      display: flex;
+                      justify-content: start;
+                      align-items: center;
+                      position: relative;
+                      background-color: rgba(245, 226, 191, 0);
+
+                      &:hover {
+                        cursor: pointer;
+                        transition: 0.19s;
+                        background-color: rgba(226, 226, 223, 0.17);
+                      }
+                      span {
+                        font-weight: 500;
+                        color: rgba(7, 6, 6, 0.9);
+                        font-size: 15px;
+                        margin-left: 25%;
+                      }
+
+                      .icon {
+                        right: 60px;
+                        position: absolute;
+                        font-size: 16px;
+                        color: rgba(14, 13, 13, 0.55);
+                      }
+                    }
+                  }
                 }
               }
-
+              span {
+              }
               .dropdown {
-                height: 100px;
-                width: 100%;
-                border-radius: 6px;
-                animation: growDown 200ms ease-in-out forwards;
-                transform-origin: top center;
+                display: none;
                 position: absolute;
-                top: 86.5%;
-                background-color: rgba(228, 226, 225, 0.1);
-                border-bottom-right-radius: 12px;
-                border-bottom-left-radius: 12px;
-                display: flex;
-                justify-content: center;
               }
             }
           }
-        }
+          .priceDropdown {
+            width: 43%;
+            height: 100%;
 
-        .search {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          width: 21%;
-          height: 100%;
+            .priceRange {
+              width: 100%;
+              height: 100%;
 
-          .button {
-            width: 70%;
-            height: 86%;
+              .king {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+
+                .topic {
+                  transition: 0.1s;
+                  box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 0);
+                }
+
+                &:hover {
+                  cursor: pointer;
+                  .topic {
+                    transition: 0.1s;
+                    box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 1);
+                  }
+                }
+
+                .dropdown {
+                  height: 100px;
+                  width: 100%;
+                  border-radius: 6px;
+                  animation: growDown 200ms ease-in-out forwards;
+                  transform-origin: top center;
+                  position: absolute;
+                  top: 86.5%;
+                  background-color: rgba(228, 226, 225, 0.1);
+                  border-bottom-right-radius: 12px;
+                  border-bottom-left-radius: 12px;
+                  display: flex;
+                  justify-content: center;
+                }
+              }
+            }
+          }
+
+          .search {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 21%;
+            height: 100%;
+
+            .button {
+              width: 70%;
+              height: 86%;
+            }
           }
         }
       }
     }
-  }
-  .right {
-    height: 100vh;
-    width: 100%;
-    .heroImg {
-      height: 100%;
+    .right {
+      height: 100vh;
       width: 100%;
-      top: 0;
-      position: center;
-      object-fit: cover;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      border-bottom-left-radius: 16px;
+      .heroImg {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        position: center;
+        object-fit: cover;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-bottom-left-radius: 16px;
+      }
     }
   }
-}
 
-@keyframes growDown {
-  0% {
-    transform: scaleY(0);
-  }
-  100% {
-    transform: scaleY(1);
+  @keyframes growDown {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
   }
 }

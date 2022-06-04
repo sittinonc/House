@@ -1,25 +1,16 @@
 .container {
+  position: relative;
   width: 42%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
   .king {
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .topic {
-      font-size: 16px;
-    }
-    .icon {
-      margin-top: 1.5px;
-      margin-right: 1.5px;
-    }
-
     &:hover {
       cursor: pointer;
     }
@@ -31,7 +22,7 @@
     }
 
     span {
-      font-size: 19px;
+      font-size: 16px;
       color: grey;
       font-weight: 400;
 
@@ -55,25 +46,61 @@
   }
   .active {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    position: relative;
+    justify-content: center;
+    position: absolute;
+    bottom: -110px;
+    width: 100%;
+    height: 120px;
+    background-color: rgba(164, 158, 144, 0.1);
+    border-radius: 8px;
+
     .dropdown {
-      max-width: 180px;
-      position: absolute;
-      background-color: rgba(224, 203, 192, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
       border-bottom-right-radius: 8px;
       border-bottom-left-radius: 8px;
       visibility: visible;
-      transition: 1s;
+      transition: 0.1s;
+
+      .dropdownConfig {
+        width: 90%;
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
+
+        .from {
+          height: 50px;
+          width: 100%;
+        }
+
+        .to {
+          height: 50px;
+          width: 100%;
+        }
+      }
     }
   }
 
   .unActive {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    height: 100%;
     .dropdown {
-      position: absolute;
       visibility: hidden;
+
+      .dropdownConfig {
+        visibility: hidden;
+        display: flex;
+        flex-direction: row;
+      }
     }
   }
 }
