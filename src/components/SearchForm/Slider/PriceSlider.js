@@ -21,9 +21,6 @@ const theme = createTheme({
 });
 
 const accent = purple[500];
-function valuetext(value) {
-  return `${value}°C`;
-}
 
 const marks = [
   {
@@ -49,11 +46,9 @@ const PriceSlider = (props) => {
   const [fromV, setFromV] = useState(0);
   const [toV, setToV] = useState(12);
   const [showV, setShowV] = useState([]);
-
   const [userSetPrice, setUserSteprice] = useState(false);
 
   const handleSliderChange = (event, newValue) => {
-    //console.log(newValue);
     if (!userSetPrice) {
       setUserSteprice(true);
     }
@@ -115,7 +110,7 @@ const PriceSlider = (props) => {
           <FontAwesomeIcon className={classes.icon} icon={faTag} />{" "}
           {showV.length === 0
             ? "ช่วงราคา"
-            : "ช่วงราคา" + ": " + fromV + " - " + toV + " ล้าน"}
+            : `ช่วงราคา: ${showV[0]} - ${showV[1]} ล้าน`}
         </span>
       </div>
       <div className={active == true ? classes.active : classes.unActive}>
@@ -126,13 +121,11 @@ const PriceSlider = (props) => {
                 disableSwap
                 id="slider"
                 size="small"
-                getAriaLabel={() => "Temperature range"}
                 value={[Number(fromV), Number(toV)]}
                 color="myAwesomeColor"
                 onChange={handleSliderChange}
                 marks={marks}
                 valueLabelDisplay="auto"
-                getAriaValueText={valuetext}
                 min={0}
                 step={1}
                 max={12}
@@ -148,9 +141,8 @@ const PriceSlider = (props) => {
                     size="small"
                     fullWidth
                     id="from"
-                    defaultValue={Number(value[0])}
+                    defaultValue={Number(value[0]) + " ล้าน"}
                     onChange={(event) => {
-                      console.log(event.target.value);
                       if (!userSetPrice) {
                         setUserSteprice(true);
                       }
@@ -166,9 +158,8 @@ const PriceSlider = (props) => {
                     required
                     fullWidth
                     id="to"
-                    defaultValue={Number(value[1])}
+                    defaultValue={Number(value[1]) + " ล้าน"}
                     onChange={(event) => {
-                      console.log(event.target.value);
                       if (!userSetPrice) {
                         setUserSteprice(true);
                       }
@@ -183,10 +174,21 @@ const PriceSlider = (props) => {
             </div>
 
             <div className={classes.confirmButton}>
-              <div className={classes.applyBox}>
+              <div
+                className={classes.applyBox}
+                onClick={() => {
+                  setShowV([fromV, toV]);
+                  setActive(false);
+                }}
+              >
                 <span>ยืนยัน</span>
               </div>
-              <div className={classes.cancleBox}>
+              <div
+                className={classes.cancleBox}
+                onClick={() => {
+                  setActive(false);
+                }}
+              >
                 <span>ยกเลิก</span>
               </div>
             </div>

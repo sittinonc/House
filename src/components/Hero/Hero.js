@@ -26,9 +26,13 @@ const price = [
 ];
 const Hero = () => {
   const [selectedButton, setSelectedButton] = useState(1);
-  const [selectedLocation, setSelectedLocation] = useState([]);
+  const [locationData, setLocationData] = useState([
+    "กรุงเทพ",
+    "นนทบุรี",
+    "นครปฐม",
+  ]);
+  const [selectedLocation, setSelectedLocation] = useState(locationData);
   const [selectedPrice, setSelectedPrice] = useState([]);
-  const [locationData, setLocationData] = useState(["นนทบุรี", "นครปฐม"]);
 
   const [priceData, setPriceData] = useState(price);
 
