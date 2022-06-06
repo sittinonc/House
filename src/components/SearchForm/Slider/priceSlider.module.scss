@@ -46,11 +46,11 @@
   }
   .active {
     position: absolute;
-    bottom: -115px;
+    top: 80%;
     width: 100%;
-    height: 130px;
     background-color: rgba(164, 158, 144, 0.1);
     border-radius: 8px;
+    transition: 0.125s ease-in-out;
 
     .dropdown {
       margin-top: 1%;
@@ -90,6 +90,7 @@
           display: flex;
           justify-content: space-between;
           flex-direction: row;
+          padding-bottom: 11px;
 
           .applyBox {
             display: flex;
@@ -147,20 +148,13 @@
   }
 
   .unActive {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: -50px;
+    position: relative;
+    background-color: rgba(164, 158, 144, 0.1);
     width: 100%;
-    height: 100%;
+    height: 0;
+    overflow: hidden;
     .dropdown {
-      visibility: hidden;
-
-      .dropdownConfig {
-        visibility: hidden;
-        display: flex;
-        flex-direction: row;
-      }
+      position: absolute;
     }
   }
 }

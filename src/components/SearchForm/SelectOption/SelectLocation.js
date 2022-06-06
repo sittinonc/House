@@ -102,7 +102,11 @@ const SelectLocation = (props) => {
           </div>
           <div className={classes.configBox}>
             <div
-              className={classes.clear}
+              className={
+                props.selectedLocation.length === 0
+                  ? classes.unClear
+                  : classes.clear
+              }
               onClick={() => {
                 setTimeout(() => {}, 100);
                 props.setSelectedLocation([]);

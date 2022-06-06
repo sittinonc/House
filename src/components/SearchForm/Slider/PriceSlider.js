@@ -138,10 +138,14 @@ const PriceSlider = (props) => {
                 <Grid item xs={10} sm={1}>
                   <TextField
                     required
+                    autoComplete={"false"}
                     size="small"
                     fullWidth
                     id="from"
                     defaultValue={Number(value[0]) + " ล้าน"}
+                    onFocus={() => {
+                      document.getElementById("from").value = "";
+                    }}
                     onChange={(event) => {
                       if (!userSetPrice) {
                         setUserSteprice(true);
@@ -157,8 +161,12 @@ const PriceSlider = (props) => {
                     size="small"
                     required
                     fullWidth
+                    autoComplete={false}
                     id="to"
                     defaultValue={Number(value[1]) + " ล้าน"}
+                    onFocus={() => {
+                      document.getElementById("to").value = "";
+                    }}
                     onChange={(event) => {
                       if (!userSetPrice) {
                         setUserSteprice(true);
@@ -177,6 +185,20 @@ const PriceSlider = (props) => {
               <div
                 className={classes.applyBox}
                 onClick={() => {
+                  if (document.getElementById("to").value == "") {
+                    if (showV.length !== 0) {
+                      document.getElementById("to").value = showV[1];
+                    } else {
+                      document.getElementById("to").value = toV;
+                    }
+                  }
+                  if (document.getElementById("from").value == "") {
+                    if (showV.length !== 0) {
+                      document.getElementById("from").value = showV[0];
+                    } else {
+                      document.getElementById("from").value = fromV;
+                    }
+                  }
                   setShowV([fromV, toV]);
                   setActive(false);
                 }}
@@ -186,6 +208,20 @@ const PriceSlider = (props) => {
               <div
                 className={classes.cancleBox}
                 onClick={() => {
+                  if (document.getElementById("to").value == "") {
+                    if (showV.length !== 0) {
+                      document.getElementById("to").value = showV[1];
+                    } else {
+                      document.getElementById("to").value = toV;
+                    }
+                  }
+                  if (document.getElementById("from").value == "") {
+                    if (showV.length !== 0) {
+                      document.getElementById("from").value = showV[0];
+                    } else {
+                      document.getElementById("from").value = fromV;
+                    }
+                  }
                   setActive(false);
                 }}
               >
