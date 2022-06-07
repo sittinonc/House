@@ -95,14 +95,16 @@ const PriceSlider = (props) => {
       <div className={classes.king}>
         <span
           className={
-            active == true
+            active == true && props.dropdownCommand == "price"
               ? classes.spanActive + " " + classes.topic
               : classes.topic
           }
           onClick={() => {
-            if (active) {
+            if (active && props.dropdownCommand === "price") {
               setActive(false);
             } else {
+              console.log(props.dropdownCommand);
+              props.setDropdownCommand("price");
               setActive(true);
             }
           }}
@@ -113,7 +115,13 @@ const PriceSlider = (props) => {
             : `ช่วงราคา: ${showV[0]} - ${showV[1]} ล้าน`}
         </span>
       </div>
-      <div className={active == true ? classes.active : classes.unActive}>
+      <div
+        className={
+          active == true && props.dropdownCommand == "price"
+            ? classes.active
+            : classes.unActive
+        }
+      >
         <div className={classes.dropdown}>
           <ThemeProvider theme={theme}>
             <Box sx={{ width: "75%" }}>

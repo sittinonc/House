@@ -31,35 +31,24 @@ const SelectLocation = (props) => {
     return check;
   };
 
-  const dropdownHandler = () => {
-    if (active) {
-      setActive(false);
-      setActive((prev) => {
-        return prev - 1;
-      });
-    } else {
-      setActive((prev) => {
-        return prev + 1;
-      });
-      setActive(true);
-    }
-  };
   useEffect(() => {}, [props.selectedPrice]);
   return (
     <div className={classes.zoneDropdown}>
       <div
         className={classes.king}
         onClick={() => {
-          if (active) {
+          if (active && props.dropdownCommand === "location") {
             setActive(false);
           } else {
+            console.log(props.dropdownCommand);
+            props.setDropdownCommand("location");
             setActive(true);
           }
         }}
       >
         <span
           className={
-            active == true
+            active == true && props.dropdownCommand == "location"
               ? classes.spanActive + " " + classes.topic
               : classes.topic
           }
@@ -68,7 +57,13 @@ const SelectLocation = (props) => {
           {`${props.selectedLocation.length} พื้นที่`}
         </span>
       </div>
-      <div className={active ? classes.active : classes.unActive}>
+      <div
+        className={
+          active == true && props.dropdownCommand == "location"
+            ? classes.active
+            : classes.unActive
+        }
+      >
         <div className={classes.dropdown}>
           <div className={classes.inDropdown}>
             {props.data.map((e, i) => {

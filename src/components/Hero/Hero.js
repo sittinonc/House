@@ -25,6 +25,7 @@ const price = [
   },
 ];
 const Hero = () => {
+  const [dropdownCommand, setDropdownCommand] = useState(null);
   const [selectedButton, setSelectedButton] = useState(1);
   const [locationData, setLocationData] = useState([
     "กรุงเทพ",
@@ -82,8 +83,13 @@ const Hero = () => {
                 setSelectedLocation={setSelectedLocation}
                 type="Location"
                 data={locationData}
+                dropdownCommand={dropdownCommand}
+                setDropdownCommand={setDropdownCommand}
               />
-              <PriceSlider />
+              <PriceSlider
+                dropdownCommand={dropdownCommand}
+                setDropdownCommand={setDropdownCommand}
+              />
               <div className={classes.search}>
                 <Button
                   className={classes.button}
