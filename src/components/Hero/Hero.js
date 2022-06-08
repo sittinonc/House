@@ -2,12 +2,12 @@ import classes from "./hero.module.scss";
 import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleDot } from "@fortawesome/free-solid-svg-icons";
-import Button from "@mui/material/Button";
 import {
-  faCircle,
-  faCircleDot as faCircleDotReg,
-} from "@fortawesome/free-regular-svg-icons";
+  faCircleDot,
+  faCircleArrowDown,
+} from "@fortawesome/free-solid-svg-icons";
+
+import Button from "@mui/material/Button";
 import PriceSlider from "../SearchForm/Slider/PriceSlider";
 import SelectLocation from "../SearchForm/SelectOption/SelectLocation";
 const price = [
@@ -31,10 +31,11 @@ const Hero = () => {
     "กรุงเทพ",
     "นนทบุรี",
     "นครปฐม",
+    "ยะลา",
   ]);
   const [selectedLocation, setSelectedLocation] = useState(locationData);
-  const [selectedPrice, setSelectedPrice] = useState([]);
 
+  const [selectedPrice, setSelectedPrice] = useState([]);
   const [priceData, setPriceData] = useState(price);
 
   return (
@@ -44,7 +45,7 @@ const Hero = () => {
         <div className={classes.left}>
           <div className={classes.greetingBox}>
             <span className={classes.brandText}>
-              Q-House, quality houses delivered at reasonable prices.
+              Quality houses delivered at reasonable prices.
             </span>
             <span className={classes.subText}>
               All of our products developed by high experiences team.
@@ -100,6 +101,20 @@ const Hero = () => {
                   ค้นหา
                 </Button>
               </div>
+            </div>
+            <div className={classes.scrollDown}>
+              {" "}
+              <FontAwesomeIcon
+                className={classes.FontAwesomeIcon}
+                icon={faCircleArrowDown}
+              />
+              <span
+                onClick={() => {
+                  window.scrollTo(0, 500);
+                }}
+              >
+                เลื่อนลงเพื่อชมโครงการแนะนำของ Q-House
+              </span>
             </div>
           </div>
         </div>

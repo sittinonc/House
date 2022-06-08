@@ -95,7 +95,7 @@ const PriceSlider = (props) => {
       <div className={classes.king}>
         <span
           className={
-            active == true && props.dropdownCommand == "price"
+            active == true && props.dropdownCommand === "price"
               ? classes.spanActive + " " + classes.topic
               : classes.topic
           }

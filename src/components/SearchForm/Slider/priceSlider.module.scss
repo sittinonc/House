@@ -11,17 +11,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     &:hover {
       cursor: pointer;
     }
 
-    .spanActive {
-      font-weight: 400;
-      transition: 0.12s;
-      color: black;
-    }
+    .topic {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .icon {
+        margin-right: 10px;
+        margin-top: 1.5px;
+        font-size: 18px;
+      }
 
-    span {
       font-size: 16px;
       color: grey;
       font-weight: 400;
@@ -31,17 +36,11 @@
         transition: 0.12s;
         color: black;
       }
-      &:after {
-        display: block;
-        content: "";
-        border-bottom: solid 1.6px black;
-        transform: scaleY(0);
-        transition: transform 120ms ease-in-out;
-      }
-
-      &:hover:after {
-        transform: scaleY(0.8);
-      }
+    }
+    .spanActive {
+      font-weight: 400;
+      transition: 0.12s;
+      color: black;
     }
   }
   .active {

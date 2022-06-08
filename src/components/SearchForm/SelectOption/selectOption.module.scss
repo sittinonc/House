@@ -15,13 +15,16 @@
       cursor: pointer;
     }
 
-    .spanActive {
-      font-weight: 400;
-      transition: 0.12s;
-      color: black;
-    }
+    .topic {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .icon {
+        margin-right: 10px;
+        font-size: 18px;
+      }
 
-    span {
       font-size: 16px;
       color: grey;
       font-weight: 400;
@@ -31,17 +34,11 @@
         transition: 0.12s;
         color: black;
       }
-      &:after {
-        display: block;
-        content: "";
-        border-bottom: solid 1.6px black;
-        transform: scaleY(0);
-        transition: transform 120ms ease-in-out;
-      }
-
-      &:hover:after {
-        transform: scaleY(0.8);
-      }
+    }
+    .spanActive {
+      font-weight: 400;
+      transition: 0.12s;
+      color: black;
     }
   }
   .unActive {
@@ -75,10 +72,8 @@
       .inDropdown {
         transition: 0.1s;
         margin-top: 2%;
-        display: flex;
-        flex-direction: column;
         width: 100%;
-        max-height: 140px;
+        max-height: 95px;
         overflow-y: scroll;
 
         .box {

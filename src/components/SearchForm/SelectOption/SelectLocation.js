@@ -1,6 +1,6 @@
 import classes from "./selectOption.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleDot, faHouseChimney } from "@fortawesome/free-solid-svg-icons";
+import { faCircleDot, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import {
   faCircle,
   faCircleDot as faCircleDotReg,
@@ -53,7 +53,7 @@ const SelectLocation = (props) => {
               : classes.topic
           }
         >
-          <FontAwesomeIcon icon={faHouseChimney} />{" "}
+          <FontAwesomeIcon className={classes.icon} icon={faLocationDot} />{" "}
           {`${props.selectedLocation.length} พื้นที่`}
         </span>
       </div>
