@@ -101,6 +101,11 @@ const PriceSlider = (props) => {
           }
           onClick={() => {
             if (active && props.dropdownCommand === "price") {
+              props.setDropdownCommand((prev) => {
+                console.log("tryna exclude");
+                console.log(prev);
+                console.log("prev");
+              });
               setActive(false);
             } else {
               console.log(props.dropdownCommand);
@@ -207,6 +212,8 @@ const PriceSlider = (props) => {
                       document.getElementById("from").value = fromV;
                     }
                   }
+                  props.setSelectedPrice([fromV, toV]);
+                  props.setDropdownCommand((prev) => {});
                   setShowV([fromV, toV]);
                   setActive(false);
                 }}
@@ -230,6 +237,7 @@ const PriceSlider = (props) => {
                       document.getElementById("from").value = fromV;
                     }
                   }
+                  props.setDropdownCommand((prev) => {});
                   setActive(false);
                 }}
               >

@@ -38,6 +38,7 @@ const SelectLocation = (props) => {
         className={classes.king}
         onClick={() => {
           if (active && props.dropdownCommand === "location") {
+            props.setDropdownCommand((prev) => {});
             setActive(false);
           } else {
             console.log(props.dropdownCommand);

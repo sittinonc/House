@@ -253,14 +253,20 @@
           }
         }
         .scrollDown {
+          animation: 2s ease-out 0s 1 slideInFromLeft;
           display: flex;
           flex-direction: row;
           align-items: center;
           color: rgb(168, 168, 168);
           font-weight: 300;
-          width: 100%;
+          width: 350px;
           margin-top: 9%;
           transition: 0.12s;
+          &:hover {
+            transition: 0.15s;
+            cursor: pointer;
+            color: rgb(114, 114, 114);
+          }
 
           .FontAwesomeIcon {
             margin-right: 13px;
@@ -268,13 +274,13 @@
 
           span {
             font-size: 15px;
-
-            &:hover {
-              transition: 0.12s;
-              cursor: pointer;
-              color: rgb(114, 114, 114);
-            }
           }
+        }
+
+        .fade {
+          display: none;
+          transition: 0.12;
+          color: rgb(168, 168, 168);
         }
       }
     }
@@ -302,5 +308,23 @@
     100% {
       transform: scaleY(1);
     }
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-700%);
+  }
+  96% {
+    transform: translateX(0.15%);
+  }
+  98% {
+    transform: translateX(0.1%);
+  }
+  99% {
+    transform: translateX(0.05%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

@@ -26,17 +26,16 @@ const price = [
 ];
 const Hero = () => {
   const [dropdownCommand, setDropdownCommand] = useState(null);
-  const [selectedButton, setSelectedButton] = useState(1);
   const [locationData, setLocationData] = useState([
     "กรุงเทพ",
     "นนทบุรี",
     "นครปฐม",
     "ยะลา",
   ]);
+  //api parameter
+  const [selectedButton, setSelectedButton] = useState(1);
   const [selectedLocation, setSelectedLocation] = useState(locationData);
-
   const [selectedPrice, setSelectedPrice] = useState([]);
-  const [priceData, setPriceData] = useState(price);
 
   return (
     <div className={classes.hero}>
@@ -90,9 +89,25 @@ const Hero = () => {
               <PriceSlider
                 dropdownCommand={dropdownCommand}
                 setDropdownCommand={setDropdownCommand}
+                setSelectedPrice={setSelectedPrice}
               />
               <div className={classes.search}>
                 <Button
+                  onClick={() => {
+                    if (selectedPrice.length === 0) {
+                      console.log("Price: ALL");
+                    } else {
+                      console.log(
+                        `Price: ${selectedPrice[0]} - ${selectedPrice[1]}`
+                      );
+                    }
+                    if (selectedLocation.length === 0) {
+                      console.log("Location: ALL");
+                    } else {
+                      console.log(`Location: ${selectedLocation.length}`);
+                    }
+                    console.log(`Category: ${selectedButton}`);
+                  }}
                   className={classes.button}
                   style={{ borderRadius: "30px", backgroundColor: "darkblue" }}
                   variant="contained"
@@ -102,7 +117,13 @@ const Hero = () => {
                 </Button>
               </div>
             </div>
-            <div className={classes.scrollDown}>
+            <div
+              className={
+                dropdownCommand == null
+                  ? classes.scrollDown
+                  : classes.scrollDown + " " + classes.fade
+              }
+            >
               {" "}
               <FontAwesomeIcon
                 className={classes.FontAwesomeIcon}
