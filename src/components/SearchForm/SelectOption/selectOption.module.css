@@ -1,4 +1,5 @@
 .zoneDropdown {
+  position: relative;
   width: 36%;
   height: 100%;
 }
@@ -26,6 +27,37 @@
   cursor: pointer;
 }
 
+.zoneDropdown .king .topic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  color: grey;
+  font-weight: 400;
+}
+
+.zoneDropdown .king .topic .icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.zoneDropdown .king .topic:hover {
+  cursor: pointer;
+  -webkit-transition: 0.12s;
+  transition: 0.12s;
+  color: black;
+}
+
 .zoneDropdown .king .spanActive {
   font-weight: 400;
   -webkit-transition: 0.12s;
@@ -33,87 +65,63 @@
   color: black;
 }
 
-.zoneDropdown .king span {
-  font-size: 19px;
-  color: grey;
-  font-weight: 400;
-}
-
-.zoneDropdown .king span:hover {
-  cursor: pointer;
-  -webkit-transition: 0.12s;
-  transition: 0.12s;
-  color: black;
-}
-
-.zoneDropdown .king span:after {
-  display: block;
-  content: "";
-  border-bottom: solid 1.6px black;
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
-  -webkit-transition: -webkit-transform 120ms ease-in-out;
-  transition: -webkit-transform 120ms ease-in-out;
-  transition: transform 120ms ease-in-out;
-  transition: transform 120ms ease-in-out, -webkit-transform 120ms ease-in-out;
-}
-
-.zoneDropdown .king span:hover:after {
-  -webkit-transform: scaleY(0.8);
-          transform: scaleY(0.8);
-}
-
 .zoneDropdown .unActive {
   position: relative;
-  width: 100%;
-  height: 100%;
+  background-color: rgba(164, 158, 144, 0.1);
+  width: 95%;
+  height: 0;
+  overflow: hidden;
 }
 
 .zoneDropdown .unActive .dropdown {
-  visibility: hidden;
   position: absolute;
 }
 
 .zoneDropdown .active {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 80%;
+  width: 95%;
+  background-color: rgba(164, 158, 144, 0.1);
+  border-radius: 8px;
+  -webkit-transition: 0.125s ease-in-out;
+  transition: 0.125s ease-in-out;
 }
 
 .zoneDropdown .active .dropdown {
-  visibility: visible;
-  background-color: green;
-  position: absolute;
-  width: 100%;
-  -webkit-animation: growDown 200ms ease-in-out forwards;
-          animation: growDown 200ms ease-in-out forwards;
-  -webkit-transform-origin: top center;
-          transform-origin: top center;
-  top: -10%;
-  background-color: rgba(224, 203, 192, 0.1);
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  visibility: visible;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
 .zoneDropdown .active .dropdown .inDropdown {
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  margin-top: 2%;
   width: 100%;
+  max-height: 95px;
+  overflow-y: scroll;
 }
 
 .zoneDropdown .active .dropdown .inDropdown .box {
-  height: 34px;
-  width: 100%;
+  height: 30px;
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -125,7 +133,7 @@
   cursor: pointer;
   -webkit-transition: 0.19s;
   transition: 0.19s;
-  background-color: rgba(226, 226, 223, 0.17);
+  background-color: rgba(226, 226, 223, 0.25);
 }
 
 .zoneDropdown .active .dropdown .inDropdown .box span {
@@ -136,9 +144,104 @@
 }
 
 .zoneDropdown .active .dropdown .inDropdown .box .icon {
-  right: 60px;
+  right: 5%;
   position: absolute;
   font-size: 16px;
   color: rgba(14, 13, 13, 0.55);
+}
+
+.zoneDropdown .configBox {
+  margin-top: 2.5%;
+  width: 100%;
+  height: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.zoneDropdown .configBox .clear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(214, 214, 214, 0.1);
+  width: 100%;
+}
+
+.zoneDropdown .configBox .clear:hover {
+  cursor: pointer;
+  -webkit-transition: 0.05s ease-out;
+  transition: 0.05s ease-out;
+  background-color: rgba(214, 214, 214, 0.4);
+}
+
+.zoneDropdown .configBox .clear:hover span {
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+  color: #312f2f;
+  font-size: 13.5px;
+  font-weight: 300;
+}
+
+.zoneDropdown .configBox .clear span {
+  color: #312f2f;
+  font-size: 13.5px;
+  font-weight: 300;
+}
+
+.zoneDropdown .configBox .unClear {
+  cursor: no-drop;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(214, 214, 214, 0.1);
+  width: 100%;
+}
+
+.zoneDropdown .configBox .unClear:hover {
+  cursor: no-drop;
+  -webkit-transition: 0.05s ease-out;
+  transition: 0.05s ease-out;
+  background-color: rgba(214, 214, 214, 0.4);
+}
+
+.zoneDropdown .configBox .unClear:hover span {
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+  color: #312f2f;
+  font-size: 13.5px;
+  font-weight: 300;
+}
+
+.zoneDropdown .configBox .unClear span {
+  color: #312f2f;
+  font-size: 13.5px;
+  font-weight: 300;
 }
 /*# sourceMappingURL=selectOption.module.css.map */

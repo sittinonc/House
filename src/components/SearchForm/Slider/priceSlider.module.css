@@ -1,22 +1,11 @@
 .container {
+  position: relative;
   width: 42%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .container .king {
+  position: relative;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -34,17 +23,40 @@
           align-items: center;
 }
 
-.container .king .topic {
-  font-size: 16px;
-}
-
-.container .king .icon {
-  margin-top: 1.5px;
-  margin-right: 1.5px;
-}
-
 .container .king:hover {
   cursor: pointer;
+}
+
+.container .king .topic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  color: grey;
+  font-weight: 400;
+}
+
+.container .king .topic .icon {
+  margin-right: 10px;
+  margin-top: 1.5px;
+  font-size: 18px;
+}
+
+.container .king .topic:hover {
+  cursor: pointer;
+  -webkit-transition: 0.12s;
+  transition: 0.12s;
+  color: black;
 }
 
 .container .king .spanActive {
@@ -54,37 +66,18 @@
   color: black;
 }
 
-.container .king span {
-  font-size: 19px;
-  color: grey;
-  font-weight: 400;
-}
-
-.container .king span:hover {
-  cursor: pointer;
-  -webkit-transition: 0.12s;
-  transition: 0.12s;
-  color: black;
-}
-
-.container .king span:after {
-  display: block;
-  content: "";
-  border-bottom: solid 1.6px black;
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
-  -webkit-transition: -webkit-transform 120ms ease-in-out;
-  transition: -webkit-transform 120ms ease-in-out;
-  transition: transform 120ms ease-in-out;
-  transition: transform 120ms ease-in-out, -webkit-transform 120ms ease-in-out;
-}
-
-.container .king span:hover:after {
-  -webkit-transform: scaleY(0.8);
-          transform: scaleY(0.8);
-}
-
 .container .active {
+  position: absolute;
+  top: 80%;
+  width: 100%;
+  background-color: rgba(164, 158, 144, 0.1);
+  border-radius: 8px;
+  -webkit-transition: 0.125s ease-in-out;
+  transition: 0.125s ease-in-out;
+}
+
+.container .active .dropdown {
+  margin-top: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,28 +85,155 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  visibility: visible;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
-.container .active .dropdown {
-  max-width: 180px;
-  position: absolute;
-  background-color: rgba(224, 203, 192, 0.1);
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
+.container .active .dropdown .dropdownConfig {
+  width: 90%;
   visibility: visible;
-  -webkit-transition: 1s;
-  transition: 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .active .dropdown .dropdownConfig .inputShow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 6px;
+          column-gap: 6px;
+}
+
+.container .active .dropdown .dropdownConfig .inputShow .from {
+  height: 50px;
+  width: 100%;
+}
+
+.container .active .dropdown .dropdownConfig .inputShow .to {
+  height: 50px;
+  width: 100%;
+}
+
+.container .active .dropdown .dropdownConfig .confirmButton {
+  margin-top: 1%;
+  width: 100%;
+  height: 27px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-bottom: 11px;
+}
+
+.container .active .dropdown .dropdownConfig .confirmButton .applyBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #b4b4b4;
+  border-radius: 12px;
+  width: 57%;
+}
+
+.container .active .dropdown .dropdownConfig .confirmButton .applyBox:hover {
+  cursor: pointer;
+  -webkit-transition: 0.05s ease-out;
+  transition: 0.05s ease-out;
+  -webkit-box-shadow: inset 0 0 0 0.2px #616161;
+          box-shadow: inset 0 0 0 0.2px #616161;
+}
+
+.container .active .dropdown .dropdownConfig .confirmButton .applyBox:hover span {
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+  color: white;
+  font-size: 13.5px;
+  font-weight: 300;
+}
+
+.container .active .dropdown .dropdownConfig .confirmButton .applyBox span {
+  color: white;
+  font-size: 13.5px;
+  font-weight: 300;
+}
+
+.container .active .dropdown .dropdownConfig .confirmButton .cancleBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fbfbfb;
+  border-radius: 10px;
+  width: 40%;
+  -webkit-box-shadow: inset 0 0 0 0px #616161;
+          box-shadow: inset 0 0 0 0px #616161;
+  -webkit-transition: 0.06s ease-out;
+  transition: 0.06s ease-out;
+}
+
+.container .active .dropdown .dropdownConfig .confirmButton .cancleBox:hover {
+  -webkit-transition: 0.05s ease-out;
+  transition: 0.05s ease-out;
+  -webkit-box-shadow: inset 0 0 0 1px #616161;
+          box-shadow: inset 0 0 0 1px #616161;
+  cursor: pointer;
+}
+
+.container .active .dropdown .dropdownConfig .confirmButton .cancleBox span {
+  font-size: 13.5px;
+  font-weight: 300;
+}
+
+.container .unActive {
+  position: relative;
+  background-color: rgba(164, 158, 144, 0.1);
+  width: 100%;
+  height: 0;
+  overflow: hidden;
 }
 
 .container .unActive .dropdown {
   position: absolute;
-  visibility: hidden;
 }
 /*# sourceMappingURL=priceSlider.module.css.map */
