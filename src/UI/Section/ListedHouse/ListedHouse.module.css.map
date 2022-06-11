@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,MAAM,EAAE,GAAG;EACX,UAAU,EAAE,MAAM;EAClB,gBAAgB,EAAE,OAAkB;CAMrC;;AATD,AAKE,YALU,AAKT,MAAM,CAAC;EACN,MAAM,EAAE,OAAO;EACf,KAAK,EAAE,GAAc;CACtB",
+    "sources": [
+        "ListedHouse.module.scss"
+    ],
+    "names": [],
+    "file": "ListedHouse.module.css"
+}

@@ -1,11 +1,10 @@
-import classes from "./TopSection.module.scss";
-import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
+import Section from "../../UI/Section/Section";
 const TopSection = () => {
   return (
-    <div className={classes.TopSection}>
+    <Section style={{ height: "100vh" }}>
       <Hero />
-    </div>
+    </Section>
   );
 };
 export default TopSection;

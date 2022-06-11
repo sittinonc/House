@@ -1,0 +1,10 @@
+.ListedHouse {
+  margin: 7px;
+  text-align: center;
+  background-color: rgb(233, 232, 232);
+
+  &:hover {
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+  }
+}

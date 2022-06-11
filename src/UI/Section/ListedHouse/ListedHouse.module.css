@@ -1,0 +1,11 @@
+.ListedHouse {
+  margin: 7px;
+  text-align: center;
+  background-color: #e9e8e8;
+}
+
+.ListedHouse:hover {
+  cursor: pointer;
+  color: red;
+}
+/*# sourceMappingURL=ListedHouse.module.css.map */

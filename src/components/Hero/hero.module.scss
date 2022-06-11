@@ -1,12 +1,14 @@
 //Desktop giant
 .hero {
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
   .container {
     position: absolute;
     top: 0;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -32,7 +34,6 @@
         margin-top: 150px;
 
         .brandText {
-          color: red;
           margin-top: 8px;
           width: 88%;
           font-size: 53px;
@@ -286,10 +287,10 @@
       }
     }
     .right {
-      height: 98vh;
+      height: 100%;
       width: 100%;
       .heroImg {
-        height: 100%;
+        height: 98%;
         width: 100%;
         top: 0;
         position: center;
