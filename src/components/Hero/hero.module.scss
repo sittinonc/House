@@ -65,7 +65,7 @@
           justify-content: center;
           align-items: center;
           column-gap: 6px;
-          width: 44%;
+          width: 41%;
           height: 66px;
           border-radius: 105px;
           background-color: rgba(231, 231, 231, 0.7);
@@ -339,7 +339,6 @@
           margin-top: 150px;
 
           .brandText {
-            color: blue;
             margin-top: 8px;
             width: 88%;
             font-size: 49px;
@@ -348,6 +347,7 @@
           }
 
           .subText {
+            font-size: 15px;
             margin-top: 20px;
             line-height: 30px;
             width: 100%;
@@ -389,12 +389,12 @@
               color: rgba(199, 198, 198, 0.9);
 
               .topic {
-                font-size: 13px;
+                font-size: 12px;
               }
 
               .FontAwesomeIcon {
-                font-size: 18px;
-                padding-right: 5.2%;
+                font-size: 16px;
+                padding-right: 5%;
               }
 
               &:hover {
@@ -423,7 +423,6 @@
             align-items: center;
             background-color: rgba(248, 248, 248, 0.7);
             font-weight: 600;
-            font-size: 17px;
 
             .zoneDropdown {
               width: 36%;
@@ -476,14 +475,14 @@
                         span {
                           font-weight: 500;
                           color: rgba(7, 6, 6, 0.9);
-                          font-size: 15px;
+                          font-size: 14px;
                           margin-left: 25%;
                         }
 
                         .icon {
                           right: 60px;
                           position: absolute;
-                          font-size: 16px;
+                          font-size: 14px;
                           color: rgba(14, 13, 13, 0.55);
                         }
                       }
@@ -551,7 +550,7 @@
               flex-direction: column;
               justify-content: center;
               align-items: center;
-              width: 21%;
+              width: 24%;
               height: 100%;
 
               .button {
@@ -581,7 +580,7 @@
             }
 
             span {
-              font-size: 15px;
+              font-size: 14px;
             }
           }
 
@@ -611,7 +610,7 @@
   }
 }
 //Desktop Small
-@media only screen and (min-width: 1024px) and (max-width: 1179px) {
+@media only screen and (min-width: 1024px) and (max-width: 1180px) {
   .hero {
     width: 100%;
     display: flex;
@@ -645,15 +644,15 @@
           margin-top: 150px;
 
           .brandText {
-            color: green;
             margin-top: 8px;
             width: 88%;
-            font-size: 60px;
+            font-size: 44px;
             font-weight: 600;
-            line-height: 74px;
+            line-height: 69px;
           }
 
           .subText {
+            font-size: 14px;
             margin-top: 20px;
             line-height: 30px;
             width: 100%;
@@ -677,7 +676,7 @@
             justify-content: center;
             align-items: center;
             column-gap: 6px;
-            width: 44%;
+            width: 47%;
             height: 66px;
             border-radius: 105px;
             background-color: rgba(231, 231, 231, 0.7);
@@ -695,12 +694,12 @@
               color: rgba(199, 198, 198, 0.9);
 
               .topic {
-                font-size: 13px;
+                font-size: 12px;
               }
 
               .FontAwesomeIcon {
-                font-size: 18px;
-                padding-right: 5.2%;
+                font-size: 14px;
+                padding-right: 5%;
               }
 
               &:hover {
@@ -857,12 +856,13 @@
               flex-direction: column;
               justify-content: center;
               align-items: center;
-              width: 21%;
+              width: 27%;
               height: 100%;
 
               .button {
                 width: 70%;
                 height: 86%;
+                font-size: 14px;
               }
             }
           }
@@ -887,7 +887,7 @@
             }
 
             span {
-              font-size: 15px;
+              font-size: 14px;
             }
           }
 

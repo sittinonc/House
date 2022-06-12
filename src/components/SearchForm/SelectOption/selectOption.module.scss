@@ -169,3 +169,351 @@
     }
   }
 }
+
+@media only screen and (min-width: 1180px) and (max-width: 1239px) {
+  .zoneDropdown {
+    position: relative;
+    width: 36%;
+    height: 100%;
+
+    .king {
+      position: relative;
+      width: 90%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+      }
+
+      .topic {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .icon {
+          margin-right: 10px;
+          font-size: 15px;
+        }
+
+        font-size: 15px;
+        color: grey;
+        font-weight: 400;
+
+        &:hover {
+          cursor: pointer;
+          transition: 0.12s;
+          color: black;
+        }
+      }
+      .spanActive {
+        font-weight: 400;
+        transition: 0.12s;
+        color: black;
+      }
+    }
+    .unActive {
+      position: relative;
+      background-color: rgba(164, 158, 144, 0.1);
+      width: 95%;
+      height: 0;
+      overflow: hidden;
+      .dropdown {
+        position: absolute;
+      }
+    }
+
+    .active {
+      position: absolute;
+      top: 80%;
+      width: 95%;
+      background-color: rgba(164, 158, 144, 0.1);
+      border-radius: 8px;
+      transition: 0.125s ease-in-out;
+
+      .dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        visibility: visible;
+        transition: 0.1s;
+
+        .inDropdown {
+          transition: 0.1s;
+          margin-top: 2%;
+          width: 100%;
+          max-height: 89px;
+          overflow-y: scroll;
+
+          .box {
+            height: 29px;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-color: rgba(245, 226, 191, 0);
+
+            &:hover {
+              cursor: pointer;
+              transition: 0.19s;
+              background-color: rgba(226, 226, 223, 0.25);
+            }
+            span {
+              font-weight: 500;
+              color: rgba(7, 6, 6, 0.9);
+              font-size: 13px;
+              margin-left: 25%;
+            }
+
+            .icon {
+              position: absolute;
+              right: 5%;
+              font-size: 15px;
+              color: rgba(14, 13, 13, 0.55);
+            }
+          }
+        }
+      }
+    }
+    .configBox {
+      margin-top: 2.5%;
+      width: 100%;
+      height: 26px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .clear {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(214, 214, 214, 0.1);
+        width: 100%;
+
+        &:hover {
+          cursor: pointer;
+          transition: 0.05s ease-out;
+          background-color: rgba(214, 214, 214, 0.4);
+
+          span {
+            transition: 0.15s all;
+            color: rgb(49, 47, 47);
+            font-size: 13.5px;
+            font-weight: 300;
+          }
+        }
+        span {
+          color: rgb(49, 47, 47);
+          font-size: 13.5px;
+          font-weight: 300;
+        }
+      }
+      .unClear {
+        cursor: no-drop;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(214, 214, 214, 0.1);
+        width: 100%;
+
+        &:hover {
+          cursor: no-drop;
+          transition: 0.05s ease-out;
+          background-color: rgba(214, 214, 214, 0.4);
+
+          span {
+            transition: 0.15s all;
+            color: rgb(49, 47, 47);
+            font-size: 13.5px;
+            font-weight: 300;
+          }
+        }
+        span {
+          color: rgb(49, 47, 47);
+          font-size: 13.5px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1179px) {
+  .zoneDropdown {
+    position: relative;
+    width: 36%;
+    height: 100%;
+
+    .king {
+      position: relative;
+      width: 90%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .topic {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .icon {
+          margin-right: 10px;
+          font-size: 14px;
+        }
+
+        font-size: 14px;
+        color: grey;
+        font-weight: 400;
+
+        &:hover {
+          cursor: pointer;
+          transition: 0.12s;
+          color: black;
+        }
+      }
+      .spanActive {
+        font-weight: 400;
+        transition: 0.12s;
+        color: black;
+      }
+    }
+    .unActive {
+      position: relative;
+      background-color: rgba(164, 158, 144, 0.1);
+      width: 95%;
+      height: 0;
+      overflow: hidden;
+      .dropdown {
+        position: absolute;
+      }
+    }
+
+    .active {
+      position: absolute;
+      top: 80%;
+      width: 95%;
+      background-color: rgba(164, 158, 144, 0.1);
+      border-radius: 8px;
+      transition: 0.125s ease-in-out;
+
+      .dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        visibility: visible;
+        transition: 0.1s;
+
+        .inDropdown {
+          transition: 0.1s;
+          margin-top: 2%;
+          width: 100%;
+          max-height: 95px;
+          overflow-y: scroll;
+
+          .box {
+            height: 30px;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-color: rgba(245, 226, 191, 0);
+
+            &:hover {
+              cursor: pointer;
+              transition: 0.19s;
+              background-color: rgba(226, 226, 223, 0.25);
+            }
+            span {
+              font-weight: 500;
+              color: rgba(7, 6, 6, 0.9);
+              font-size: 13px;
+              margin-left: 28%;
+            }
+
+            .icon {
+              right: 6%;
+              position: absolute;
+              font-size: 14px;
+              color: rgba(14, 13, 13, 0.55);
+            }
+          }
+        }
+      }
+    }
+    .configBox {
+      margin-top: 2.5%;
+      width: 100%;
+      height: 26px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .clear {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(214, 214, 214, 0.1);
+        width: 100%;
+
+        &:hover {
+          cursor: pointer;
+          transition: 0.05s ease-out;
+          background-color: rgba(214, 214, 214, 0.4);
+
+          span {
+            transition: 0.15s all;
+            color: rgb(49, 47, 47);
+            font-size: 13.5px;
+            font-weight: 300;
+          }
+        }
+        span {
+          color: rgb(49, 47, 47);
+          font-size: 13.5px;
+          font-weight: 300;
+        }
+      }
+      .unClear {
+        cursor: no-drop;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(214, 214, 214, 0.1);
+        width: 100%;
+
+        &:hover {
+          cursor: no-drop;
+          transition: 0.05s ease-out;
+          background-color: rgba(214, 214, 214, 0.4);
+
+          span {
+            transition: 0.15s all;
+            color: rgb(49, 47, 47);
+            font-size: 13.5px;
+            font-weight: 300;
+          }
+        }
+        span {
+          color: rgb(49, 47, 47);
+          font-size: 13.5px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

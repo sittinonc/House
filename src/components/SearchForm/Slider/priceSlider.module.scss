@@ -157,3 +157,327 @@
     }
   }
 }
+@media only screen and (min-width: 1180px) and (max-width: 1239px) {
+  .container {
+    position: relative;
+    width: 42%;
+    height: 100%;
+
+    .king {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .topic {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .icon {
+          margin-right: 10px;
+          margin-top: 1.5px;
+          font-size: 15px;
+        }
+
+        font-size: 15px;
+        color: grey;
+        font-weight: 400;
+
+        &:hover {
+          cursor: pointer;
+          transition: 0.12s;
+          color: black;
+        }
+      }
+      .spanActive {
+        font-weight: 400;
+        transition: 0.12s;
+        color: black;
+      }
+    }
+    .active {
+      position: absolute;
+      top: 80%;
+      width: 100%;
+      background-color: rgba(164, 158, 144, 0.1);
+      border-radius: 8px;
+      transition: 0.125s ease-in-out;
+
+      .dropdown {
+        margin-top: 1%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        visibility: visible;
+        transition: 0.1s;
+
+        .dropdownConfig {
+          width: 90%;
+          visibility: visible;
+          display: flex;
+          flex-direction: column;
+
+          .inputShow {
+            color: blue;
+            display: flex;
+            flex-direction: row;
+            column-gap: 6px;
+            .from {
+              height: 50px;
+              width: 100%;
+            }
+
+            .to {
+              height: 50px;
+              width: 100%;
+            }
+          }
+
+          .confirmButton {
+            margin-top: 1%;
+            width: 100%;
+            height: 27px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            padding-bottom: 11px;
+
+            .applyBox {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              background-color: rgb(180, 180, 180);
+              border-radius: 12px;
+              width: 57%;
+
+              &:hover {
+                cursor: pointer;
+                transition: 0.05s ease-out;
+                box-shadow: inset 0 0 0 0.2px #616161;
+
+                span {
+                  transition: 0.15s all;
+                  color: rgb(255, 255, 255);
+                  font-size: 13.5px;
+                  font-weight: 300;
+                }
+              }
+              span {
+                color: white;
+                font-size: 13.5px;
+                font-weight: 300;
+              }
+            }
+
+            .cancleBox {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              background-color: rgb(251, 251, 251);
+              border-radius: 10px;
+              width: 40%;
+              box-shadow: inset 0 0 0 0px #616161;
+              transition: 0.06s ease-out;
+
+              &:hover {
+                transition: 0.05s ease-out;
+                box-shadow: inset 0 0 0 1px #616161;
+                cursor: pointer;
+              }
+
+              span {
+                font-size: 13.5px;
+                font-weight: 300;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .unActive {
+      position: relative;
+      background-color: rgba(164, 158, 144, 0.1);
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      .dropdown {
+        position: absolute;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1179px) {
+  .container {
+    position: relative;
+    width: 42%;
+    height: 100%;
+
+    .king {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .topic {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .icon {
+          margin-right: 10px;
+          margin-top: 1.5px;
+          font-size: 15px;
+        }
+
+        font-size: 15px;
+        color: grey;
+        font-weight: 400;
+
+        &:hover {
+          cursor: pointer;
+          transition: 0.12s;
+          color: black;
+        }
+      }
+      .spanActive {
+        font-weight: 400;
+        transition: 0.12s;
+        color: black;
+      }
+    }
+    .active {
+      position: absolute;
+      top: 80%;
+      width: 100%;
+      background-color: rgba(164, 158, 144, 0.1);
+      border-radius: 8px;
+      transition: 0.125s ease-in-out;
+
+      .dropdown {
+        margin-top: 1%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        visibility: visible;
+        transition: 0.1s;
+
+        .dropdownConfig {
+          width: 90%;
+          visibility: visible;
+          display: flex;
+          flex-direction: column;
+
+          .inputShow {
+            display: flex;
+            flex-direction: row;
+            column-gap: 6px;
+            .from {
+              height: 50px;
+              width: 100%;
+            }
+
+            .to {
+              height: 50px;
+              width: 100%;
+            }
+          }
+
+          .confirmButton {
+            margin-top: 1%;
+            width: 100%;
+            height: 27px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            padding-bottom: 11px;
+
+            .applyBox {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              background-color: rgb(180, 180, 180);
+              border-radius: 12px;
+              width: 57%;
+
+              &:hover {
+                cursor: pointer;
+                transition: 0.05s ease-out;
+                box-shadow: inset 0 0 0 0.2px #616161;
+
+                span {
+                  transition: 0.15s all;
+                  color: rgb(255, 255, 255);
+                  font-size: 13.5px;
+                  font-weight: 300;
+                }
+              }
+              span {
+                color: white;
+                font-size: 13.5px;
+                font-weight: 300;
+              }
+            }
+
+            .cancleBox {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              background-color: rgb(251, 251, 251);
+              border-radius: 10px;
+              width: 40%;
+              box-shadow: inset 0 0 0 0px #616161;
+              transition: 0.06s ease-out;
+
+              &:hover {
+                transition: 0.05s ease-out;
+                box-shadow: inset 0 0 0 1px #616161;
+                cursor: pointer;
+              }
+
+              span {
+                font-size: 13.5px;
+                font-weight: 300;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .unActive {
+      position: relative;
+      background-color: rgba(164, 158, 144, 0.1);
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      .dropdown {
+        position: absolute;
+      }
+    }
+  }
+}
