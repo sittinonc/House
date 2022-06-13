@@ -8,6 +8,9 @@ function App() {
     <>
       <TopSection />
       <MiddleSection />
+      <div
+        style={{ width: "100%", height: "500px", backgroundColor: "grey" }}
+      ></div>
     </>
   );
 }

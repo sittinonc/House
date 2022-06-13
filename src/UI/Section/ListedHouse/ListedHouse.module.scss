@@ -1,8 +1,8 @@
 .ListedHouse {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 14px;
-  height: 395px;
+  height: 430px;
   border-radius: 2px;
   background-color: rgb(233, 232, 232);
 
@@ -11,7 +11,7 @@
     color: rgb(255, 0, 0);
   }
   .imgBox {
-    height: 61%;
+    height: 58%;
     width: 100%;
 
     .img {
@@ -27,25 +27,28 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 39%;
+    height: 42%;
 
     .top {
+      height: 50%;
       width: 100%;
-      margin-top: 10px;
       margin-left: 15px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       box-shadow: 0 2.5px 1.5px -2px rgba(206, 206, 206, 0.8);
       .major {
-        font-size: 20px;
+        font-size: 19px;
         font-weight: 600;
       }
       .minor {
-        font-size: 16px;
+        color: grey;
+        margin-top: 2%;
+        font-size: 13px;
       }
     }
     .bottom {
+      height: 50%;
       width: 100%;
       margin-top: 15px;
       display: flex;
@@ -53,12 +56,27 @@
       margin-left: 15px;
       gap: 10px;
 
-      div {
+      .property {
         display: flex;
         flex-direction: column;
         height: 70px;
         width: 27%;
-        background-color: green;
+        background-color: rgb(221, 251, 221);
+        .symbol {
+          margin-left: 10%;
+          width: 100%;
+          height: 50%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+        }
+        .text {
+          margin-left: 10%;
+          height: 50%;
+          width: 100%;
+          font-size: 14px;
+        }
       }
     }
   }
