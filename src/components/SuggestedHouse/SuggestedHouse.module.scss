@@ -1,15 +1,10 @@
 .SuggestedHouse {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   .box {
-    background-color: #898989;
-    padding: 10px;
-    height: 300px;
-    width: 90%;
+    background-color: #dedbdb;
+    width: 100%;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    gap: 48px;
   }
 }
