@@ -1,17 +1,17 @@
-import logo from "./logo.svg";
 import "./App.css";
-//--
-import TopSection from "./components/TopSection/TopSection";
-import MiddleSection from "./components/MiddleSection/MiddleSection";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
 function App() {
   return (
-    <>
-      <TopSection />
-      <MiddleSection />
-      <div
-        style={{ width: "100%", height: "500px", backgroundColor: "grey" }}
-      ></div>
-    </>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

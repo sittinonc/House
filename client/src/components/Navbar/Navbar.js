@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import classes from "./navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
@@ -22,9 +23,12 @@ const Navbar = () => {
         </div>
         <div className={classes.right}>
           <div className={classes.userStatus}>
-            <div>
-              <span>Admin</span>
-            </div>
+            <Link
+              style={{ textDecoration: "none", color: "white" }}
+              to="/admin"
+            >
+              <div>Admin</div>
+            </Link>
             <div className={classes.active}>
               <span>User</span>
             </div>
