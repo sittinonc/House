@@ -1,9 +1,9 @@
 import Hero from "../Hero/Hero";
 import Section from "../../UI/Section/Section";
-const TopSection = () => {
+const TopSection = (props) => {
   return (
     <Section style={{ height: "100vh" }}>
-      <Hero />
+      <Hero username={props.username} setUsername={props.setUsername} />
     </Section>
   );
 };

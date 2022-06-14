@@ -25,7 +25,7 @@ const price = [
     label: "10 ล้าน",
   },
 ];
-const Hero = () => {
+const Hero = (props) => {
   const [navStatus, setNavStatus] = useState(0);
   window.addEventListener("scroll", () => {
     console.log(window.scrollY);
@@ -50,7 +50,7 @@ const Hero = () => {
 
   return (
     <div className={classes.hero}>
-      <Navbar />
+      <Navbar username={props.username} setUsername={props.setUsername} />
       <FixedNavbar navStatus={navStatus} />
       <div className={classes.container}>
         <div className={classes.left}>

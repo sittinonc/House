@@ -1,9 +1,9 @@
 import TopSection from "../../components/TopSection/TopSection";
 import MiddleSection from "../../components/MiddleSection/MiddleSection";
-const Home = () => {
+const Home = (props) => {
   return (
     <>
-      <TopSection />
+      <TopSection username={props.username} setUsername={props.setUsername} />
       <MiddleSection />
       <div
         style={{

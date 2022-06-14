@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import classes from "./Login.module.scss";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import uri from '../../components/config'
+import axios from 'axios'
 
-const Login = () => {
+const Login = (props) => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const [redirect, setRedirect] = useState();
 
   const clearValue = () => {
     setEmail(null);
@@ -14,6 +17,28 @@ const Login = () => {
     document.getElementById("email").value = null;
     document.getElementById("password").value = null;
   };
+
+  const login = () => {
+    let url = uri + '/auth/login'
+    let fromData = {
+      username: email, password
+    }
+    axios
+      .post(url, fromData)
+      .then((res) => {
+        let data = res.data
+        props.setUsername(data.username)
+        setRedirect(true)
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+
+  }
+  if (redirect || props.username) {
+    return <Navigate to='/' />
+  }
+
   return (
     <div className={classes.pages}>
       <div className={classes.signinContainer}>
@@ -61,7 +86,7 @@ const Login = () => {
             variant="contained"
             size="large"
             onClick={() => {
-              alert(`Email: ${email}, Password ${password}`);
+              login();
               clearValue();
             }}
           >
