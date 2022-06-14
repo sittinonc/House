@@ -1,10 +1,10 @@
 .ListedHouse {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 45px 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
   height: 430px;
-  border-radius: 2px;
-  background-color: rgb(233, 232, 232);
+  border-radius: 4px;
 
   &:hover {
     cursor: pointer;
@@ -16,8 +16,8 @@
 
     .img {
       position: center;
-      border-top-left-radius: 2px;
-      border-top-right-radius: 2px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
       height: 100%;
       width: 100%;
     }
@@ -32,16 +32,17 @@
     .top {
       height: 50%;
       width: 100%;
-      margin-left: 15px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       box-shadow: 0 2.5px 1.5px -2px rgba(206, 206, 206, 0.8);
       .major {
+        margin-left: 15px;
         font-size: 19px;
         font-weight: 600;
       }
       .minor {
+        margin-left: 15px;
         color: grey;
         margin-top: 2%;
         font-size: 13px;

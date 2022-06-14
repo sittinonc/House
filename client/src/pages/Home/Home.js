@@ -9,7 +9,7 @@ const Home = (props) => {
         style={{
           width: "100%",
           height: "500px",
-          backgroundColor: "grey",
+          backgroundColor: "white",
         }}
       ></div>
     </>

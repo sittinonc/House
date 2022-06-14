@@ -7,14 +7,12 @@ import uri from "../config";
 
 const Navbar = (props) => {
   const logout = () => {
-    let url = uri + '/auth/logout'
+    let url = uri + "/auth/logout";
     axios.defaults.withCredentials = true;
-    axios
-      .post(url)
-      .then(() => {
-        props.setUsername(null)
-      })
-  }
+    axios.post(url).then(() => {
+      props.setUsername(null);
+    });
+  };
 
   return (
     <div className={classes.navbar}>
@@ -35,31 +33,34 @@ const Navbar = (props) => {
         </div>
         <div className={classes.right}>
           <div className={classes.userStatus}>
-
-            {!props.username && <div className={classes.active}>
-              <Link
-                style={{ textDecoration: "none", color: "white" }}
-                to="/admin"
-              >
-                <div>Login</div>
-              </Link>
-            </div>}
-            {props.username && <>
-              <Link
-                style={{ textDecoration: "none", color: "white" }}
-                to="/edit"
-              >
-                <div>Edit</div>
-              </Link>
-              <div onClick={() => { logout() }}>
-                Logout
-              </div>
+            {!props.username && (
               <div className={classes.active}>
-                Admin
+                <Link
+                  style={{ textDecoration: "none", color: "white" }}
+                  to="/admin"
+                >
+                  <div>Admin</div>
+                </Link>
               </div>
-            </>
-
-            }
+            )}
+            {props.username && (
+              <>
+                <Link
+                  style={{ textDecoration: "none", color: "white" }}
+                  to="/edit"
+                >
+                  <div>Edit</div>
+                </Link>
+                <div
+                  onClick={() => {
+                    logout();
+                  }}
+                >
+                  Logout
+                </div>
+                <div className={classes.active}>Admin</div>
+              </>
+            )}
           </div>
         </div>
       </div>
