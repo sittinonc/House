@@ -58,7 +58,6 @@ const Navbar = (props) => {
                 >
                   Logout
                 </div>
-                <div className={classes.active}>Admin</div>
               </>
             )}
           </div>

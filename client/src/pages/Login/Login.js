@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
+
 import classes from "./Login.module.scss";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import uri from '../../components/config'
-import axios from 'axios'
+
+import uri from "../../components/config";
+import axios from "axios";
 
 const Login = (props) => {
   const [email, setEmail] = useState(null);
@@ -19,24 +21,24 @@ const Login = (props) => {
   };
 
   const login = () => {
-    let url = uri + '/auth/login'
+    let url = uri + "/auth/login";
     let fromData = {
-      username: email, password
-    }
+      username: email,
+      password: password,
+    };
     axios
       .post(url, fromData)
       .then((res) => {
-        let data = res.data
-        props.setUsername(data.username)
-        setRedirect(true)
+        let data = res.data;
+        props.setUsername(data.username);
+        setRedirect(true);
       })
       .catch((err) => {
         console.log(err);
-      })
-
-  }
+      });
+  };
   if (redirect || props.username) {
-    return <Navigate to='/' />
+    return <Navigate to="/" />;
   }
 
   return (
