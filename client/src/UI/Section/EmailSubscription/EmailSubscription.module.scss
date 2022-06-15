@@ -1,0 +1,56 @@
+.EmailSubscription {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(223, 223, 223, 0.9);
+  .container {
+    border-radius: 7px;
+    width: 100%;
+    height: 71%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1%;
+
+    .input {
+      height: 100%;
+      width: 66%;
+
+      input {
+        font-size: 14px;
+        color: rgb(10, 10, 10);
+        font-weight: 400;
+        margin-left: 5%;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+        }
+      }
+    }
+    .button {
+      margin-right: 2.1%;
+      height: 100%;
+      width: 33%;
+      background-color: rgb(251, 251, 251);
+      font-size: 14px;
+      color: black;
+      border-radius: 11px;
+
+      Button {
+        background-color: rgb(251, 251, 251);
+        border-radius: 11px;
+        width: 100%;
+      }
+    }
+  }
+}

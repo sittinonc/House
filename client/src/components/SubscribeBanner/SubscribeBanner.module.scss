@@ -1,0 +1,39 @@
+.OfferLand {
+  margin-top: 13vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 99%;
+  height: 300px;
+  border-radius: 16px;
+  background-color: #1c3693;
+  background-image: linear-gradient(315deg, #1c3693 30%, #1e368f 100%);
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10%;
+    .head {
+      width: 50%;
+      font-size: 25px;
+      color: white;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 10px;
+      span {
+      }
+    }
+    .buttonBox {
+      width: 30%;
+      height: 58px;
+    }
+  }
+}

@@ -40,6 +40,7 @@
 .hero .container .left {
   width: 100%;
   height: 100%;
+  max-width: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,7 +110,7 @@
           align-items: center;
   -webkit-column-gap: 6px;
           column-gap: 6px;
-  width: 44%;
+  width: 41%;
   height: 66px;
   border-radius: 105px;
   background-color: rgba(231, 231, 231, 0.7);
@@ -497,7 +498,6 @@
     margin-top: 150px;
   }
   .hero .container .left .greetingBox .brandText {
-    color: blue;
     margin-top: 8px;
     width: 88%;
     font-size: 49px;
@@ -505,6 +505,7 @@
     line-height: 74px;
   }
   .hero .container .left .greetingBox .subText {
+    font-size: 15px;
     margin-top: 20px;
     line-height: 30px;
     width: 100%;
@@ -568,11 +569,11 @@
     color: rgba(199, 198, 198, 0.9);
   }
   .hero .container .left .searchComponent .newOrAll div .topic {
-    font-size: 13px;
+    font-size: 12px;
   }
   .hero .container .left .searchComponent .newOrAll div .FontAwesomeIcon {
-    font-size: 18px;
-    padding-right: 5.2%;
+    font-size: 16px;
+    padding-right: 5%;
   }
   .hero .container .left .searchComponent .newOrAll div:hover {
     cursor: pointer;
@@ -607,7 +608,6 @@
             align-items: center;
     background-color: rgba(248, 248, 248, 0.7);
     font-weight: 600;
-    font-size: 17px;
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown {
     width: 36%;
@@ -686,13 +686,13 @@
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown .box span {
     font-weight: 500;
     color: rgba(7, 6, 6, 0.9);
-    font-size: 15px;
+    font-size: 14px;
     margin-left: 25%;
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown .box .icon {
     right: 60px;
     position: absolute;
-    font-size: 16px;
+    font-size: 14px;
     color: rgba(14, 13, 13, 0.55);
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king .dropdown {
@@ -774,7 +774,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 21%;
+    width: 24%;
     height: 100%;
   }
   .hero .container .left .searchComponent .productProperty .search .button {
@@ -811,7 +811,7 @@
     margin-right: 13px;
   }
   .hero .container .left .searchComponent .scrollDown span {
-    font-size: 15px;
+    font-size: 14px;
   }
   .hero .container .left .searchComponent .fade {
     display: none;
@@ -837,7 +837,7 @@
   }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1179px) {
+@media only screen and (min-width: 1024px) and (max-width: 1180px) {
   .hero {
     width: 100%;
     display: -webkit-box;
@@ -897,14 +897,14 @@
     margin-top: 150px;
   }
   .hero .container .left .greetingBox .brandText {
-    color: green;
     margin-top: 8px;
     width: 88%;
-    font-size: 60px;
+    font-size: 44px;
     font-weight: 600;
-    line-height: 74px;
+    line-height: 69px;
   }
   .hero .container .left .greetingBox .subText {
+    font-size: 14px;
     margin-top: 20px;
     line-height: 30px;
     width: 100%;
@@ -941,7 +941,7 @@
             align-items: center;
     -webkit-column-gap: 6px;
             column-gap: 6px;
-    width: 44%;
+    width: 47%;
     height: 66px;
     border-radius: 105px;
     background-color: rgba(231, 231, 231, 0.7);
@@ -968,11 +968,11 @@
     color: rgba(199, 198, 198, 0.9);
   }
   .hero .container .left .searchComponent .newOrAll div .topic {
-    font-size: 13px;
+    font-size: 12px;
   }
   .hero .container .left .searchComponent .newOrAll div .FontAwesomeIcon {
-    font-size: 18px;
-    padding-right: 5.2%;
+    font-size: 14px;
+    padding-right: 5%;
   }
   .hero .container .left .searchComponent .newOrAll div:hover {
     cursor: pointer;
@@ -1174,12 +1174,13 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 21%;
+    width: 27%;
     height: 100%;
   }
   .hero .container .left .searchComponent .productProperty .search .button {
     width: 70%;
     height: 86%;
+    font-size: 14px;
   }
   .hero .container .left .searchComponent .scrollDown {
     -webkit-animation: 2s ease-out 0s 1 slideInFromLeft;
@@ -1211,7 +1212,7 @@
     margin-right: 13px;
   }
   .hero .container .left .searchComponent .scrollDown span {
-    font-size: 15px;
+    font-size: 14px;
   }
   .hero .container .left .searchComponent .fade {
     display: none;

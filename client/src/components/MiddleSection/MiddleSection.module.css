@@ -1,5 +1,6 @@
 .MiddleSection {
-  margin-top: 60px;
+  width: 100%;
+  margin-top: 7vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,17 +14,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  background-color: #dcdcdd;
 }
 
 .MiddleSection .container {
-  width: 80.5%;
-  background-color: #a0e0a0;
-}
-
-.MiddleSection .container .topic {
-  font-size: 20px;
-  color: black;
+  width: 79%;
 }
 /*# sourceMappingURL=MiddleSection.module.css.map */
