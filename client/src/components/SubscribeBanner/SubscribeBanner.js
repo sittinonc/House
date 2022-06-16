@@ -1,5 +1,5 @@
 import classes from "./SubscribeBanner.module.scss";
-import EmailSubscription from "../../UI/Section/EmailSubscription/EmailSubscription";
+import EmailSubscription from "../../UI/EmailSubscription/EmailSubscription";
 
 const SubscribeBanner = () => {
   return (

@@ -1,6 +1,6 @@
 import classes from "./SuggestedHouse.module.scss";
 import { FcHome } from "react-icons/fc";
-import ListedHouse from "../../UI/Section/ListedHouse/ListedHouse";
+import ListedHouse from "../../UI/ListedHouse/ListedHouse";
 const Houses = ["h1", "h2", "h3"];
 const SuggestedHouse = () => {
   return (
