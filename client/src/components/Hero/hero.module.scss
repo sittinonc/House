@@ -306,35 +306,11 @@
 }
 
 //Desktop Mid
-@media only screen and (min-width: 1180px) and (max-width: 1239px) {
+@media only screen and (min-width: 1180px) and (max-width: 1300px) {
   .hero {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
     .container {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-      -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-      user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-
       .left {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-
         .greetingBox {
-          display: flex;
-          flex-direction: column;
           row-gap: 2%;
           margin-left: 20%;
           margin-top: 150px;
@@ -352,13 +328,10 @@
             margin-top: 20px;
             line-height: 30px;
             width: 100%;
-            color: rgba(160, 160, 160, 0.78);
           }
         }
 
         .searchComponent {
-          display: flex;
-          flex-direction: column;
           margin-top: 4%;
           margin-left: 20%;
           row-gap: 10px;
@@ -366,11 +339,6 @@
           height: 500px;
 
           .newOrAll {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
             column-gap: 6px;
             width: 44%;
             height: 66px;
@@ -382,12 +350,7 @@
               width: 46%;
               border-radius: 105px;
               height: 71.6%;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
               font-weight: 600;
-              color: rgba(199, 198, 198, 0.9);
 
               .topic {
                 font-size: 12px;
@@ -397,32 +360,13 @@
                 font-size: 16px;
                 padding-right: 5%;
               }
-
-              &:hover {
-                cursor: pointer;
-                transition: 0.15s;
-                color: rgb(224, 173, 61);
-              }
-            }
-
-            .active {
-              transition: 0.15s;
-              color: rgb(224, 173, 61);
             }
           }
 
           .productProperty {
             width: 94%;
             border-radius: 105px;
-            border: 0.5px solid rgba(1, 1, 1, 0.02);
-            box-shadow: rgba(250, 191, 115, 0.05) 0px 3px 1px,
-              rgba(247, 170, 5, 0.12) 1px 2px 88px;
             height: 65.7px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(248, 248, 248, 0.7);
             font-weight: 600;
 
             .zoneDropdown {
@@ -430,31 +374,13 @@
               height: 100%;
 
               .king {
-                position: relative;
                 width: 90%;
                 height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
                 &:hover {
-                  cursor: pointer;
-                  .topic {
-                    transition: 0.1s;
-                    box-shadow: 0 3px 3px -2px rgba(252, 195, 89, 0.6);
-                  }
                   .dropdown {
                     width: 100%;
                     border-radius: 6px;
-                    animation: growDown 200ms ease-in-out forwards;
-                    transform-origin: top center;
-                    position: absolute;
                     top: 86.5%;
-                    background-color: rgba(228, 226, 225, 0.1);
-                    border-bottom-right-radius: 12px;
-                    border-bottom-left-radius: 12px;
-                    display: flex;
-                    justify-content: center;
 
                     .inDropdown {
                       width: 100%;
@@ -462,39 +388,19 @@
                       .box {
                         height: 34px;
                         width: 100%;
-                        display: flex;
-                        justify-content: start;
-                        align-items: center;
-                        position: relative;
-                        background-color: rgba(245, 226, 191, 0);
-
-                        &:hover {
-                          cursor: pointer;
-                          transition: 0.19s;
-                          background-color: rgba(226, 226, 223, 0.17);
-                        }
                         span {
                           font-weight: 500;
-                          color: rgba(7, 6, 6, 0.9);
                           font-size: 14px;
                           margin-left: 25%;
                         }
 
                         .icon {
                           right: 60px;
-                          position: absolute;
                           font-size: 14px;
-                          color: rgba(14, 13, 13, 0.55);
                         }
                       }
                     }
                   }
-                }
-                span {
-                }
-                .dropdown {
-                  display: none;
-                  position: absolute;
                 }
               }
             }
@@ -507,50 +413,20 @@
                 height: 100%;
 
                 .king {
-                  position: relative;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
                   width: 100%;
                   height: 100%;
-
-                  .topic {
-                    transition: 0.1s;
-                    box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 0);
-                  }
-
-                  &:hover {
-                    cursor: pointer;
-                    .topic {
-                      transition: 0.1s;
-                      box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 1);
-                    }
-                  }
 
                   .dropdown {
                     height: 100px;
                     width: 100%;
                     border-radius: 6px;
-                    animation: growDown 200ms ease-in-out forwards;
-                    transform-origin: top center;
-                    position: absolute;
                     top: 86.5%;
-                    background-color: rgba(228, 226, 225, 0.1);
-                    border-bottom-right-radius: 12px;
-                    border-bottom-left-radius: 12px;
-                    display: flex;
-                    justify-content: center;
                   }
                 }
               }
             }
 
             .search {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
               width: 24%;
               height: 100%;
 
@@ -561,20 +437,9 @@
             }
           }
           .scrollDown {
-            animation: 2s ease-out 0s 1 slideInFromLeft;
-            transition: 0.12s;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            color: rgb(168, 168, 168);
             font-weight: 300;
             width: 350px;
             margin-top: 9%;
-            &:hover {
-              transition: 0.15s;
-              cursor: pointer;
-              color: rgb(114, 114, 114);
-            }
 
             .FontAwesomeIcon {
               margin-right: 13px;
@@ -584,27 +449,6 @@
               font-size: 14px;
             }
           }
-
-          .fade {
-            display: none;
-            transition: 0.12;
-            color: rgb(168, 168, 168);
-          }
-        }
-      }
-      .right {
-        height: 98vh;
-        width: 100%;
-        .heroImg {
-          height: 100%;
-          width: 100%;
-          top: 0;
-          position: center;
-          object-fit: cover;
-          margin-left: auto;
-          margin-right: auto;
-          display: block;
-          border-bottom-left-radius: 16px;
         }
       }
     }
@@ -613,33 +457,9 @@
 //Desktop Small
 @media only screen and (min-width: 1024px) and (max-width: 1180px) {
   .hero {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
     .container {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-      -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-      user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-
       .left {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-
         .greetingBox {
-          display: flex;
-          flex-direction: column;
           row-gap: 2%;
           margin-left: 20%;
           margin-top: 150px;
@@ -657,13 +477,10 @@
             margin-top: 20px;
             line-height: 30px;
             width: 100%;
-            color: rgba(160, 160, 160, 0.78);
           }
         }
 
         .searchComponent {
-          display: flex;
-          flex-direction: column;
           margin-top: 4%;
           margin-left: 20%;
           row-gap: 10px;
@@ -671,28 +488,16 @@
           height: 500px;
 
           .newOrAll {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
             column-gap: 6px;
             width: 47%;
             height: 66px;
             border-radius: 105px;
-            background-color: rgba(231, 231, 231, 0.7);
 
             div {
-              background-color: rgb(255, 254, 254);
               width: 46%;
               border-radius: 105px;
               height: 71.6%;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
               font-weight: 600;
-              color: rgba(199, 198, 198, 0.9);
 
               .topic {
                 font-size: 12px;
@@ -702,32 +507,13 @@
                 font-size: 14px;
                 padding-right: 5%;
               }
-
-              &:hover {
-                cursor: pointer;
-                transition: 0.15s;
-                color: rgb(224, 173, 61);
-              }
-            }
-
-            .active {
-              transition: 0.15s;
-              color: rgb(224, 173, 61);
             }
           }
 
           .productProperty {
             width: 94%;
             border-radius: 105px;
-            border: 0.5px solid rgba(1, 1, 1, 0.02);
-            box-shadow: rgba(250, 191, 115, 0.05) 0px 3px 1px,
-              rgba(247, 170, 5, 0.12) 1px 2px 88px;
             height: 65.7px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(248, 248, 248, 0.7);
             font-weight: 600;
             font-size: 17px;
 
@@ -736,31 +522,13 @@
               height: 100%;
 
               .king {
-                position: relative;
                 width: 90%;
                 height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
                 &:hover {
-                  cursor: pointer;
-                  .topic {
-                    transition: 0.1s;
-                    box-shadow: 0 3px 3px -2px rgba(252, 195, 89, 0.6);
-                  }
                   .dropdown {
                     width: 100%;
                     border-radius: 6px;
-                    animation: growDown 200ms ease-in-out forwards;
-                    transform-origin: top center;
-                    position: absolute;
                     top: 86.5%;
-                    background-color: rgba(228, 226, 225, 0.1);
-                    border-bottom-right-radius: 12px;
-                    border-bottom-left-radius: 12px;
-                    display: flex;
-                    justify-content: center;
 
                     .inDropdown {
                       width: 100%;
@@ -768,39 +536,20 @@
                       .box {
                         height: 34px;
                         width: 100%;
-                        display: flex;
-                        justify-content: start;
-                        align-items: center;
-                        position: relative;
-                        background-color: rgba(245, 226, 191, 0);
 
-                        &:hover {
-                          cursor: pointer;
-                          transition: 0.19s;
-                          background-color: rgba(226, 226, 223, 0.17);
-                        }
                         span {
                           font-weight: 500;
-                          color: rgba(7, 6, 6, 0.9);
                           font-size: 15px;
                           margin-left: 25%;
                         }
 
                         .icon {
                           right: 60px;
-                          position: absolute;
                           font-size: 16px;
-                          color: rgba(14, 13, 13, 0.55);
                         }
                       }
                     }
                   }
-                }
-                span {
-                }
-                .dropdown {
-                  display: none;
-                  position: absolute;
                 }
               }
             }
@@ -813,50 +562,20 @@
                 height: 100%;
 
                 .king {
-                  position: relative;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
                   width: 100%;
                   height: 100%;
-
-                  .topic {
-                    transition: 0.1s;
-                    box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 0);
-                  }
-
-                  &:hover {
-                    cursor: pointer;
-                    .topic {
-                      transition: 0.1s;
-                      box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 1);
-                    }
-                  }
 
                   .dropdown {
                     height: 100px;
                     width: 100%;
                     border-radius: 6px;
-                    animation: growDown 200ms ease-in-out forwards;
-                    transform-origin: top center;
-                    position: absolute;
                     top: 86.5%;
-                    background-color: rgba(228, 226, 225, 0.1);
-                    border-bottom-right-radius: 12px;
-                    border-bottom-left-radius: 12px;
-                    display: flex;
-                    justify-content: center;
                   }
                 }
               }
             }
 
             .search {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
               width: 27%;
               height: 100%;
 
@@ -868,20 +587,9 @@
             }
           }
           .scrollDown {
-            animation: 2s ease-out 0s 1 slideInFromLeft;
-            transition: 0.12s;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            color: rgb(168, 168, 168);
             font-weight: 300;
             width: 350px;
             margin-top: 9%;
-            &:hover {
-              transition: 0.15s;
-              cursor: pointer;
-              color: rgb(114, 114, 114);
-            }
 
             .FontAwesomeIcon {
               margin-right: 13px;
@@ -891,27 +599,6 @@
               font-size: 14px;
             }
           }
-
-          .fade {
-            display: none;
-            transition: 0.12;
-            color: rgb(168, 168, 168);
-          }
-        }
-      }
-      .right {
-        height: 98vh;
-        width: 100%;
-        .heroImg {
-          height: 100%;
-          width: 100%;
-          top: 0;
-          position: center;
-          object-fit: cover;
-          margin-left: auto;
-          margin-right: auto;
-          display: block;
-          border-bottom-left-radius: 16px;
         }
       }
     }
