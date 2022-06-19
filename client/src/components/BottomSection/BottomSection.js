@@ -11,19 +11,18 @@ const BottomSection = () => {
   return (
     <Section>
       <div className={classes.container}>
-        <div className={classes.separate}>
+        <div className={classes.separateLeft}>
           <div className={classes.right}>
             <span className={classes.head}>
               <FontAwesomeIcon id={classes.logo} icon={faHouseChimney} />
               QHOUSE
             </span>
             <span className={classes.text}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
-              accusamus deleniti. Lorem ipsum dolor sit amet.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </span>
           </div>
         </div>
-        <div className={classes.separate}>
+        <div className={classes.separateRight}>
           <div className={classes.item}>
             <span className={classes.head}>โครงการ</span>
             <div className={classes.subGroup}>

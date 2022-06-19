@@ -9,16 +9,24 @@
   //box-shadow: 0px -1.5px 0px 0 rgba(225, 223, 223, 0.6);
   box-shadow: 0 2.5px 1.5px -2px rgba(206, 206, 206, 0.8);
 
-  .separate {
+  .separateLeft,
+  .separateRight {
     margin-top: 3%;
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 47%;
     .item,
     .right {
       height: 100%;
       width: 100%;
       .head {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
         font-size: 20px;
         font-weight: 600;
 
@@ -59,6 +67,192 @@
       display: flex;
       flex-direction: column;
       row-gap: 8%;
+    }
+  }
+
+  .separateRight {
+    width: 53%;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 500px) {
+  .container {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 28px;
+    width: 85%;
+    height: 100%;
+    padding-bottom: 20px;
+
+    .separateLeft,
+    .separateRight {
+      margin-top: 0%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 28px;
+      width: 100%;
+      padding-bottom: 30px;
+      box-shadow: 0 2.5px 1.5px -2px rgba(206, 206, 206, 0.8);
+      .item,
+      .right {
+        height: 100%;
+        width: 100%;
+        .head {
+          font-size: 20px;
+          font-weight: 600;
+
+          #logo {
+            padding-right: 2%;
+          }
+        }
+        .text {
+          margin-top: 3%;
+          line-height: 25px;
+          font-size: 14px;
+          color: grey;
+        }
+        .subGroup {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          margin-top: 3%;
+          row-gap: 6px;
+          .sub {
+            color: grey;
+            font-size: 15px;
+
+            &:hover {
+              cursor: pointer;
+              color: rgb(112, 112, 112);
+            }
+
+            .logo {
+              padding-right: 4%;
+            }
+          }
+        }
+      }
+
+      .right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8%;
+      }
+    }
+
+    .separateLeft {
+      padding-bottom: 0px;
+      box-shadow: 0 2.5px 1.5px -2px rgba(206, 206, 206, 0);
+    }
+
+    .separateRight {
+      width: 100%;
+    }
+  }
+}
+@media only screen and (min-width: 501px) and (max-width: 1024px) {
+  .container {
+    margin-top: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 30px;
+    background-color: rgb(255, 255, 255);
+    width: 85%;
+    height: 100%;
+    //box-shadow: 0px -1.5px 0px 0 rgba(225, 223, 223, 0.6);
+    padding-bottom: 20px;
+
+    .separateLeft,
+    .separateRight {
+      margin-top: 0%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+      width: 100%;
+      padding-bottom: 30px;
+      box-shadow: 0 2.5px 1.5px -2px rgba(206, 206, 206, 0.8);
+      .item,
+      .right {
+        height: 100%;
+        width: 100%;
+        .head {
+          font-size: 20px;
+          font-weight: 600;
+
+          #logo {
+            padding-right: 2%;
+          }
+        }
+        .text {
+          margin-top: 3%;
+          line-height: 25px;
+          font-size: 14px;
+          color: grey;
+        }
+        .subGroup {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          margin-top: 3%;
+          row-gap: 6px;
+          .sub {
+            color: grey;
+            font-size: 15px;
+
+            &:hover {
+              cursor: pointer;
+              color: rgb(112, 112, 112);
+            }
+
+            .logo {
+              padding-right: 4%;
+            }
+          }
+        }
+      }
+
+      .right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8%;
+      }
+    }
+
+    .separateLeft {
+      padding-bottom: 0px;
+      box-shadow: 0 2.5px 1.5px -2px rgba(206, 206, 206, 0);
+    }
+
+    .separateRight {
+      width: 100%;
+    }
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .container {
+    .separateLeft,
+    .separateRight {
+      .item,
+      .right {
+        .head {
+          font-size: 18px;
+        }
+        .text {
+          font-size: 14px;
+        }
+        .subGroup {
+          .sub {
+            font-size: 14px;
+          }
+        }
+      }
     }
   }
 }
