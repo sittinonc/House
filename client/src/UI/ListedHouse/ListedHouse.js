@@ -1,6 +1,8 @@
 import classes from "./ListedHouse.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBed } from "@fortawesome/free-solid-svg-icons";
+import { MdOutlineBed } from "react-icons/md";
+import { BiBath, BiArea } from "react-icons/bi";
 
 const ListedHouse = (props) => {
   const priceFormat = (num) => {
@@ -29,41 +31,43 @@ const ListedHouse = (props) => {
     }
   };
   return (
-    <div className={classes.ListedHouse}>
-      <div className={classes.imgBox}>
-        <img
-          className={classes.img}
-          src="https://images.adsttc.com/media/images/5e68/48ed/b357/658e/fb00/0441/large_jpg/AM1506.jpg?1583892706"
-        />
-      </div>
-      <div className={classes.details}>
-        <div className={classes.top}>
-          <span className={classes.major}>{priceFormat(5000000)} บาท</span>
-          <span className={classes.minor}>
-            11/25 ซอยxx ถนนxx นครปฐม ตำบล อำเภอ 102931
-          </span>
+    <div className={classes.container}>
+      <div className={classes.ListedHouse}>
+        <div className={classes.imgBox}>
+          <img
+            className={classes.img}
+            src="https://i.pinimg.com/originals/45/3d/a9/453da9f7af0a8be2d6bec12fac5765a1.jpg"
+          />
         </div>
-        <div className={classes.bottom}>
-          <div className={classes.property}>
-            <div className={classes.symbol}>
-              <FontAwesomeIcon icon={faBed} />
-              <span>3</span>
-            </div>
-            <div className={classes.text}>Bedrooms</div>
+        <div className={classes.details}>
+          <div className={classes.top}>
+            <span className={classes.major}>{priceFormat(5000000)} บาท</span>
+            <span className={classes.minor}>
+              11/25 ซอยxx ถนนxx นครปฐม ตำบล อำเภอ 102931
+            </span>
           </div>
-          <div className={classes.property}>
-            <div className={classes.symbol}>
-              <FontAwesomeIcon icon={faBed} />
-              <span>3</span>
+          <div className={classes.bottom}>
+            <div className={classes.property}>
+              <div className={classes.symbol}>
+                <MdOutlineBed style={{ fontSize: "21px" }} />
+                <span>3</span>
+              </div>
+              <div className={classes.text}>ห้องนอน</div>
             </div>
-            <div className={classes.text}>Bedrooms</div>
-          </div>
-          <div className={classes.property}>
-            <div className={classes.symbol}>
-              <FontAwesomeIcon icon={faBed} />
-              <span>3</span>
+            <div className={classes.property}>
+              <div className={classes.symbol}>
+                <BiBath style={{ fontSize: "21px" }} />
+                <span>3</span>
+              </div>
+              <div className={classes.text}>ห้องน้ำ</div>
             </div>
-            <div className={classes.text}>Bedrooms</div>
+            <div className={classes.property}>
+              <div className={classes.symbol}>
+                <BiArea style={{ fontSize: "21px" }} />
+                <span>52</span>
+              </div>
+              <div className={classes.text}>ตารางเมตร</div>
+            </div>
           </div>
         </div>
       </div>
