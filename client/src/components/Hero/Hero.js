@@ -1,6 +1,5 @@
 import classes from "./hero.module.scss";
 import Navbar from "../Navbar/Navbar";
-import FixedNavbar from "../Navbar/FixedNavbar";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -26,16 +25,6 @@ const price = [
   },
 ];
 const Hero = (props) => {
-  const [navStatus, setNavStatus] = useState(0);
-  window.addEventListener("scroll", () => {
-    console.log(window.scrollY);
-    if (window.scrollY >= 100) {
-      setNavStatus(1);
-    } else {
-      setNavStatus(0);
-    }
-  });
-
   const [dropdownCommand, setDropdownCommand] = useState(null);
   const [locationData, setLocationData] = useState([
     "กรุงเทพ",
@@ -51,7 +40,6 @@ const Hero = (props) => {
   return (
     <div className={classes.hero}>
       <Navbar username={props.username} setUsername={props.setUsername} />
-      <FixedNavbar navStatus={navStatus} />
       <div className={classes.container}>
         <div className={classes.left}>
           <div className={classes.greetingBox}>
