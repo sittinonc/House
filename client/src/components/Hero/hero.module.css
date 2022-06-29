@@ -24,17 +24,8 @@
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-touch-callout: none;
-  /* iOS Safari */
   -webkit-user-select: none;
-  /* Safari */
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Old versions of Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-  /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+  -khtml-user-select: none;
 }
 
 .hero .container .left {
@@ -679,6 +670,12 @@
   }
   .hero .container .left .searchComponent .scrollDown span {
     font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 0) and (max-width: 1024px) {
+  .hero {
+    display: none;
   }
 }
 

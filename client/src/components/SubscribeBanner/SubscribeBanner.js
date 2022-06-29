@@ -6,8 +6,8 @@ const SubscribeBanner = () => {
     <div className={classes.OfferLand}>
       <div className={classes.container}>
         <span className={classes.head}>
-          <span>*กรอก Email เพื่อรับข้อเสนอ ข้อมูลข่าวสาร</span>
-          <span>และโปรโมชั่นใหม่จากเรา</span>
+          <span className={classes.head}>ติดตามข่าวาสาร</span>
+          <span>กรอก Email เพื่อรับข้อเสนอ ข้อมูลข่าวสาร และโปรโมชั่นใหม่จากเรา</span>
         </span>
         <div className={classes.buttonBox}>
           <EmailSubscription />

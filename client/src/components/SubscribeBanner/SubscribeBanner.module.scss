@@ -7,7 +7,7 @@
   width: 99%;
   height: 300px;
   border-radius: 21px;
-  background-image: linear-gradient(315deg, #1c3693 30%, #1e368f 100%);
+  background-image: linear-gradient(315deg, #5a77e3 30%, #2e57d1 100%);
 
   .container {
     width: 100%;
@@ -19,7 +19,7 @@
     row-gap: 10%;
     .head {
       width: 60%;
-      font-size: 24px;
+      font-size: 19px;
       color: white;
       font-weight: 500;
       display: flex;
@@ -27,7 +27,8 @@
       justify-content: center;
       align-items: center;
       row-gap: 10px;
-      span {
+      .head {
+        font-size: 24px;
       }
     }
     .buttonBox {
@@ -37,20 +38,14 @@
   }
 }
 
-@media only screen and (min-width: 501px) and (max-width: 944px) {
+@media only screen and (min-width: 631px) and (max-width: 944px) {
   .OfferLand {
     margin-top: 10vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 99%;
     height: 220px;
     border-radius: 21px;
     background-color: #8d909d;
-    //background-color: #1c3693;
-    //background-image: linear-gradient(315deg, #1c3693 30%, #1e368f 100%);
-    background-image: linear-gradient(315deg, #5272f0 30%, #c7ccde 100%);
+    background-image: linear-gradient(315deg, #5a77e3 30%, #2e57d1 100%); 
 
     .container {
       width: 100%;
@@ -62,7 +57,7 @@
       row-gap: 15%;
       .head {
         width: 100%;
-        font-size: 18px;
+        font-size: 16px;
         color: white;
         font-weight: 500;
         display: flex;
@@ -70,7 +65,8 @@
         justify-content: center;
         align-items: center;
         row-gap: 11px;
-        span {
+        .head {
+          font-size: 22px;
         }
       }
       .buttonBox {
@@ -81,7 +77,7 @@
   }
 }
 
-@media only screen and (min-width: 0px) and (max-width: 500px) {
+@media only screen and (min-width: 0px) and (max-width: 632px) {
   .OfferLand {
     margin-top: 10vh;
     display: none;

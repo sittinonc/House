@@ -1,4 +1,4 @@
-//Desktop giant
+//Desktop
 .hero {
   width: 100%;
   height: 100vh;
@@ -12,13 +12,9 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
 
     .left {
       width: 100%;
@@ -604,7 +600,11 @@
     }
   }
 }
-//Tablet
+@media only screen and (min-width: 0) and (max-width: 1024px) {
+  .hero {
+    display: none;
+  }
+}
 
 @keyframes growDown {
   0% {

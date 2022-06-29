@@ -49,21 +49,21 @@ const ListedHouse = (props) => {
           <div className={classes.bottom}>
             <div className={classes.property}>
               <div className={classes.symbol}>
-                <MdOutlineBed style={{ fontSize: "21px" }} />
+                <MdOutlineBed className={classes.icon}  />
                 <span>3</span>
               </div>
               <div className={classes.text}>ห้องนอน</div>
             </div>
             <div className={classes.property}>
               <div className={classes.symbol}>
-                <BiBath style={{ fontSize: "21px" }} />
+                <BiBath className={classes.icon}  />
                 <span>3</span>
               </div>
               <div className={classes.text}>ห้องน้ำ</div>
             </div>
             <div className={classes.property}>
               <div className={classes.symbol}>
-                <BiArea style={{ fontSize: "21px" }} />
+                <BiArea className={classes.icon}  />
                 <span>52</span>
               </div>
               <div className={classes.text}>ตารางเมตร</div>

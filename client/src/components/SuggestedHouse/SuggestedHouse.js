@@ -12,7 +12,7 @@ const SuggestedHouse = () => {
               <FcHome className={classes.icon} />
             </div>
           </div>
-          <span>โครงการแนะนำ</span>
+          <span >โครงการแนะนำ</span>
         </div>
         <div className={classes.detail}>
           <div className={classes.textBox}>

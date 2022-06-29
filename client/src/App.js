@@ -1,4 +1,4 @@
-import "./App.css";
+import classes from "./App.module.scss";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className={classes.app}>
       <BrowserRouter>
         <Routes>
           <Route
