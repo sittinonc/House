@@ -5,7 +5,7 @@ const MobileHero = () => {
     <div className={classes.container}>
       <img
         className={classes.heroImg}
-        src="https://i.pinimg.com/564x/0f/8b/a5/0f8ba5b8d78ed7c43ababd190aafb282.jpg"
+        src="https://i.pinimg.com/736x/ce/87/8d/ce878dd1e278970f1658abf42fc39130--story-house-modern-houses.jpg"
       />
       <div className={classes.content}>
         <div className={classes.details}>

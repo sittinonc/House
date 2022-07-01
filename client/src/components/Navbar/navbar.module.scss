@@ -58,12 +58,13 @@
         color: grey;
         position: relative;
 
-        h2 {
-          font-size: 17px;
+        .navLink {
+          font-size: 16px;
+          text-decoration: none;
           font-weight: 400;
+          margin: 0;
           color: #666;
           display: inline-block;
-          margin: 0;
           text-transform: uppercase;
           &:hover {
             cursor: pointer;

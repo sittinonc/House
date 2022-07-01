@@ -28,16 +28,15 @@
         height: 82.5%;
         width: 40%;
         font-size: 22px;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 35px;
-        color: rgb(202, 1, 1);
+        color: white;
       }
 
       .button {
         display: flex;
         flex-direction: row;
         width: 100%;
-        color: rgb(202, 1, 1);
 
         .blank {
           width: 71%;
@@ -45,6 +44,8 @@
 
         .use {
           font-size: 17px;
+          color: white;
+          text-decoration: underline;
         }
       }
     }
@@ -83,8 +84,7 @@
           height: 82.5%;
           width: 54%;
           font-size: 15px;
-          line-height: 23px;
-          color: green;
+          line-height: 21px;
         }
 
         .button {
@@ -94,7 +94,6 @@
 
           .use {
             font-size: 13px;
-            color: green;
           }
         }
       }
