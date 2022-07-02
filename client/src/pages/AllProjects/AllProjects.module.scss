@@ -1,0 +1,189 @@
+.page {
+  width: 76%;
+  max-width: 1300px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  background-color: aliceblue;
+
+  .container {
+    background-color: rgb(240, 249, 249);
+    width: 73%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .head {
+        width: 96%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .attributesSet {
+        width: 95%;
+        height: 56px;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 70px;
+
+        .eachAttribute {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          column-gap: 12px;
+
+          span {
+            font-size: 16px;
+          }
+
+          .icon {
+            margin-top: 2px;
+            font-size: 11px;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .house {
+      width: 97%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .box {
+        justify-content: center;
+        margin-top: 2%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        padding: 10px;
+      }
+    }
+  }
+
+  .sideWidgetBox {
+    display: flex;
+    background-color: rgb(195, 195, 215);
+    width: 27%;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 1023px) {
+  .page {
+    width: 95%;
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .wrapper {
+        .attributesSet {
+          width: 95%;
+          height: 56px;
+          background-color: white;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 30px;
+        }
+      }
+    }
+
+    .sideWidgetBox {
+      display: none;
+      background-color: rgb(195, 195, 215);
+      width: 27%;
+    }
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 699px) {
+  .page {
+    width: 100%;
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .wrapper {
+        .attributesSet {
+          width: 95%;
+          height: 56px;
+          background-color: white;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 30px;
+        }
+      }
+
+      .house {
+        .box {
+          justify-content: center;
+          margin-top: 2%;
+          width: 90%;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+          gap: 30px;
+          gap: 30px;
+          padding: 10px;
+        }
+      }
+    }
+
+    .sideWidgetBox {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 550px) {
+  .page {
+    width: 100%;
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .wrapper {
+        .attributesSet {
+          width: 95%;
+          height: 56px;
+          background-color: white;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 30px;
+        }
+      }
+
+      .house {
+        .box {
+          margin-top: 2%;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          padding: 0px;
+        }
+      }
+    }
+  }
+}
