@@ -1,4 +1,4 @@
-const conn = require('../../database')
+const { conn } = require('../../database')
 
 const Logout = (req, res) => {
     console.log('logout');

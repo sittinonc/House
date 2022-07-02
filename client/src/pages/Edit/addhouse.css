@@ -1,0 +1,30 @@
+.AddHouseContainer {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.heading {
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 2px #e5e5e5;
+}
+
+.heading button {
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 0.3rem 2rem 0.3rem 3rem;
+    color: white;
+    background-color: #38DEA9;
+    border: solid 2px #2cae85;
+}
+
+.heading button:hover {
+    background-color: #83ffd8;
+    transition: 0.35s;
+
+    color: black;
+}

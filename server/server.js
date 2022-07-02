@@ -48,6 +48,9 @@ app.use('/auth', authRouter)
 app.use('/image', imageRouter)
 app.use('/api', apiRouter)
 
+app.use((req, res) => {
+    res.status(404).send('Error 404 not found')
+})
 
 app.listen(port, () => {
     console.log(`server started at port ${port}`);
