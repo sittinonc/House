@@ -7,6 +7,7 @@ import ChooseImage from './ChooseImage'
 import uri from '../../components/config'
 import PreviewImg from './PreviewImg'
 import axios from 'axios'
+import Map from './Map'
 
 
 const Main = styled.div`
@@ -87,6 +88,7 @@ const EditContent = (props) => {
     const [filenames, setFilenames] = useState(props.data ? props.data.filenames : [])
     const [blueprints, setBlueprints] = useState(props.data ? props.data.blueprints : [])
     const [imgStore, setImageStore] = useState()
+    const [latlon, setLatlon] = useState(props.data ? props.data.latlon : null)
     const [imgCategory, setImgCategory] = useState('default')
     const [isSuggest, setIsSuggest] = useState(props.data ? props.data.isSuggest : false)
     const [chooseImage, setChooseImage] = useState()
@@ -121,7 +123,8 @@ const EditContent = (props) => {
             parkingLot,
             description,
             filenames,
-            blueprints
+            blueprints,
+            latlon
         }
         axios.defaults.withCredentials = true;
         axios
@@ -361,7 +364,7 @@ const EditContent = (props) => {
                     {imgCategory == 'blueprint' && blueprints.length > 0 && <PreviewImg filenames={blueprints} />}
                 </RightC>
             </Content>
-
+            <Map setLatlon={setLatlon} latlon={latlon} />
         </Main >
     )
 }

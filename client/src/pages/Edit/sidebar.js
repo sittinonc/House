@@ -25,8 +25,8 @@ const Content = styled.div`
 
 const Back = styled(Link)`
     color: #c3c3c3;
-    margin: 0;
-    padding: 0;
+    margin-top: 30px;
+    font-size: 34px;
     text-decoration: none;
 `
 
@@ -34,7 +34,7 @@ const Sidebar = (props) => {
     return (
         <div className="editSidebar">
             <Back to='/'>
-                <h1>Back</h1>
+                Back
             </Back>
             <LineBreak />
             <h2>Houses</h2>
