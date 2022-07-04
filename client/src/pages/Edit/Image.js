@@ -1,8 +1,13 @@
 import React from 'react'
+import ImageStore from './ImageStore'
 
 const Image = (props) => {
     return (
-        <div>{props.method}</div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <ImageStore
+                trigger={true}
+            />
+        </div>
     )
 }
 

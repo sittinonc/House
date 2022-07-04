@@ -44,12 +44,10 @@ const Sidebar = (props) => {
 
             <LineBreak />
             <h2>Image</h2>
-            <Content onClick={() => props.setMethod('add-image')}>
-                <h3 >Add image</h3>
+            <Content onClick={() => props.setMethod('imgStore')}>
+                <h3 >Open image store</h3>
             </Content>
-            <Content onClick={() => props.setMethod('delete-image')}>
-                <h3>Delete image</h3>
-            </Content>
+
             <LineBreak />
 
         </div>

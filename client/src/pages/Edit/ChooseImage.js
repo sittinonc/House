@@ -39,14 +39,17 @@ const Label = styled.label`
 const ChooseImage = (props) => {
     const [allImg, setAllImg] = useState()
     useEffect(() => {
-        let url = uri + '/image/list'
-        axios
-            .get(url)
-            .then((res) => {
-                let data = res.data
-                setAllImg(data)
-            })
-    }, [])
+        if (props.trigger) {
+            let url = uri + '/image/list'
+            axios
+                .get(url)
+                .then((res) => {
+                    let data = res.data
+                    setAllImg(data)
+                })
+        }
+
+    }, [props.trigger])
 
     const createAllImage = () => {
         return allImg.map((item, index) => {

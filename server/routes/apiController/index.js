@@ -44,6 +44,11 @@ const PatchHouse = (req, res) => {
     let { [`_id`]: _id, ...doc } = req.body
     _id = ObjectId(_id)
     let objId = { _id }
+    doc = {
+        ...doc,
+        lastUpdate: new Date().toISOString()
+    }
+
     let newValue = { $set: doc };
     conn.collection('houses').findOneAndUpdate(objId, newValue, (err, doc) => {
         if (err) {
@@ -62,11 +67,36 @@ const PatchHouse = (req, res) => {
 }
 
 const DeleteHouse = (req, res) => {
-    res.send('delete')
+
+    let _id = ObjectId(req.params._id)
+    let objId = { _id }
+    let newValue = {
+        $set: {
+            exist: false,
+            lastUpdate: new Date().toISOString()
+        }
+    };
+
+    conn.collection('houses').findOneAndUpdate(objId, newValue, (err, doc) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).json({
+                success: false,
+                msg: err
+            })
+        }
+        return res.status(200).json({
+            success: true,
+            msg: 'house deleted'
+        })
+    })
+
 }
 
 const ListSuggest = (req, res) => {
-    res.send('suggest')
+    conn.collection('houses').find({ exist: true, isSuggest: true }).toArray((err, files) => {
+        return res.status(200).json(files)
+    })
 
 }
 

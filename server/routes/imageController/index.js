@@ -96,9 +96,56 @@ const List = (req, res) => {
     });
 }
 
+const Delete = (req, res) => {
+    gfs.find({ filename: req.params.filename }).toArray((err, files) => {
+        if (err) {
+            console.log(err);
+        }
+        // Check if files
+        if (!files || files.length === 0) {
+            return res.status(404).json({
+                err: 'No files exist'
+            });
+        }
+
+        // Files exist
+        conn.collection("uploads.files").deleteMany({ _id: files[0]._id })
+        conn.collection("uploads.chunks").deleteMany({ files_id: files[0]._id })
+        conn.collection('houses').find({ filenames: { $all: [`${req.params.filename}`] } })
+            .toArray((err, res) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).end()
+                }
+                res.forEach((item, index) => {
+                    let doc = {}
+                    let text = JSON.stringify(item)
+                    let newVal = JSON.parse(text)
+                    let fileNameIndex = newVal.filenames.indexOf(req.params.filename);
+                    if (fileNameIndex !== -1) {
+                        newVal.filenames.splice(fileNameIndex, 1)
+                        let filenames = newVal.filenames
+                        doc.filenames = filenames
+                        let _id = item._id
+                        let objId = { _id }
+                        let newValue = { $set: doc };
+                        conn.collection('houses').findOneAndUpdate(objId, newValue, (err, doc) => {
+                            if (err) {
+                                console.log(err);
+                            }
+                        })
+                    }
+                })
+
+            })
+        return res.status(200).json(files);
+    });
+}
+
 module.exports = {
     View,
     UploadSingle,
-    List
+    List,
+    Delete
 
 }

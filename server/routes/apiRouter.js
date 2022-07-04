@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router()
 const apiController = require('./apiController')
+const checkAuth = require("./checkAuth");
 
-router.post('/post', apiController.PostHouse)
-router.post('/patch', apiController.PatchHouse)
+router.post('/post', checkAuth, apiController.PostHouse)
+router.post('/patch', checkAuth, apiController.PatchHouse)
 router.get('/list', apiController.ListHouse)
 router.get('/suggest', apiController.ListSuggest)
-router.delete('/delete', apiController.DeleteHouse)
+router.delete('/delete/:_id', checkAuth, apiController.DeleteHouse)
 
 module.exports = router

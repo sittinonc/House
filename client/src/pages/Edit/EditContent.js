@@ -91,7 +91,6 @@ const EditContent = (props) => {
     const [isSuggest, setIsSuggest] = useState(props.data ? props.data.isSuggest : false)
     const [chooseImage, setChooseImage] = useState()
 
-    console.log(props.data);
     const handleSubmit = async (event) => {
         event.preventDefault();
         let name = event.target.Name.value;
@@ -138,9 +137,25 @@ const EditContent = (props) => {
             });
     };
 
+    const deleteHousesById = () => {
+        let url = uri + '/api/delete/' + props.data._id
+        axios.defaults.withCredentials = true;
+        axios
+            .delete(url)
+            .then((res) => {
+                props.updateData()
+                props.setRenderEditPage(null)
+                props.setEditingContent(null)
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
     return (
         <Main>
             <ImageStore
+                popup={true}
                 trigger={imgStore}
                 setImageStore={setImageStore}
             />
@@ -155,7 +170,9 @@ const EditContent = (props) => {
                     Editing content
                 </h2>
                 <div style={{ display: 'flex' }}>
-                    {props.data && <BackBtn delete onClick={() => { props.setRenderEditPage(false) }}>
+                    {props.data && <BackBtn delete onClick={() => {
+                        deleteHousesById()
+                    }}>
                         Delete
                     </BackBtn>}
                     <BackBtn form="all-data" type="submit" save>
@@ -164,7 +181,7 @@ const EditContent = (props) => {
 
                     <BackBtn onClick={() => {
                         props.setEditingContent(null)
-                        props.setRenderEditPage(false)
+                        props.setRenderEditPage(null)
                     }}>
                         Back
                     </BackBtn>

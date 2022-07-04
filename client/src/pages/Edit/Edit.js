@@ -10,13 +10,10 @@ const Edit = (props) => {
         if (method == "house") {
             return <AddHouse />
         }
-        else if (method == "add-image") {
-            return <Image method={method} />
+        else if (method == "imgStore") {
+            return <Image />
         }
-        else if (method == "delete-image") {
-            return <Image method={method} />
 
-        }
     }
     return (
         <div className="editContainer">
