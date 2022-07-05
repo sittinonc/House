@@ -1,0 +1,91 @@
+.utility {
+  border-radius: 7px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  .head {
+    margin-left: 26px;
+    margin-top: 20px;
+    span {
+      font-size: 17px;
+    }
+  }
+  .box {
+    margin-top: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    .each {
+      user-select: none;
+      position: relative;
+      border-radius: 4px;
+      border: solid rgba(186, 186, 186, 0.3) 1px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 82%;
+      height: 40px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .label {
+        margin-left: 9px;
+        font-size: 14px;
+        color: rgb(96, 96, 96);
+      }
+      .icon {
+        margin-right: 5px;
+        font-size: 11px;
+        color: rgb(87, 86, 86);
+      }
+      .dropdownActive {
+        width: 100%;
+        z-index: 10;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 25px 0px;
+        position: absolute;
+        top: 39px;
+        background-color: rgb(255, 255, 255);
+        max-height: 167px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        border-radius: 5px;
+        .dropdownItem {
+          color: rgb(103, 103, 103);
+          border-bottom: 1px solid rgba(222, 222, 222, 0.5);
+          min-height: 40px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          &:hover {
+            cursor: pointer;
+            background-color: rgb(123, 71, 71);
+
+            span {
+              margin-left: 9px;
+              color: rgb(241, 241, 241);
+            }
+          }
+
+          span {
+            font-size: 13px;
+            margin-left: 9px;
+          }
+        }
+      }
+      .dropdownOff {
+        display: none;
+      }
+    }
+  }
+}

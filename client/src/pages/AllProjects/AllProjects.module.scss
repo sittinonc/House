@@ -1,14 +1,13 @@
 .page {
-  width: 76%;
-  max-width: 1300px;
+  width: calc(40vw + 550px);
+  max-width: 1600px;
   height: 100%;
   display: flex;
   flex-direction: row;
   margin: auto;
-  background-color: aliceblue;
+  gap: 9px;
 
   .container {
-    background-color: rgb(240, 249, 249);
     width: 73%;
     height: 100%;
     display: flex;
@@ -17,40 +16,151 @@
 
     .wrapper {
       width: 100%;
+      height: 100%;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
 
       .head {
-        width: 96%;
+        margin-top: 30px;
+        width: 95%;
+        height: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
+        font-size: 28px;
       }
 
       .attributesSet {
+        box-shadow: rgba(206, 206, 248, 0.2) 5px 11px 13px,
+          rgba(17, 17, 26, 0.05) 0px 8px 32px;
         width: 95%;
         height: 56px;
         background-color: white;
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 70px;
+        position: relative;
+        gap: 42px;
 
         .eachAttribute {
+          height: 80%;
           display: flex;
-          flex-direction: row;
-          align-items: center;
-          column-gap: 12px;
+          flex-direction: column;
+          user-select: none;
+          position: relative;
+
+          ::-webkit-scrollbar {
+          }
+
+          ::-webkit-scrollbar-track {
+            width: 10px;
+            background: #ddd;
+          }
+
+          ::-webkit-scrollbar-thumb {
+            width: 10px;
+            background: #666;
+          }
+
+          .label {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            column-gap: 10px;
+          }
 
           span {
-            font-size: 16px;
+            font-size: 15px;
+            font-weight: 300;
+            color: rgb(69, 69, 69);
           }
 
           .icon {
             margin-top: 2px;
             font-size: 11px;
+            color: rgb(87, 86, 86);
             text-align: center;
+          }
+
+          &:hover {
+            cursor: pointer;
+            transition: 0.19s;
+            span {
+              color: rgba(7, 6, 6, 0.9);
+            }
+
+            .icon {
+              color: rgba(7, 6, 6, 0.9);
+            }
+          }
+
+          .dropdownActive {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 25px 0px;
+            position: absolute;
+            top: 50px;
+            left: 0%;
+            background-color: rgb(255, 255, 255);
+            max-height: 167px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            border-radius: 5px;
+
+            .dropdownItem {
+              color: rgb(103, 103, 103);
+              border-bottom: 1px solid rgba(222, 222, 222, 0.5);
+              min-height: 40px;
+              width: 180px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              &:hover {
+                background-color: rgb(123, 71, 71);
+
+                span {
+                  color: rgb(241, 241, 241);
+                }
+              }
+
+              span {
+                font-size: 13px;
+                margin-left: 9px;
+              }
+            }
+            .top {
+              border-top-left-radius: "7px";
+            }
+          }
+
+          .dropdownNone {
+            display: none;
+          }
+        }
+
+        .display {
+          width: 52px;
+          position: absolute;
+          right: 20px;
+          background-color: rgb(255, 255, 255);
+          display: flex;
+          flex-direction: row;
+          gap: 0;
+          .each {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            font-size: 18px;
+            width: 100%;
+            color: rgb(102, 102, 102);
+
+            &:hover {
+              cursor: pointer;
+              color: rgb(97, 56, 56);
+            }
           }
         }
       }
@@ -68,7 +178,7 @@
         margin-top: 2%;
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 30px;
         padding: 10px;
       }
@@ -76,9 +186,12 @@
   }
 
   .sideWidgetBox {
+    background-color: white;
+    margin-top: 32px;
     display: flex;
-    background-color: rgb(195, 195, 215);
+    flex-direction: column;
     width: 27%;
+    gap: 27px;
   }
 }
 @media only screen and (min-width: 700px) and (max-width: 1023px) {
@@ -102,6 +215,23 @@
           gap: 30px;
         }
       }
+      .house {
+        width: 96%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .box {
+          justify-content: center;
+          margin-top: 2%;
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+          gap: 30px;
+          padding: 10px;
+        }
+      }
     }
 
     .sideWidgetBox {
@@ -111,7 +241,7 @@
     }
   }
 }
-@media only screen and (min-width: 0px) and (max-width: 699px) {
+@media only screen and (min-width: 0px) and (max-width: 700px) {
   .page {
     width: 100%;
     .container {
@@ -134,6 +264,7 @@
       }
 
       .house {
+        width: 98%;
         .box {
           justify-content: center;
           margin-top: 2%;
@@ -176,11 +307,14 @@
       }
 
       .house {
+        margin-top: 15px;
+        width: 95%;
         .box {
+          width: 99%;
           margin-top: 2%;
           display: flex;
           flex-direction: column;
-          gap: 30px;
+          gap: 20px;
           padding: 0px;
         }
       }

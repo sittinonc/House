@@ -1,9 +1,9 @@
 import classes from "./SideWidget.module.scss";
 
-const SideWidget = () => {
+const SideWidget = (props) => {
   return (
-    <div className={classes.container}>
-      <div className={classes.sth}></div>
+    <div className={classes.widget}>
+      <div className={classes.container}>{props.children}</div>
     </div>
   );
 };
