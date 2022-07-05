@@ -24,17 +24,8 @@
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-touch-callout: none;
-  /* iOS Safari */
   -webkit-user-select: none;
-  /* Safari */
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Old versions of Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-  /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+  -khtml-user-select: none;
 }
 
 .hero .container .left {
@@ -438,61 +429,8 @@
   border-bottom-left-radius: 16px;
 }
 
-@media only screen and (min-width: 1180px) and (max-width: 1239px) {
-  .hero {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    position: relative;
-  }
-  .hero .container {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Safari */
-    /* Konqueror HTML */
-    -moz-user-select: none;
-    /* Old versions of Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    user-select: none;
-    /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-  }
-  .hero .container .left {
-    width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
+@media only screen and (min-width: 1180px) and (max-width: 1300px) {
   .hero .container .left .greetingBox {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     row-gap: 2%;
     margin-left: 20%;
     margin-top: 150px;
@@ -509,16 +447,8 @@
     margin-top: 20px;
     line-height: 30px;
     width: 100%;
-    color: rgba(160, 160, 160, 0.78);
   }
   .hero .container .left .searchComponent {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     margin-top: 4%;
     margin-left: 20%;
     row-gap: 10px;
@@ -526,20 +456,6 @@
     height: 500px;
   }
   .hero .container .left .searchComponent .newOrAll {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-column-gap: 6px;
             column-gap: 6px;
     width: 44%;
@@ -552,21 +468,7 @@
     width: 46%;
     border-radius: 105px;
     height: 71.6%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     font-weight: 600;
-    color: rgba(199, 198, 198, 0.9);
   }
   .hero .container .left .searchComponent .newOrAll div .topic {
     font-size: 12px;
@@ -575,38 +477,10 @@
     font-size: 16px;
     padding-right: 5%;
   }
-  .hero .container .left .searchComponent .newOrAll div:hover {
-    cursor: pointer;
-    -webkit-transition: 0.15s;
-    transition: 0.15s;
-    color: #e0ad3d;
-  }
-  .hero .container .left .searchComponent .newOrAll .active {
-    -webkit-transition: 0.15s;
-    transition: 0.15s;
-    color: #e0ad3d;
-  }
   .hero .container .left .searchComponent .productProperty {
     width: 94%;
     border-radius: 105px;
-    border: 0.5px solid rgba(1, 1, 1, 0.02);
-    -webkit-box-shadow: rgba(250, 191, 115, 0.05) 0px 3px 1px, rgba(247, 170, 5, 0.12) 1px 2px 88px;
-            box-shadow: rgba(250, 191, 115, 0.05) 0px 3px 1px, rgba(247, 170, 5, 0.12) 1px 2px 88px;
     height: 65.7px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: rgba(248, 248, 248, 0.7);
     font-weight: 600;
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown {
@@ -614,50 +488,13 @@
     height: 100%;
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king {
-    position: relative;
     width: 90%;
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover {
-    cursor: pointer;
-  }
-  .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .topic {
-    -webkit-transition: 0.1s;
-    transition: 0.1s;
-    -webkit-box-shadow: 0 3px 3px -2px rgba(252, 195, 89, 0.6);
-            box-shadow: 0 3px 3px -2px rgba(252, 195, 89, 0.6);
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown {
     width: 100%;
     border-radius: 6px;
-    -webkit-animation: growDown 200ms ease-in-out forwards;
-            animation: growDown 200ms ease-in-out forwards;
-    -webkit-transform-origin: top center;
-            transform-origin: top center;
-    position: absolute;
     top: 86.5%;
-    background-color: rgba(228, 226, 225, 0.1);
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown {
     width: 100%;
@@ -665,39 +502,15 @@
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown .box {
     height: 34px;
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: relative;
-    background-color: rgba(245, 226, 191, 0);
-  }
-  .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown .box:hover {
-    cursor: pointer;
-    -webkit-transition: 0.19s;
-    transition: 0.19s;
-    background-color: rgba(226, 226, 223, 0.17);
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown .box span {
     font-weight: 500;
-    color: rgba(7, 6, 6, 0.9);
     font-size: 14px;
     margin-left: 25%;
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown .box .icon {
     right: 60px;
-    position: absolute;
     font-size: 14px;
-    color: rgba(14, 13, 13, 0.55);
-  }
-  .hero .container .left .searchComponent .productProperty .zoneDropdown .king .dropdown {
-    display: none;
-    position: absolute;
   }
   .hero .container .left .searchComponent .productProperty .priceDropdown {
     width: 43%;
@@ -708,72 +521,16 @@
     height: 100%;
   }
   .hero .container .left .searchComponent .productProperty .priceDropdown .priceRange .king {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: 100%;
     height: 100%;
-  }
-  .hero .container .left .searchComponent .productProperty .priceDropdown .priceRange .king .topic {
-    -webkit-transition: 0.1s;
-    transition: 0.1s;
-    -webkit-box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 0);
-            box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 0);
-  }
-  .hero .container .left .searchComponent .productProperty .priceDropdown .priceRange .king:hover {
-    cursor: pointer;
-  }
-  .hero .container .left .searchComponent .productProperty .priceDropdown .priceRange .king:hover .topic {
-    -webkit-transition: 0.1s;
-    transition: 0.1s;
-    -webkit-box-shadow: 0 2.5px 1.5px -2px #070707;
-            box-shadow: 0 2.5px 1.5px -2px #070707;
   }
   .hero .container .left .searchComponent .productProperty .priceDropdown .priceRange .king .dropdown {
     height: 100px;
     width: 100%;
     border-radius: 6px;
-    -webkit-animation: growDown 200ms ease-in-out forwards;
-            animation: growDown 200ms ease-in-out forwards;
-    -webkit-transform-origin: top center;
-            transform-origin: top center;
-    position: absolute;
     top: 86.5%;
-    background-color: rgba(228, 226, 225, 0.1);
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   .hero .container .left .searchComponent .productProperty .search {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: 24%;
     height: 100%;
   }
@@ -782,30 +539,9 @@
     height: 86%;
   }
   .hero .container .left .searchComponent .scrollDown {
-    -webkit-animation: 2s ease-out 0s 1 slideInFromLeft;
-            animation: 2s ease-out 0s 1 slideInFromLeft;
-    -webkit-transition: 0.12s;
-    transition: 0.12s;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    color: #a8a8a8;
     font-weight: 300;
     width: 350px;
     margin-top: 9%;
-  }
-  .hero .container .left .searchComponent .scrollDown:hover {
-    -webkit-transition: 0.15s;
-    transition: 0.15s;
-    cursor: pointer;
-    color: #727272;
   }
   .hero .container .left .searchComponent .scrollDown .FontAwesomeIcon {
     margin-right: 13px;
@@ -813,85 +549,10 @@
   .hero .container .left .searchComponent .scrollDown span {
     font-size: 14px;
   }
-  .hero .container .left .searchComponent .fade {
-    display: none;
-    -webkit-transition: 0.12;
-    transition: 0.12;
-    color: #a8a8a8;
-  }
-  .hero .container .right {
-    height: 98vh;
-    width: 100%;
-  }
-  .hero .container .right .heroImg {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    position: center;
-    -o-object-fit: cover;
-       object-fit: cover;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    border-bottom-left-radius: 16px;
-  }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1180px) {
-  .hero {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    position: relative;
-  }
-  .hero .container {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Safari */
-    /* Konqueror HTML */
-    -moz-user-select: none;
-    /* Old versions of Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    user-select: none;
-    /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-  }
-  .hero .container .left {
-    width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
   .hero .container .left .greetingBox {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     row-gap: 2%;
     margin-left: 20%;
     margin-top: 150px;
@@ -908,16 +569,8 @@
     margin-top: 20px;
     line-height: 30px;
     width: 100%;
-    color: rgba(160, 160, 160, 0.78);
   }
   .hero .container .left .searchComponent {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     margin-top: 4%;
     margin-left: 20%;
     row-gap: 10px;
@@ -925,47 +578,17 @@
     height: 500px;
   }
   .hero .container .left .searchComponent .newOrAll {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-column-gap: 6px;
             column-gap: 6px;
     width: 47%;
     height: 66px;
     border-radius: 105px;
-    background-color: rgba(231, 231, 231, 0.7);
   }
   .hero .container .left .searchComponent .newOrAll div {
-    background-color: #fffefe;
     width: 46%;
     border-radius: 105px;
     height: 71.6%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     font-weight: 600;
-    color: rgba(199, 198, 198, 0.9);
   }
   .hero .container .left .searchComponent .newOrAll div .topic {
     font-size: 12px;
@@ -974,38 +597,10 @@
     font-size: 14px;
     padding-right: 5%;
   }
-  .hero .container .left .searchComponent .newOrAll div:hover {
-    cursor: pointer;
-    -webkit-transition: 0.15s;
-    transition: 0.15s;
-    color: #e0ad3d;
-  }
-  .hero .container .left .searchComponent .newOrAll .active {
-    -webkit-transition: 0.15s;
-    transition: 0.15s;
-    color: #e0ad3d;
-  }
   .hero .container .left .searchComponent .productProperty {
     width: 94%;
     border-radius: 105px;
-    border: 0.5px solid rgba(1, 1, 1, 0.02);
-    -webkit-box-shadow: rgba(250, 191, 115, 0.05) 0px 3px 1px, rgba(247, 170, 5, 0.12) 1px 2px 88px;
-            box-shadow: rgba(250, 191, 115, 0.05) 0px 3px 1px, rgba(247, 170, 5, 0.12) 1px 2px 88px;
     height: 65.7px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: rgba(248, 248, 248, 0.7);
     font-weight: 600;
     font-size: 17px;
   }
@@ -1014,50 +609,13 @@
     height: 100%;
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king {
-    position: relative;
     width: 90%;
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover {
-    cursor: pointer;
-  }
-  .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .topic {
-    -webkit-transition: 0.1s;
-    transition: 0.1s;
-    -webkit-box-shadow: 0 3px 3px -2px rgba(252, 195, 89, 0.6);
-            box-shadow: 0 3px 3px -2px rgba(252, 195, 89, 0.6);
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown {
     width: 100%;
     border-radius: 6px;
-    -webkit-animation: growDown 200ms ease-in-out forwards;
-            animation: growDown 200ms ease-in-out forwards;
-    -webkit-transform-origin: top center;
-            transform-origin: top center;
-    position: absolute;
     top: 86.5%;
-    background-color: rgba(228, 226, 225, 0.1);
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown {
     width: 100%;
@@ -1065,39 +623,15 @@
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown .box {
     height: 34px;
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: relative;
-    background-color: rgba(245, 226, 191, 0);
-  }
-  .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown .box:hover {
-    cursor: pointer;
-    -webkit-transition: 0.19s;
-    transition: 0.19s;
-    background-color: rgba(226, 226, 223, 0.17);
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown .box span {
     font-weight: 500;
-    color: rgba(7, 6, 6, 0.9);
     font-size: 15px;
     margin-left: 25%;
   }
   .hero .container .left .searchComponent .productProperty .zoneDropdown .king:hover .dropdown .inDropdown .box .icon {
     right: 60px;
-    position: absolute;
     font-size: 16px;
-    color: rgba(14, 13, 13, 0.55);
-  }
-  .hero .container .left .searchComponent .productProperty .zoneDropdown .king .dropdown {
-    display: none;
-    position: absolute;
   }
   .hero .container .left .searchComponent .productProperty .priceDropdown {
     width: 43%;
@@ -1108,72 +642,16 @@
     height: 100%;
   }
   .hero .container .left .searchComponent .productProperty .priceDropdown .priceRange .king {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: 100%;
     height: 100%;
-  }
-  .hero .container .left .searchComponent .productProperty .priceDropdown .priceRange .king .topic {
-    -webkit-transition: 0.1s;
-    transition: 0.1s;
-    -webkit-box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 0);
-            box-shadow: 0 2.5px 1.5px -2px rgba(7, 7, 7, 0);
-  }
-  .hero .container .left .searchComponent .productProperty .priceDropdown .priceRange .king:hover {
-    cursor: pointer;
-  }
-  .hero .container .left .searchComponent .productProperty .priceDropdown .priceRange .king:hover .topic {
-    -webkit-transition: 0.1s;
-    transition: 0.1s;
-    -webkit-box-shadow: 0 2.5px 1.5px -2px #070707;
-            box-shadow: 0 2.5px 1.5px -2px #070707;
   }
   .hero .container .left .searchComponent .productProperty .priceDropdown .priceRange .king .dropdown {
     height: 100px;
     width: 100%;
     border-radius: 6px;
-    -webkit-animation: growDown 200ms ease-in-out forwards;
-            animation: growDown 200ms ease-in-out forwards;
-    -webkit-transform-origin: top center;
-            transform-origin: top center;
-    position: absolute;
     top: 86.5%;
-    background-color: rgba(228, 226, 225, 0.1);
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   .hero .container .left .searchComponent .productProperty .search {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: 27%;
     height: 100%;
   }
@@ -1183,30 +661,9 @@
     font-size: 14px;
   }
   .hero .container .left .searchComponent .scrollDown {
-    -webkit-animation: 2s ease-out 0s 1 slideInFromLeft;
-            animation: 2s ease-out 0s 1 slideInFromLeft;
-    -webkit-transition: 0.12s;
-    transition: 0.12s;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    color: #a8a8a8;
     font-weight: 300;
     width: 350px;
     margin-top: 9%;
-  }
-  .hero .container .left .searchComponent .scrollDown:hover {
-    -webkit-transition: 0.15s;
-    transition: 0.15s;
-    cursor: pointer;
-    color: #727272;
   }
   .hero .container .left .searchComponent .scrollDown .FontAwesomeIcon {
     margin-right: 13px;
@@ -1214,27 +671,11 @@
   .hero .container .left .searchComponent .scrollDown span {
     font-size: 14px;
   }
-  .hero .container .left .searchComponent .fade {
+}
+
+@media only screen and (min-width: 0) and (max-width: 1024px) {
+  .hero {
     display: none;
-    -webkit-transition: 0.12;
-    transition: 0.12;
-    color: #a8a8a8;
-  }
-  .hero .container .right {
-    height: 98vh;
-    width: 100%;
-  }
-  .hero .container .right .heroImg {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    position: center;
-    -o-object-fit: cover;
-       object-fit: cover;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    border-bottom-left-radius: 16px;
   }
 }
 

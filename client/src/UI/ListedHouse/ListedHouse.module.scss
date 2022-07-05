@@ -1,0 +1,185 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .ListedHouse {
+    width: 100%;
+    min-height: 430px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 45px 0px;
+    &:hover {
+      cursor: pointer;
+    }
+    .imgBox {
+      height: 58%;
+      width: 100%;
+
+      .img {
+        object-fit: cover;
+        object-position: top center;
+        height: 100%;
+        width: 100%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+      }
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 42%;
+
+      .top {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        box-shadow: 0 2.5px 1.5px -2px rgba(206, 206, 206, 0.8);
+        .major {
+          margin-left: 18px;
+          font-size: 19px;
+          font-weight: 600;
+        }
+        .minor {
+          margin-left: 18px;
+          color: grey;
+          margin-top: 2%;
+          font-size: 13px;
+        }
+      }
+      .bottom {
+        height: 100%;
+        width: 100%;
+        margin-left: 19px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+
+        .property {
+          display: flex;
+          flex-direction: column;
+          height: 70px;
+          width: 27%;
+          row-gap: 1px;
+          .symbol {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            .icon {
+              font-size: 21px;
+            }
+          }
+          .text {
+            font-weight: 500;
+            height: 50%;
+            width: 100%;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 435px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .ListedHouse {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 350px;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 45px 0px;
+      &:hover {
+        cursor: pointer;
+      }
+      .imgBox {
+        height: 100%;
+        width: 100%;
+
+        .img {
+          object-fit: cover;
+          object-position: top center;
+          height: 100%;
+          width: 100%;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+        }
+      }
+      .details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+
+        .top {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          box-shadow: 0 2.5px 1.5px -2px rgba(206, 206, 206, 0.8);
+          .major {
+            margin-left: 18px;
+            font-size: 16px;
+            font-weight: 600;
+          }
+          .minor {
+            margin-left: 18px;
+            color: grey;
+            margin-top: 2%;
+            font-size: 12px;
+          }
+        }
+        .bottom {
+          height: 100%;
+          width: 100%;
+          margin-left: 19px;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 10px;
+
+          .property {
+            display: flex;
+            flex-direction: column;
+            height: 70px;
+            width: 27%;
+            row-gap: 1px;
+            .symbol {
+              font-size: 14px;
+              width: 100%;
+              height: 50%;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 10px;
+              font-weight: 600;
+
+              .icon {
+                font-size: 20px;
+              }
+            }
+            .text {
+              font-weight: 500;
+              height: 50%;
+              width: 100%;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

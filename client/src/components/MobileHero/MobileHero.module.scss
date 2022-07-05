@@ -1,0 +1,102 @@
+.container {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  .heroImg {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  .content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      margin-top: 4%;
+      margin-left: 4%;
+      .text {
+        height: 82.5%;
+        width: 40%;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 35px;
+        color: white;
+      }
+
+      .button {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .blank {
+          width: 71%;
+        }
+
+        .use {
+          font-size: 17px;
+          color: white;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 407px) and (max-width: 555px) {
+  .container {
+    .content {
+      .details {
+        .text {
+          height: 82.5%;
+          width: 45%;
+          font-size: 17px;
+          line-height: 30px;
+        }
+
+        .button {
+          .blank {
+            width: 66%;
+          }
+
+          .use {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 407px) {
+  .container {
+    .content {
+      .details {
+        .text {
+          height: 82.5%;
+          width: 54%;
+          font-size: 15px;
+          line-height: 21px;
+        }
+
+        .button {
+          .blank {
+            width: 64%;
+          }
+
+          .use {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}

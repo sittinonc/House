@@ -1,11 +1,4 @@
-.MiddleSection {
-  width: 100%;
+.container {
   margin-top: 7vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .container {
-    width: 79%;
-  }
+  width: 79%;
 }

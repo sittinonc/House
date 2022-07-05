@@ -1,10 +1,11 @@
-import "./App.css";
+import classes from "./App.module.scss";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Edit from "./pages/Edit/Edit";
+import AllProjects from "./pages/AllProjects/AllProjects";
 
 import axios from "axios";
 import uri from "./components/config";
@@ -25,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className={classes.app}>
       <BrowserRouter>
         <Routes>
           <Route
@@ -36,6 +37,7 @@ function App() {
             path="/admin"
             element={<Login username={username} setUsername={setUsername} />}
           />
+          <Route path="/allprojects" element={<AllProjects />} />
           {username && <Route path="/edit" element={<Edit />} />}
           <Route
             exact

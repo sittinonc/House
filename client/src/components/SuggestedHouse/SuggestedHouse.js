@@ -1,6 +1,6 @@
 import classes from "./SuggestedHouse.module.scss";
 import { FcHome } from "react-icons/fc";
-import ListedHouse from "../../UI/Section/ListedHouse/ListedHouse";
+import ListedHouse from "../../UI/ListedHouse/ListedHouse";
 const Houses = ["h1", "h2", "h3"];
 const SuggestedHouse = () => {
   return (
@@ -12,21 +12,25 @@ const SuggestedHouse = () => {
               <FcHome className={classes.icon} />
             </div>
           </div>
-          <span>โครงการแนะนำ</span>
+          <span >โครงการแนะนำ</span>
         </div>
         <div className={classes.detail}>
-          <div className={classes.line} />
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam
-            excepturi consectetur mollitia quisquam sit aut veritatis
-            voluptatibus numquam delectus.
-          </p>
+          <div className={classes.textBox}>
+            <div className={classes.spacer}></div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam
+              excepturi consectetur mollitia quisquam sit aut veritatis
+              voluptatibus numquam delectus.
+            </p>
+          </div>
         </div>
       </div>
-      <div className={classes.box}>
-        {Houses.map((e, i) => {
-          return <ListedHouse data={e} />;
-        })}
+      <div className={classes.house}>
+        <div className={classes.box}>
+          {Houses.map((e, i) => {
+            return <ListedHouse data={e} />;
+          })}
+        </div>
       </div>
       <div className={classes.buttonBox}>
         <div className={classes.button}>ดูโครงการทั้งหมด</div>

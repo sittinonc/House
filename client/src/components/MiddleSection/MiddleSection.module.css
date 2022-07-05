@@ -1,22 +1,5 @@
-.MiddleSection {
-  width: 100%;
+.container {
   margin-top: 7vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.MiddleSection .container {
   width: 79%;
 }
 /*# sourceMappingURL=MiddleSection.module.css.map */
