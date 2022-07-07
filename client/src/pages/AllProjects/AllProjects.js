@@ -1,11 +1,13 @@
 import classes from "./AllProjects.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 
 import PagesNavbar from "../../components/Navbar/PagesNavbar/PagesNavbar";
+import MobilePagesNavbar from "../../components/Navbar/MobilePagesNavbar/MobilePagesNavbar";
+import NavMobileOverlay from "../../components/Navbar/MobilePagesNavbar/NavMobileOverlay/NavMobileOverlay";
 import ShowHouse from "../../UI/ShowHouse/ShowHouse";
 
 //widgets
@@ -15,6 +17,20 @@ import Utility from "../../components/Widgets/Utility";
 import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
 
 const AllProjects = () => {
+  const [screenStatus, setScreenStatus] = useState(
+    window.innerWidth < 1024 ? "mobile" : "desktop"
+  );
+  const reportWindowSize = (e) => {
+    console.log(e.target.innerWidth);
+    if (e.target.innerWidth < 1024) {
+      setScreenStatus("mobile");
+    } else {
+      setScreenStatus("desktop");
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("resize", reportWindowSize);
+  }, []);
   let count = { gridCount: 0, landscapeCount: 0 };
   //dummy data
   const Houses = ["h1", "h2", "h3", "h4"];
@@ -39,11 +55,22 @@ const AllProjects = () => {
   const [sort, setSort] = useState("ราคาต่ำไปสูง");
 
   const [dropdownCommand, setDropdownCommand] = useState(null);
+  const [navMobileOverlay, setNavMobileOverlay] = useState(null);
 
   return (
     <div className={classes.x}>
+      {navMobileOverlay ? (
+        <NavMobileOverlay setNavMobileOverlay={setNavMobileOverlay} />
+      ) : null}
       <div className={classes.page}>
-        <PagesNavbar />
+        {screenStatus === "desktop" ? (
+          <PagesNavbar />
+        ) : (
+          <MobilePagesNavbar
+            navMobileOverlay={navMobileOverlay}
+            setNavMobileOverlay={setNavMobileOverlay}
+          />
+        )}
         <div className={classes.inPage}>
           <div className={classes.container}>
             <div className={classes.wrapper}>

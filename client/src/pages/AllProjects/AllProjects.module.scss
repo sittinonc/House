@@ -205,128 +205,161 @@
     }
   }
 }
-@media only screen and (min-width: 700px) and (max-width: 1023px) {
-  .page {
-    width: 95%;
-    .container {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .wrapper {
-        .attributesSet {
-          width: 95%;
-          height: 56px;
-          background-color: white;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 30px;
-        }
-      }
-      .house {
-        width: 96%;
-        height: 100%;
+@media only screen and (min-width: 701px) and (max-width: 1023px) {
+  .x {
+    width: 100vw;
+    .page {
+      width: 99%;
+      .inPage {
+        width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        .box {
-          justify-content: center;
-          margin-top: 2%;
+        flex-direction: column;
+        .container {
           width: 100%;
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-          gap: 30px;
-          padding: 10px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .wrapper {
+            .attributesSet {
+              width: 96%;
+              height: 56px;
+              background-color: white;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 30px;
+            }
+          }
+          .house {
+            width: 98%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            .box {
+              justify-content: center;
+              margin-top: 2%;
+              width: 100%;
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+              gap: 30px;
+              padding: 10px;
+            }
+          }
+        }
+
+        .sideWidgetBox {
+          display: none;
         }
       }
-    }
-
-    .sideWidgetBox {
-      display: none;
-      background-color: rgb(195, 195, 215);
-      width: 27%;
     }
   }
 }
-@media only screen and (min-width: 0px) and (max-width: 700px) {
-  .page {
-    width: 100%;
-    .container {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .wrapper {
-        .attributesSet {
-          width: 95%;
-          height: 56px;
-          background-color: white;
+@media only screen and (min-width: 551px) and (max-width: 700px) {
+  .x {
+    width: 100vw;
+    .page {
+      width: 99%;
+      .inPage {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .container {
+          width: 100%;
+          height: 100%;
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           align-items: center;
-          gap: 30px;
+
+          .wrapper {
+            .attributesSet {
+              width: 96%;
+              height: 56px;
+              background-color: white;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 30px;
+            }
+          }
+          .house {
+            width: 98%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            .box {
+              justify-content: center;
+              margin-top: 2%;
+              width: 100%;
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+              gap: 30px;
+              padding: 10px;
+            }
+          }
+        }
+
+        .sideWidgetBox {
+          display: none;
         }
       }
-
-      .house {
-        width: 98%;
-        .box {
-          justify-content: center;
-          margin-top: 2%;
-          width: 90%;
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-          gap: 30px;
-          gap: 30px;
-          padding: 10px;
-        }
-      }
-    }
-
-    .sideWidgetBox {
-      display: none;
     }
   }
 }
 
 @media only screen and (min-width: 0px) and (max-width: 550px) {
-  .page {
-    width: 100%;
-    .container {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .wrapper {
-        .attributesSet {
-          width: 95%;
-          height: 56px;
-          background-color: white;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 30px;
-        }
-      }
-
-      .house {
-        margin-top: 15px;
-        width: 95%;
-        .box {
-          width: 99%;
-          margin-top: 2%;
+  .x {
+    width: 100vw;
+    .page {
+      width: 99%;
+      .inPage {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .container {
+          width: 100%;
+          height: 100%;
           display: flex;
           flex-direction: column;
-          gap: 20px;
-          padding: 0px;
+          align-items: center;
+
+          .wrapper {
+            .attributesSet {
+              width: 96%;
+              height: 56px;
+              background-color: white;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 30px;
+            }
+          }
+          .house {
+            width: 98%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            .box {
+              justify-content: center;
+              margin-top: 2%;
+              width: 100%;
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+              gap: 30px;
+              padding: 10px;
+            }
+          }
+        }
+
+        .sideWidgetBox {
+          display: none;
         }
       }
     }

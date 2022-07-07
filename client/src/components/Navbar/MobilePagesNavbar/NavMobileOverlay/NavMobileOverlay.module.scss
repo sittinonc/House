@@ -1,0 +1,49 @@
+.page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 1s ease;
+
+  .box {
+    transition: 1.12s;
+    animation-name: expandLeftToRightMeduim;
+    animation-duration: 0.3s;
+    height: 100%;
+    position: relative;
+    background-color: white;
+    width: 45%;
+
+    .quit {
+      position: absolute;
+      top: 3%;
+      right: 5%;
+      font-size: 23px;
+
+      .icon {
+      }
+    }
+  }
+}
+
+@keyframes expandLeftToRightMeduim {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 45%;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
