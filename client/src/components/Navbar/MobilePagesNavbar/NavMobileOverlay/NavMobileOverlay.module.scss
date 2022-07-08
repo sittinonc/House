@@ -11,21 +11,65 @@
   transition: all 1s ease;
 
   .box {
-    transition: 1.12s;
-    animation-name: expandLeftToRightMeduim;
-    animation-duration: 0.2s;
-    height: 100%;
-    position: relative;
-    background-color: white;
     width: 41%;
+    min-width: 350px;
+    max-width: 100vw;
+    .content {
+      position: relative;
+      transition: 1.12s;
+      animation-name: expandLeftToRightMeduim;
+      animation-duration: 0.2s;
+      height: 100vh;
+      width: 100%;
+      background-color: rgb(256, 252, 252);
 
-    .quit {
-      position: absolute;
-      top: 3%;
-      right: 6%;
-      font-size: 23px;
+      .menu {
+        position: absolute;
+        top: 73px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .item {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 60px;
+          border-bottom: solid rgba(164, 164, 164, 0.2) 1px;
 
-      .icon {
+          &:hover {
+            cursor: pointer;
+          }
+
+          span {
+            margin-left: 8%;
+          }
+
+          .showIcon {
+            color: black;
+            margin-right: 8%;
+            font-size: 14px;
+            display: inline-block;
+          }
+
+          .hideIcon {
+            margin-right: 8%;
+            font-size: 14px;
+            color: rgba(131, 131, 131, 0.3);
+            display: inline-block;
+          }
+        }
+      }
+
+      .quit {
+        position: absolute;
+        top: 3%;
+        right: 6%;
+        font-size: 23px;
+
+        .icon {
+        }
       }
     }
   }
@@ -36,7 +80,7 @@
     width: 0%;
   }
   100% {
-    width: 41%;
+    width: 100%;
   }
 }
 @keyframes fadeIn {

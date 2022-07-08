@@ -1,6 +1,6 @@
 import classes from "./NavMobileOverlay.module.scss";
-import { ImCancelCircle } from "react-icons/im";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { GoPrimitiveDot } from "react-icons/go";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import ReactDOM from "react-dom";
 
@@ -10,14 +10,58 @@ const NavMobileOverlay = (props) => {
       {ReactDOM.createPortal(
         <div className={classes.page}>
           <div className={classes.box}>
-            <div className={classes.quit}>
-              <FontAwesomeIcon
-                icon={faXmark}
-                className={classes.icon}
-                onClick={() => {
-                  props.setNavMobileOverlay(false);
-                }}
-              />
+            <div className={classes.content}>
+              <div className={classes.menu}>
+                <div className={classes.item}>
+                  <span>หน้าแรก</span>
+                  <GoPrimitiveDot
+                    className={
+                      props.currentPage === "home"
+                        ? classes.showIcon
+                        : classes.hideIcon
+                    }
+                  />
+                </div>
+                <div className={classes.item}>
+                  <span>โครงการ</span>
+                  <GoPrimitiveDot
+                    className={
+                      props.currentPage === "allProjects"
+                        ? classes.showIcon
+                        : classes.hideIcon
+                    }
+                  />
+                </div>
+                <div className={classes.item}>
+                  <span>ซื้อ</span>
+                  <GoPrimitiveDot
+                    className={
+                      props.currentPage === "buy"
+                        ? classes.showIcon
+                        : classes.hideIcon
+                    }
+                  />
+                </div>
+                <div className={classes.item}>
+                  <span>ติดต่อเรา</span>
+                  <GoPrimitiveDot
+                    className={
+                      props.currentPage === "contact"
+                        ? classes.showIcon
+                        : classes.hideIcon
+                    }
+                  />
+                </div>
+              </div>
+              <div className={classes.quit}>
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  className={classes.icon}
+                  onClick={() => {
+                    props.setNavMobileOverlay(false);
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>,

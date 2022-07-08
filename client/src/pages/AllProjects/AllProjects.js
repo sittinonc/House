@@ -15,8 +15,9 @@ import SideWidget from "../../UI/SideWidget/SideWidget";
 import Measurement from "../../components/Widgets/Measurement";
 import Utility from "../../components/Widgets/Utility";
 import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
+import { getThemeProps } from "@mui/system";
 
-const AllProjects = () => {
+const AllProjects = (props) => {
   const [screenStatus, setScreenStatus] = useState(
     window.innerWidth < 1024 ? "mobile" : "desktop"
   );
@@ -29,6 +30,7 @@ const AllProjects = () => {
     }
   };
   useEffect(() => {
+    props.setCurrentPage("allProjects");
     window.addEventListener("resize", reportWindowSize);
   }, []);
   let count = { gridCount: 0, landscapeCount: 0 };
@@ -60,7 +62,11 @@ const AllProjects = () => {
   return (
     <div className={classes.x}>
       {navMobileOverlay ? (
-        <NavMobileOverlay setNavMobileOverlay={setNavMobileOverlay} />
+        <NavMobileOverlay
+          setCurrentPage={props.setCurrentPage}
+          currentPage={props.currentPage}
+          setNavMobileOverlay={setNavMobileOverlay}
+        />
       ) : null}
       <div className={classes.page}>
         {screenStatus === "desktop" ? (

@@ -11,6 +11,7 @@ import axios from "axios";
 import uri from "./components/config";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState(null);
   const [username, setUsername] = useState();
 
   useEffect(() => {
@@ -31,13 +32,28 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home username={username} setUsername={setUsername} />}
+            element={
+              <Home
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+                username={username}
+                setUsername={setUsername}
+              />
+            }
           />
           <Route
             path="/admin"
             element={<Login username={username} setUsername={setUsername} />}
           />
-          <Route path="/allprojects" element={<AllProjects />} />
+          <Route
+            path="/allprojects"
+            element={
+              <AllProjects
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            }
+          />
           {username && <Route path="/edit" element={<Edit />} />}
           <Route
             exact
