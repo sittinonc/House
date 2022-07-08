@@ -45,7 +45,7 @@
             box-shadow: rgba(206, 206, 248, 0.2) 5px 11px 13px,
               rgba(17, 17, 26, 0.05) 0px 8px 32px;
             width: 95%;
-            height: 56px;
+            min-height: 56px;
             background-color: white;
             display: flex;
             flex-direction: row;
@@ -107,9 +107,10 @@
               }
 
               .dropdownActive {
+                z-index: 1111;
                 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 25px 0px;
                 position: absolute;
-                top: 50px;
+                top: 39px;
                 left: 0%;
                 background-color: rgb(255, 255, 255);
                 max-height: 167px;
@@ -224,12 +225,16 @@
           .wrapper {
             .attributesSet {
               width: 96%;
-              height: 56px;
+              min-height: 56px;
               background-color: white;
               display: flex;
               flex-direction: row;
               align-items: center;
               gap: 30px;
+
+              .display {
+                display: none;
+              }
             }
           }
           .house {
@@ -252,13 +257,19 @@
         }
 
         .sideWidgetBox {
-          display: none;
+          margin-top: 15px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
   }
 }
-@media only screen and (min-width: 551px) and (max-width: 700px) {
+
+@media only screen and (min-width: 0px) and (max-width: 700px) {
   .x {
     width: 100vw;
     .page {
@@ -275,14 +286,42 @@
           align-items: center;
 
           .wrapper {
+            .head {
+              font-size: 24px;
+            }
             .attributesSet {
               width: 96%;
-              height: 56px;
-              background-color: white;
+              min-height: 56px;
               display: flex;
-              flex-direction: row;
+              flex-direction: column;
               align-items: center;
-              gap: 30px;
+              gap: 0;
+
+              .eachAttribute {
+                height: 50px;
+                width: 100%;
+                border-bottom: 1px solid rgba(194, 194, 194, 0.3);
+                .label {
+                  margin-left: 21px;
+                }
+                .dropdownActive {
+                  top: 50px;
+                  width: 97%;
+                  margin-left: 0%;
+
+                  .dropdownItem {
+                    width: 100%;
+
+                    span {
+                      margin-left: 15px;
+                    }
+                  }
+                }
+              }
+
+              .display {
+                display: none;
+              }
             }
           }
           .house {
@@ -296,8 +335,8 @@
               justify-content: center;
               margin-top: 2%;
               width: 100%;
-              display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+              display: flex;
+              flex-direction: column;
               gap: 30px;
               padding: 10px;
             }
@@ -305,61 +344,12 @@
         }
 
         .sideWidgetBox {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 0px) and (max-width: 550px) {
-  .x {
-    width: 100vw;
-    .page {
-      width: 99%;
-      .inPage {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        .container {
+          margin-top: 15px;
           width: 100%;
-          height: 100%;
           display: flex;
           flex-direction: column;
+          justify-content: center;
           align-items: center;
-
-          .wrapper {
-            .attributesSet {
-              width: 96%;
-              height: 56px;
-              background-color: white;
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              gap: 30px;
-            }
-          }
-          .house {
-            width: 98%;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            .box {
-              justify-content: center;
-              margin-top: 2%;
-              width: 100%;
-              display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-              gap: 30px;
-              padding: 10px;
-            }
-          }
-        }
-
-        .sideWidgetBox {
-          display: none;
         }
       }
     }

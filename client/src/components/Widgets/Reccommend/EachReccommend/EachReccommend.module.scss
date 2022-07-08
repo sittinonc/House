@@ -9,6 +9,7 @@
     border-radius: 3px;
     overflow: hidden;
     height: 69px;
+    max-width: 150px;
     width: 40%;
     background-color: rgb(107, 107, 203);
     &:hover {
@@ -43,6 +44,57 @@
       font-size: 13px;
       font-weight: 600;
       color: rgb(135, 135, 135);
+    }
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 1023px) {
+  .each {
+    width: 94%;
+    height: 90px;
+    margin-left: 12px;
+    display: flex;
+    flex-direction: row;
+
+    .imgBox {
+      border-radius: 3px;
+      overflow: hidden;
+      height: 69px;
+      max-width: 150px;
+      width: 40%;
+      background-color: rgb(107, 107, 203);
+      &:hover {
+        cursor: pointer;
+      }
+
+      .img {
+        object-fit: cover;
+        object-position: top center;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .details {
+      margin-top: 1%;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 60%;
+      margin-left: 2%;
+
+      .head {
+        font-size: 15px;
+        color: rgb(75, 75, 75);
+        &:hover {
+          cursor: pointer;
+          color: rgb(97, 56, 56);
+        }
+      }
+      .sub {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgb(135, 135, 135);
+      }
     }
   }
 }

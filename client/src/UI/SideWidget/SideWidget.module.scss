@@ -7,3 +7,15 @@
     width: 100%;
   }
 }
+
+@media only screen and (min-width: 0px) and (max-width: 1023px) {
+  .widget {
+    width: 96%;
+    .container {
+      box-shadow: rgba(206, 206, 248, 0.5) 1px 5px 34px;
+      border-radius: 7px;
+      min-height: 145px;
+      width: 100%;
+    }
+  }
+}

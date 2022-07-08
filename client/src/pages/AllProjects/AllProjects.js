@@ -19,11 +19,14 @@ import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
 import { getThemeProps } from "@mui/system";
 
 const AllProjects = (props) => {
+  const [trigger550, setTrigger550] = useState(
+    window.innerWidth > 550 ? "3%" : "0%"
+  );
   const [screenStatus, setScreenStatus] = useState(
     window.innerWidth < 1024 ? "mobile" : "desktop"
   );
   const reportWindowSize = (e) => {
-    console.log(e.target.innerWidth);
+    //console.log(e.target.innerWidth);
     if (e.target.innerWidth < 1024) {
       setScreenStatus("mobile");
     } else {
@@ -90,8 +93,8 @@ const AllProjects = (props) => {
               <h1 className={classes.head}>โครงการทั้งหมด</h1>
               <div className={classes.attributesSet}>
                 <div
-                  style={{ marginLeft: "5%" }}
                   className={classes.eachAttribute}
+                  style={{ marginLeft: trigger550 }}
                 >
                   <div
                     className={classes.label}
