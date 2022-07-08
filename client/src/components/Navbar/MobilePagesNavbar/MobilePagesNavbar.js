@@ -1,7 +1,8 @@
 import classes from "./MobilePagesNavbar.module.scss";
 import { GoThreeBars } from "react-icons/go";
 import { FaUserCircle } from "react-icons/fa";
-import { faHouseChimney } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 const MobilePagesNavbar = (props) => {
   return (
     <div className={classes.container}>
@@ -16,7 +17,7 @@ const MobilePagesNavbar = (props) => {
           />
         </div>
         <div className={classes.brand}>
-          <faHouseChimney />
+          <FontAwesomeIcon icon={faHouseChimney} className={classes.icon} />
           <span>QHouse</span>
         </div>
         <div className={classes.user}>

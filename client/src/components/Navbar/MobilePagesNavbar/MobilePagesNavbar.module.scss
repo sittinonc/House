@@ -1,29 +1,57 @@
 .container {
   margin: 0;
   width: 100%;
-  height: 50px;
+  height: 70px;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 1px 10px -2px rgba(204, 203, 203, 0.2);
 
   .contentBox {
     height: 100%;
-    width: 98%;
-    background-color: rgb(200, 82, 82);
+    width: 96%;
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
     .dashDashDash {
+      font-size: 18px;
     }
 
     .brand {
+      display: flex;
+      flex-direction: row;
+      gap: 6px;
+      font-size: 23px;
     }
 
     .user {
+      font-size: 18px;
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 500px) {
+  .container {
+    .contentBox {
+      .dashDashDash {
+        font-size: 17px;
+      }
+
+      .brand {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        font-size: 21px;
+      }
+
+      .user {
+        font-size: 17px;
+      }
     }
   }
 }
