@@ -11,6 +11,7 @@ import axios from "axios";
 import uri from "./components/config";
 
 function App() {
+  const [pagesTags, setPagesTags] = useState([]);
   const [currentPage, setCurrentPage] = useState(null);
   const [username, setUsername] = useState();
 
@@ -34,6 +35,8 @@ function App() {
             path="/"
             element={
               <Home
+                pagesTags={pagesTags}
+                setPagesTags={setPagesTags}
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
                 username={username}
@@ -49,6 +52,8 @@ function App() {
             path="/allprojects"
             element={
               <AllProjects
+                pagesTags={pagesTags}
+                setPagesTags={setPagesTags}
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
               />

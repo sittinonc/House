@@ -8,6 +8,7 @@ import { FaBars } from "react-icons/fa";
 import PagesNavbar from "../../components/Navbar/PagesNavbar/PagesNavbar";
 import MobilePagesNavbar from "../../components/Navbar/MobilePagesNavbar/MobilePagesNavbar";
 import NavMobileOverlay from "../../components/Navbar/MobilePagesNavbar/NavMobileOverlay/NavMobileOverlay";
+import Tag from "../../UI/Tag/Tag";
 import ShowHouse from "../../UI/ShowHouse/ShowHouse";
 
 //widgets
@@ -30,6 +31,7 @@ const AllProjects = (props) => {
     }
   };
   useEffect(() => {
+    props.setPagesTags(["หน้าแรก", "โครงการทั้งหมด"]);
     props.setCurrentPage("allProjects");
     window.addEventListener("resize", reportWindowSize);
   }, []);
@@ -77,9 +79,14 @@ const AllProjects = (props) => {
             setNavMobileOverlay={setNavMobileOverlay}
           />
         )}
+
         <div className={classes.inPage}>
           <div className={classes.container}>
             <div className={classes.wrapper}>
+              <Tag
+                pagesTags={props.pagesTags}
+                setPagesTags={props.setPagesTags}
+              />
               <h1 className={classes.head}>โครงการทั้งหมด</h1>
               <div className={classes.attributesSet}>
                 <div
