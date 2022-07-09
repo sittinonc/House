@@ -247,11 +247,8 @@ const AllProjects = (props) => {
             </div>
 
             <div className={classes.sideWidgetBox}>
-              {/*Utility*/}
               <Utility />
-              {/*หน่วยวัดพื้นที่*/}
               <Measurement />
-              {/*Reccommend*/}
               <Reccommend />
             </div>
           </div>
