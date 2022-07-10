@@ -2,7 +2,9 @@ import classes from "./App.module.scss";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+//pages
 import Home from "./pages/Home/Home";
+import EachHouse from "./pages/EachHouse/EachHouse";
 import Login from "./pages/Login/Login";
 import Edit from "./pages/Edit/Edit";
 import AllProjects from "./pages/AllProjects/AllProjects";
@@ -52,6 +54,17 @@ function App() {
             path="/allprojects"
             element={
               <AllProjects
+                pagesTags={pagesTags}
+                setPagesTags={setPagesTags}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            }
+          />
+          <Route
+            path="/house/:id"
+            element={
+              <EachHouse
                 pagesTags={pagesTags}
                 setPagesTags={setPagesTags}
                 setCurrentPage={setCurrentPage}
