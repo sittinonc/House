@@ -81,7 +81,7 @@
     .photoBox {
       background-color: rgb(106, 24, 238);
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(768px, 1fr));
       .each {
       }
     }
