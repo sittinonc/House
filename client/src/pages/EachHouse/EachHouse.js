@@ -16,7 +16,6 @@ const EachHouse = (props) => {
     window.innerWidth < 1024 ? "mobile" : "desktop"
   );
   const reportWindowSize = (e) => {
-    //console.log(e.target.innerWidth);
     if (e.target.innerWidth < 1024) {
       setScreenStatus("mobile");
     } else {
