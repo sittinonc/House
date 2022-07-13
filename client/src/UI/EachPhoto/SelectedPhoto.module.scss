@@ -1,0 +1,64 @@
+.page {
+  z-index: 9999999;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(19, 19, 19, 0.3);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    max-width: 1500px;
+    max-height: 900px;
+    position: relative;
+    width: 90%;
+    height: 88%;
+    background-color: rgb(255, 255, 255);
+
+    .imgBox {
+      width: 100%;
+      height: 100%;
+      .img {
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .info {
+    }
+
+    .quit {
+      width: 30px;
+      height: 30px;
+      background-color: rgb(225, 177, 145);
+      border-radius: 2px;
+      cursor: pointer;
+      position: absolute;
+      top: 3%;
+      right: 3%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        font-size: 23px;
+        color: rgb(235, 235, 235);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 1024px) {
+  .page {
+    .content {
+      width: 100%;
+      height: 40%;
+    }
+  }
+}

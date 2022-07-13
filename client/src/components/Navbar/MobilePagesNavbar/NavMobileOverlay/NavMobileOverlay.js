@@ -1,7 +1,7 @@
 import classes from "./NavMobileOverlay.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { GoPrimitiveDot } from "react-icons/go";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { GoPrimitiveDot } from "react-icons/go";
 import ReactDOM from "react-dom";
 
 const NavMobileOverlay = (props) => {
