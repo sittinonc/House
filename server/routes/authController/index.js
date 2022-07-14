@@ -1,7 +1,7 @@
 const { conn } = require('../../database')
 
 const Logout = (req, res) => {
-    console.log('logout');
+    console.log('logout', req.session.username);
     req.session.destroy((err) => {
         if (err) {
             console.log(err);

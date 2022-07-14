@@ -36,10 +36,10 @@ const Card = (props) => {
             props.renderEditContent()
             props.setEditingContent(props.item)
         }}>
-            <CardImg filenames={props.item.filenames[0]}>
+            <CardImg filenames={props.item.photos.filenames[0]}>
             </CardImg>
             <CardContent>
-                <h3>{props.item.createAt.slice(0, 10)}</h3>
+                <h3>{props.item.websiteInfo.createAt.slice(0, 10)}</h3>
                 <h1>{props.item.name}</h1>
 
                 <p>{props.item.description.length > 100

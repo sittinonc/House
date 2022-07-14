@@ -10,7 +10,6 @@ const PostHouse = (req, res) => {
         })
     }
     conn.collection('houses').find({ name: doc.name }).toArray((err, files) => {
-        console.log(files);
         if (files.length > 0) {
             return res.status(500).json({
                 success: false,
@@ -20,8 +19,11 @@ const PostHouse = (req, res) => {
             let now = new Date().toISOString()
             doc = {
                 ...doc,
-                createAt: now,
-                lastUpdate: now,
+                websiteInfo: {
+                    ...doc.websiteInfo,
+                    createAt: now,
+                    lastUpdate: now,
+                },
                 exist: true
             }
             conn.collection('houses').insertOne(doc)
@@ -42,11 +44,13 @@ const ListHouse = (req, res) => {
 
 const PatchHouse = (req, res) => {
     let { [`_id`]: _id, ...doc } = req.body
+    let websiteInfo = doc.websiteInfo
+    websiteInfo.lastUpdate = new Date().toISOString()
     _id = ObjectId(_id)
     let objId = { _id }
     doc = {
         ...doc,
-        lastUpdate: new Date().toISOString()
+        websiteInfo
     }
 
     let newValue = { $set: doc };
@@ -66,6 +70,56 @@ const PatchHouse = (req, res) => {
 
 }
 
+const SearchHouse = (req, res) => {
+    let { province, pricestart, priceend, status } = req.query
+    let searchData = {
+        exist: true
+    }
+
+    if (province) {
+        searchData = {
+            ...searchData,
+            'location.province': province
+        }
+
+
+    }
+    if (status) {
+        searchData = {
+            ...searchData,
+            status
+        }
+    }
+
+    conn.collection('houses').find(searchData).toArray((err, files) => {
+
+        let result = files.filter((item, index) => {
+            let price = item.price
+            if (priceend && pricestart) {
+                if (price <= priceend && price >= pricestart) {
+                    return item
+                }
+            }
+            else if (pricestart) {
+                if (price >= pricestart) {
+                    return item
+                }
+            }
+            else if (priceend) {
+                if (price <= priceend) {
+                    return item
+                }
+            }
+            else {
+                return item
+            }
+
+        })
+        return res.status(200).json(result)
+    })
+
+}
+
 const DeleteHouse = (req, res) => {
 
     let _id = ObjectId(req.params._id)
@@ -73,7 +127,7 @@ const DeleteHouse = (req, res) => {
     let newValue = {
         $set: {
             exist: false,
-            lastUpdate: new Date().toISOString()
+            "websiteInfo.lastUpdate": new Date().toISOString()
         }
     };
 
@@ -100,10 +154,86 @@ const ListSuggest = (req, res) => {
 
 }
 
+const FindHouse = (req, res) => {
+    let name = req.params.name
+    conn.collection('houses').find({ name, exist: true }).toArray((err, files) => {
+        if (files.length > 0) {
+            return res.status(200).json(files[0])
+        }
+        else {
+            return res.status(403).json({
+                success: false,
+                msg: `given name doesn't exist`
+            })
+        }
+    })
+}
+
+const InterestHouse = (req, res) => {
+    let { name, email, phone, details, _id } = req.body
+    if (name && email && phone && details && _id) {
+        _id = ObjectId(req.params._id)
+        let doc = {
+            name,
+            email,
+            phone,
+            details,
+            _id
+        }
+
+        conn.collection('interest').insertOne(doc)
+
+        return res.status(200).json({
+            success: true,
+            msg: 'posted interest'
+        })
+    }
+    else {
+        return res.status(500).json({
+            success: false,
+            msg: 'require information are not fully(require : name, email, phone, details, _id)'
+        })
+    }
+}
+
+const Subscribe = (req, res) => {
+    let { email } = req.body
+    if (!email) {
+        return res.status(500).json({
+            success: false,
+            msg: 'this endpoint require email'
+        })
+    }
+    conn.collection('subscribe').find({ email }).toArray((err, files) => {
+        if (files.length > 0) {
+            return res.status(500).json({
+                success: false,
+                msg: 'this email already subscribe'
+            })
+        }
+        else {
+            let doc = {
+                email,
+                subscribeAt: new Date().toISOString()
+            }
+            conn.collection('subscribe').insertOne(doc)
+            return res.status(200).json({
+                success: true,
+                msg: `subscribed`
+            })
+        }
+    })
+
+}
+
 module.exports = {
     PostHouse,
     ListHouse,
     DeleteHouse,
     ListSuggest,
-    PatchHouse
+    PatchHouse,
+    SearchHouse,
+    FindHouse,
+    InterestHouse,
+    Subscribe
 }

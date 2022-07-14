@@ -8,6 +8,7 @@ import uri from '../../components/config'
 import PreviewImg from './PreviewImg'
 import axios from 'axios'
 import Map from './Map'
+import provinceData from '../../components/province'
 
 
 const Main = styled.div`
@@ -85,12 +86,12 @@ const ImgCategory = styled.label`
 
 const EditContent = (props) => {
     const suggestRef = useRef()
-    const [filenames, setFilenames] = useState(props.data ? props.data.filenames : [])
-    const [blueprints, setBlueprints] = useState(props.data ? props.data.blueprints : [])
+    const [filenames, setFilenames] = useState(props.data ? props.data.photos.filenames : [])
+    const [blueprints, setBlueprints] = useState(props.data ? props.data.photos.blueprints : [])
     const [imgStore, setImageStore] = useState()
-    const [latlon, setLatlon] = useState(props.data ? props.data.latlon : null)
+    const [latlon, setLatlon] = useState(props.data ? props.data.location.latlon : null)
     const [imgCategory, setImgCategory] = useState('default')
-    const [isSuggest, setIsSuggest] = useState(props.data ? props.data.isSuggest : false)
+    const [isSuggest, setIsSuggest] = useState(props.data ? props.data.websiteInfo.isSuggest : false)
     const [chooseImage, setChooseImage] = useState()
 
     const handleSubmit = async (event) => {
@@ -106,6 +107,38 @@ const EditContent = (props) => {
         let bathroom = event.target.bathroom.value;
         let parkingLot = event.target.parkingLot.value;
         let description = event.target.description.value;
+        let province = event.target.province.value;
+        let createAt = props.data ? props.data.websiteInfo.createAt : null
+        let houseDetails = {
+            price,
+            utility: {
+                area,
+                usableArea,
+                bedroom,
+                bathroom,
+                parkingLot
+            }
+        }
+
+        let location = {
+            latlon,
+            province
+        }
+
+        let photos = {
+            filenames,
+            blueprints
+        }
+
+        let buildingInformation = {
+            startDate,
+            endDate
+        }
+
+        let websiteInfo = {
+            isSuggest,
+            createAt
+        }
 
         let postUrl = uri + `${props.data ? '/api/patch' : '/api/post'}`
         let formData = {
@@ -113,18 +146,13 @@ const EditContent = (props) => {
             name,
             price,
             status,
-            startDate,
-            endDate,
-            isSuggest,
-            area,
-            usableArea,
-            bedroom,
-            bathroom,
-            parkingLot,
-            description,
-            filenames,
-            blueprints,
-            latlon
+            houseDetails,
+            location,
+            photos,
+            buildingInformation,
+            websiteInfo,
+            description
+
         }
         axios.defaults.withCredentials = true;
         axios
@@ -155,6 +183,11 @@ const EditContent = (props) => {
             });
     }
 
+    const generateProvince = () => {
+        return provinceData.map((item, index) => {
+            return <option value={`${item.province}`}>{item.province}</option>
+        })
+    }
     return (
         <Main>
             <ImageStore
@@ -240,6 +273,24 @@ const EditContent = (props) => {
                                     <option value="listing">listing</option>
                                     <option value="inProgress">inProgress</option>
                                 </select>
+                                <select
+                                    style={{ width: '20%', marginLeft: '2rem' }}
+                                    id="province"
+                                    required
+                                >
+                                    {props.data ?
+                                        <option selected disabled hidden
+                                            value={props.data.location.province}
+                                        >
+                                            {props.data.location.province}
+                                        </option >
+                                        : <option selected disabled hidden
+                                            value={null}
+                                        >
+                                            เลือกจังหวัด
+                                        </option>}
+                                    {generateProvince()}
+                                </select>
                             </div>
 
                             <div>
@@ -251,7 +302,7 @@ const EditContent = (props) => {
                                     placeholder='date'
                                     type="date"
                                     width='20%'
-                                    defaultValue={props.data ? props.data.startDate : ''}
+                                    defaultValue={props.data ? props.data.buildingInformation.startDate : ''}
                                     required
                                 />
                                 <label style={{ marginLeft: '2rem' }}>
@@ -263,7 +314,7 @@ const EditContent = (props) => {
                                     placeholder='date'
                                     type="date"
                                     width='20%'
-                                    defaultValue={props.data ? props.data.endDate : ''}
+                                    defaultValue={props.data ? props.data.buildingInformation.endDate : ''}
                                 />
                             </div>
 
@@ -283,7 +334,7 @@ const EditContent = (props) => {
                                 type="number"
                                 min="0"
                                 width='30%'
-                                defaultValue={props.data ? props.data.area : ''}
+                                defaultValue={props.data ? props.data.houseDetails.utility.area : ''}
 
                                 required
                             />
@@ -294,7 +345,7 @@ const EditContent = (props) => {
                                 type="number"
                                 min="0"
                                 width='30%'
-                                defaultValue={props.data ? props.data.usableArea : ''}
+                                defaultValue={props.data ? props.data.houseDetails.utility.usableArea : ''}
 
                             />
                         </div>
@@ -307,7 +358,7 @@ const EditContent = (props) => {
                                 min="0"
                                 type="number"
                                 width='15%'
-                                defaultValue={props.data ? props.data.bedroom : ''}
+                                defaultValue={props.data ? props.data.houseDetails.utility.bedroom : ''}
                                 required
                             />
                             <label
@@ -320,7 +371,7 @@ const EditContent = (props) => {
                                 type="number"
                                 min="0"
                                 width='15%'
-                                defaultValue={props.data ? props.data.bathroom : ''}
+                                defaultValue={props.data ? props.data.houseDetails.utility.bathroom : ''}
                                 required
                             />
                             <label
@@ -333,7 +384,7 @@ const EditContent = (props) => {
                                 min="0"
                                 type="number"
                                 width='15%'
-                                defaultValue={props.data ? props.data.parkingLot : ''}
+                                defaultValue={props.data ? props.data.houseDetails.utility.parkingLot : ''}
                                 required
                             />
                         </div>
