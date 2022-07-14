@@ -6,9 +6,14 @@ import NavMobileOverlay from "../../components/Navbar/MobilePagesNavbar/NavMobil
 import MobilePagesNavbar from "../../components/Navbar/MobilePagesNavbar/MobilePagesNavbar";
 import PagesNavbar from "../../components/Navbar/PagesNavbar/PagesNavbar";
 import PhotoShowcase from "../../components/PhotoShowcase/PhotoShowcase";
+import Tag from "../../UI/Tag/Tag";
 import BottomSection from "../../components/BottomSection/BottomSection";
+import Interest from "../../components/Widgets/Interest/Interest";
+import Measurement from "../../components/Widgets/Measurement";
+import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
 
 import SelectedPhoto from "../../UI/EachPhoto/SelectedPhoto";
+
 const img0 =
   "https://www.maisonvalentina.net/blog/wp-content/uploads/2020/12/Top-20-Interior-DesignersArchitects-from-Houston-TX-Benjamin-MV.jpg";
 const img1 =
@@ -20,6 +25,45 @@ const img3 =
 const img4 =
   "https://cdn-images.prod.thinkofliving.com/wp-content/uploads/1/2022/03/18172737/6-1.jpg";
 const EachHouse = (props) => {
+  //API
+  const [houseData, setHouseData] = useState({
+    id: "ab123",
+    name: "บ้านเดี่ยว นครปฐม...",
+    status: "กำลังก่อสร้าง",
+    houseDetails: {
+      price: 5000000,
+      project: "โครงการ A นครปฐม",
+      category: "บ้านเดี่ยว",
+      utility: {
+        area: 80,
+        usableArea: 55,
+        bedroom: 3,
+        bathRoom: 3,
+        parkingLot: 2,
+        others: "ติดแอร์ทุกห้องนอน มีเฟอร์นิเจอร์พร้อมอยู่",
+      },
+    },
+    location: {
+      province: "นครปฐม",
+      main: "11/25 ซอยxx ถนนxx นครปฐม ตำบล อำเภอ 102931",
+      moreDetails: "ห่างกับโลตัสนครปฐม 2km, ติดกับบ้านเดี่ยว...",
+      latitude: "123123123",
+      longitude: "88312300",
+    },
+    photos: {
+      house: ["filename1", "filename2", "filename3"],
+      plan: ["filename1", "filename2"],
+    },
+    buildingInformation: {
+      start: "12/05/2021",
+      finish: "05/03/2022",
+    },
+    websiteInfo: {
+      suggested: 0,
+      firstTimeListed: "10/03/2022",
+      lastedEdited: "21/06/2022",
+    },
+  });
   const [photo, setPhoto] = useState([img0, img1, img2, img3, img4]);
   const { id } = useParams();
 
@@ -37,7 +81,8 @@ const EachHouse = (props) => {
     }
   };
   useEffect(() => {
-    props.setPagesTags(["หน้าแรก", "โครงการทั้งหมด", "โครงการ"]);
+    props.setPagesTags(["หน้าแรก", "โครงการทั้งหมด", `โครงการ: ${id}`]);
+    props.setCurrentPage("eachhouse");
     props.setCurrentPage("house");
     window.addEventListener("resize", reportWindowSize);
   }, []);
@@ -66,16 +111,24 @@ const EachHouse = (props) => {
             setNavMobileOverlay={setNavMobileOverlay}
           />
         )}
+        <PhotoShowcase
+          selected={selected}
+          setSelected={setSelected}
+          screenStatus={screenStatus}
+          photo={photo}
+          setPhoto={setPhoto}
+          setSelectedPhoto={setSelectedPhoto}
+        />
         <div className={classes.inPage}>
-          <PhotoShowcase
-            selected={selected}
-            setSelected={setSelected}
-            screenStatus={screenStatus}
-            photo={photo}
-            setPhoto={setPhoto}
-            setSelectedPhoto={setSelectedPhoto}
-          />
-          House id: {id}
+          <Tag pagesTags={props.pagesTags} setPagesTags={props.setPagesTags} />
+          <div className={classes.content}>
+            <div className={classes.main}></div>
+            <div className={classes.sideWidgetBox}>
+              <Interest />
+              <Measurement />
+              <Reccommend />
+            </div>
+          </div>
         </div>
       </div>
       <BottomSection />

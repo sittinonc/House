@@ -7,10 +7,30 @@
     align-items: center;
 
     .inPage {
-      width: 100%;
+      width: calc(40vw + 550px);
+      max-width: 1600px;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      margin: auto;
+      gap: 9px;
+
+      .content {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        .main {
+          width: 73%;
+        }
+        .sideWidgetBox {
+          background-color: white;
+          margin-top: 32px;
+          display: flex;
+          flex-direction: column;
+          width: 27%;
+          gap: 27px;
+        }
+      }
     }
   }
 }

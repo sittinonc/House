@@ -24,8 +24,6 @@ const Utility = (props) => {
         </div>
         <div className={classes.box}>
           {props.config.each.map((e, i) => {
-            console.log("e.toString + i.toString");
-            console.log(e.label);
             return (
               <>
                 <div

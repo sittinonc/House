@@ -7,7 +7,6 @@ import Slider from "@mui/material/Slider";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { purple } from "@mui/material/colors";
 
 const { palette } = createTheme();
 const theme = createTheme({
@@ -19,8 +18,6 @@ const theme = createTheme({
     }),
   },
 });
-
-const accent = purple[500];
 
 const marks = [
   {
@@ -101,11 +98,7 @@ const PriceSlider = (props) => {
           }
           onClick={() => {
             if (active && props.dropdownCommand === "price") {
-              props.setDropdownCommand((prev) => {
-                console.log("tryna exclude");
-                console.log(prev);
-                console.log("prev");
-              });
+              props.setDropdownCommand((prev) => {});
               setActive(false);
             } else {
               console.log(props.dropdownCommand);

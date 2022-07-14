@@ -17,7 +17,6 @@ import SideWidget from "../../UI/SideWidget/SideWidget";
 import Measurement from "../../components/Widgets/Measurement";
 import Utility from "../../components/Widgets/Utility";
 import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
-import { getThemeProps } from "@mui/system";
 
 const AllProjects = (props) => {
   const [trigger550, setTrigger550] = useState(
