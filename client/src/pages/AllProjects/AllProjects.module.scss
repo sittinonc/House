@@ -7,6 +7,8 @@
   .page {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(255, 255, 255);
     .inPage {
       width: calc(40vw + 550px);
@@ -14,22 +16,19 @@
       height: 100%;
       display: flex;
       flex-direction: row;
-      margin: auto;
-      gap: 9px;
+      justify-content: center;
+
       .container {
-        width: 69%;
+        width: 70%;
         height: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
 
         .wrapper {
-          width: 100%;
+          width: 96%;
           height: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
 
           .head {
             margin-top: 30px;
@@ -44,7 +43,7 @@
           .attributesSet {
             box-shadow: rgba(206, 206, 248, 0.2) 5px 11px 13px,
               rgba(17, 17, 26, 0.05) 0px 8px 32px;
-            width: 95%;
+            width: 100%;
             min-height: 56px;
             background-color: white;
             display: flex;
@@ -177,14 +176,13 @@
         }
 
         .house {
-          width: 97%;
+          width: 96%;
           height: 100%;
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           .box {
-            justify-content: center;
             margin-top: 2%;
             width: 100%;
             display: grid;

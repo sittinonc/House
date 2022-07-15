@@ -83,7 +83,6 @@ const AllProjects = (props) => {
               setNavMobileOverlay={setNavMobileOverlay}
             />
           )}
-
           <div className={classes.inPage}>
             <div className={classes.container}>
               <div className={classes.wrapper}>

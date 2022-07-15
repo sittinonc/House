@@ -84,7 +84,7 @@ const Interest = () => {
           <ThemeProvider theme={theme}>
             <div className={classes.whole}>
               <Button
-                style={{ width: "100%", outlineColor: "grey" }}
+                style={{ width: "100%" }}
                 variant="outlined"
                 size="medium"
                 color="myAwesomeColor"

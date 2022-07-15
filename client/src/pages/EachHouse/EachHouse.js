@@ -12,6 +12,8 @@ import Interest from "../../components/Widgets/Interest/Interest";
 import Measurement from "../../components/Widgets/Measurement";
 import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
 
+import HouseHead from "../../UI/MainWidget/HouseHead/HouseHead";
+import HouseProperty from "../../UI/MainWidget/HousePropperty/HouseProperty";
 import SelectedPhoto from "../../UI/EachPhoto/SelectedPhoto";
 
 const img0 =
@@ -87,28 +89,28 @@ const EachHouse = (props) => {
     window.addEventListener("resize", reportWindowSize);
   }, []);
   return (
-    <div className={classes.container}>
-      {!selected ? null : (
-        <SelectedPhoto
-          selectedPhoto={selectedPhoto}
-          selected={selected}
-          setSelected={setSelected}
-        />
-      )}
-      {navMobileOverlay ? (
-        <NavMobileOverlay
-          setCurrentPage={props.setCurrentPage}
-          currentPage={props.currentPage}
-          setNavMobileOverlay={setNavMobileOverlay}
-        />
-      ) : null}
-      <div className={classes.page}>
+    <>
+      <div className={classes.x}>
         {screenStatus === "desktop" ? (
           <PagesNavbar />
         ) : (
           <MobilePagesNavbar
             navMobileOverlay={navMobileOverlay}
             setNavMobileOverlay={setNavMobileOverlay}
+          />
+        )}
+        {navMobileOverlay ? (
+          <NavMobileOverlay
+            setCurrentPage={props.setCurrentPage}
+            currentPage={props.currentPage}
+            setNavMobileOverlay={setNavMobileOverlay}
+          />
+        ) : null}
+        {!selected ? null : (
+          <SelectedPhoto
+            selectedPhoto={selectedPhoto}
+            selected={selected}
+            setSelected={setSelected}
           />
         )}
         <PhotoShowcase
@@ -119,10 +121,21 @@ const EachHouse = (props) => {
           setPhoto={setPhoto}
           setSelectedPhoto={setSelectedPhoto}
         />
-        <div className={classes.inPage}>
-          <Tag pagesTags={props.pagesTags} setPagesTags={props.setPagesTags} />
-          <div className={classes.content}>
-            <div className={classes.main}></div>
+        <div className={classes.page}>
+          <div className={classes.head}>
+            <Tag
+              pagesTags={props.pagesTags}
+              setPagesTags={props.setPagesTags}
+            />
+            <HouseHead data={houseData} />
+          </div>
+
+          <div className={classes.inPage}>
+            <div className={classes.main}>
+              <div className={classes.content}>
+                <HouseProperty data={houseData} />
+              </div>
+            </div>
             <div className={classes.sideWidgetBox}>
               <Interest />
               <Measurement />
@@ -130,9 +143,9 @@ const EachHouse = (props) => {
             </div>
           </div>
         </div>
+        <BottomSection />
       </div>
-      <BottomSection />
-    </div>
+    </>
   );
 };
 

@@ -36,9 +36,9 @@ const PagesNavbar = (props) => {
             <div className={classes.content}>
               <BsFillTelephoneFill
                 className={classes.icon}
-                style={{ fontSize: "17px" }}
-              />{" "}
-              <span>0961728911</span>
+                style={{ fontSize: "16px" }}
+              />
+              <span>096-1728911</span>
               <Link
                 style={{ textDecoration: "none", color: "white" }}
                 to="/admin"
