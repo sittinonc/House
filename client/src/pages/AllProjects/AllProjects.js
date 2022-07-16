@@ -13,9 +13,8 @@ import ShowHouse from "../../UI/ShowHouse/ShowHouse";
 import BottomSection from "../../components/BottomSection/BottomSection";
 
 //widgets
-import SideWidget from "../../UI/SideWidget/SideWidget";
-import Measurement from "../../components/Widgets/Measurement";
-import Utility from "../../components/Widgets/Utility";
+import Measurement from "../../components/Widgets/Measurement/Measurement";
+import Utility from "../../UI/SideWidget/Options/Options";
 import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
 
 const AllProjects = (props) => {

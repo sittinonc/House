@@ -1,6 +1,6 @@
 import classes from "./Measurement.module.scss";
 
-import Options from "../../UI/SideWidget/Options/Options";
+import Options from "../../../UI/SideWidget/Options/Options";
 
 const Measurement = () => {
   const config = {

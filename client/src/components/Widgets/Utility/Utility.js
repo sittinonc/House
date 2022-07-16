@@ -1,5 +1,5 @@
 import classes from "./Utility.module.scss";
-import Options from "../../UI/SideWidget/Options/Options";
+import Options from "../../../UI/SideWidget/Options/Options";
 const Utility = () => {
   const config = {
     head: "คุณสมบัตร",

@@ -1,10 +1,12 @@
 import classes from "./HouseProperty.module.scss";
-import MainWidget from "../MainWidget";
+import MainWidget from "../../../UI/MainWidget/MainWidget";
 
 const HouseProperty = () => {
   return (
     <MainWidget>
-      <h1>Test</h1>
+      <div className={classes.container}>
+        <h1>Test</h1>
+      </div>
     </MainWidget>
   );
 };

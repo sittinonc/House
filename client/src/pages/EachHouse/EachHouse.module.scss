@@ -33,14 +33,15 @@
 
         .content {
           width: 96%;
+          height: 100%;
         }
       }
       .sideWidgetBox {
-        background-color: white;
-        margin-top: 32px;
+        width: 27%;
+        height: 100%;
+        margin-top: 36px;
         display: flex;
         flex-direction: column;
-        width: 27%;
         gap: 27px;
       }
     }

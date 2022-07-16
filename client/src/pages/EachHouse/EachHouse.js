@@ -9,11 +9,11 @@ import PhotoShowcase from "../../components/PhotoShowcase/PhotoShowcase";
 import Tag from "../../UI/Tag/Tag";
 import BottomSection from "../../components/BottomSection/BottomSection";
 import Interest from "../../components/Widgets/Interest/Interest";
-import Measurement from "../../components/Widgets/Measurement";
+import Measurement from "../../components/Widgets/Measurement/Measurement";
 import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
 
-import HouseHead from "../../UI/MainWidget/HouseHead/HouseHead";
-import HouseProperty from "../../UI/MainWidget/HousePropperty/HouseProperty";
+import HouseHead from "../../components/Widgets/HouseHead/HouseHead";
+import HouseProperty from "../../components/Widgets/HousePropperty/HouseProperty";
 import SelectedPhoto from "../../UI/EachPhoto/SelectedPhoto";
 
 const img0 =
@@ -143,8 +143,8 @@ const EachHouse = (props) => {
             </div>
           </div>
         </div>
-        <BottomSection />
       </div>
+      <BottomSection />
     </>
   );
 };
