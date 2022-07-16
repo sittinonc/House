@@ -17,6 +17,7 @@ const Tag = (props) => {
         {props.pagesTags.map((e, i) => {
           return (
             <Link
+              key={i}
               className={
                 classes.tag +
                 " " +

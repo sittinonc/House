@@ -238,7 +238,7 @@ const AllProjects = (props) => {
               <div className={classes.house}>
                 <div className={classes.box}>
                   {Houses.map((e, i) => {
-                    return <ShowHouse data={e} />;
+                    return <ShowHouse key={i} data={e} />;
                   })}
                 </div>
               </div>

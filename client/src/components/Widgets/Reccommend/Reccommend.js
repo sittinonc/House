@@ -35,7 +35,7 @@ const Reccommend = () => {
         </div>
         <div className={classes.box}>
           {recHouses.map((e, i) => {
-            return <EachReccommend data={e} />;
+            return <EachReccommend key={i} data={e} />;
           })}
         </div>
       </div>
