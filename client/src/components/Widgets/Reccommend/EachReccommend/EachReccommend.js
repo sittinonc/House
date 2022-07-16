@@ -11,7 +11,7 @@ const EachReccommend = (props) => {
       <div className={classes.details}>
         <span className={classes.head}>{props.data.label}</span>
         <span className={classes.sub}>
-          {functions.priceFormet(props.data.price)} บาท
+          {functions.priceFormat(props.data.price)} บาท
         </span>
       </div>
     </div>

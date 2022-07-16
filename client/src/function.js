@@ -1,5 +1,5 @@
 const functions = {
-  priceFormet: (num) => {
+  priceFormat: (num) => {
     let string = num.toString();
     if (string.length == 6) {
       const a = string.slice(0, 3);

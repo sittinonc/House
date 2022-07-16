@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MdLocationPin } from "react-icons/md";
 
 import classes from "./HouseHead.module.scss";
+import functions from "../../../function";
 
 const HouseHead = (props) => {
   return (
@@ -20,7 +21,7 @@ const HouseHead = (props) => {
         </div>
       </div>
       <div className={classes.right}>
-        <div className={classes.price}></div>
+        <div className={classes.price}>{"5000000"}</div>
         <div className={classes.functionGroup}>
           <div className={classes.each}>share</div>
           <div className={classes.each}>copy link</div>
