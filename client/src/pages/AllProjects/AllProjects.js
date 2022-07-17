@@ -14,7 +14,7 @@ import BottomSection from "../../components/BottomSection/BottomSection";
 
 //widgets
 import Measurement from "../../components/Widgets/Measurement/Measurement";
-import Utility from "../../UI/SideWidget/Options/Options";
+import Utility from "../../components/Widgets/Utility/Utility";
 import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
 
 const AllProjects = (props) => {

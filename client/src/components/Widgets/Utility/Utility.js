@@ -1,4 +1,3 @@
-import classes from "./Utility.module.scss";
 import Options from "../../../UI/SideWidget/Options/Options";
 const Utility = () => {
   const config = {
@@ -10,6 +9,7 @@ const Utility = () => {
       { label: "อำเภอ", val: ["อำเภอ", "บาง1", "บาง2", "บาง3"] },
     ],
   };
+
   return <Options config={config} />;
 };
 

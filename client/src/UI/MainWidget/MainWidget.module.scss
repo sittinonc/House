@@ -1,10 +1,10 @@
 .container {
   width: 100%;
   .box {
-    box-shadow: rgba(206, 206, 248, 0.4) 1px 10px 34px;
+    box-shadow: rgba(206, 206, 248, 0.43) 1px 10px 34px;
     border-radius: 7px;
-    min-height: 145px;
     width: 100%;
+    overflow: hidden;
   }
 }
 
@@ -14,7 +14,6 @@
     .box {
       box-shadow: rgba(206, 206, 248, 0.5) 1px 5px 34px;
       border-radius: 7px;
-      min-height: 145px;
       width: 100%;
     }
   }
