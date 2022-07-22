@@ -85,7 +85,7 @@ const Interest = () => {
             <div className={classes.whole}>
               <Button
                 style={{ width: "100%" }}
-                variant="outlined"
+                variant="contained"
                 size="medium"
                 color="myAwesomeColor"
               >
@@ -115,7 +115,7 @@ const Interest = () => {
                   โทร
                 </div>
               </Button>
-            </div>{" "}
+            </div>
           </ThemeProvider>
         </div>
       </div>

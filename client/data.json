@@ -17,7 +17,11 @@
   },
   "location": {
     "province": "นครปฐม",
-    "main": "11/25 ซอยxx ถนนxx นครปฐม ตำบล อำเภอ 102931",
+    "subDistrict": "ตำบล",
+    "district": "อำเภอ",
+    "zipCode": "102991",
+    "road": "ถนน",
+    "alley": "ซอย...",
     "moreDetails": "ห่างกับโลตัสนครปฐม 2km, ติดกับบ้านเดี่ยว...",
     "latitude": "123123123",
     "longitude": "88312300"

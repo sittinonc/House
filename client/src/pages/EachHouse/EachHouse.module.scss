@@ -16,6 +16,13 @@
       width: 100%;
       height: 100%;
       max-width: 1600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .content {
+        width: 100%;
+      }
     }
     .inPage {
       width: 100%;
@@ -27,11 +34,12 @@
       .main {
         width: 70%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
 
         .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
           margin-top: 36px;
           width: 96%;
           height: 100%;
@@ -49,21 +57,55 @@
   }
 }
 
-@media only screen and (min-width: 0px) and (max-width: 700px) {
-  .container {
-    width: 100vw;
+@media only screen and (min-width: 0px) and (max-width: 1023px) {
+  .x {
     .page {
+      width: 99%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
+      .head {
+        margin-top: 10px;
+        width: 100%;
+        height: 100%;
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 96%;
+        }
+      }
+
       .inPage {
-        width: 99%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        .main {
+          width: 96%;
+
+          .content {
+            width: 100%;
+          }
+        }
+
+        .sideWidgetBox {
+          margin-top: 30px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 699px) {
 }

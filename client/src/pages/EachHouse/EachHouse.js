@@ -14,6 +14,7 @@ import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
 
 import HouseHead from "../../components/Widgets/HouseHead/HouseHead";
 import HouseProperty from "../../components/Widgets/HousePropperty/HouseProperty";
+import Address from "../../components/Widgets/Address/Address";
 import SelectedPhoto from "../../UI/EachPhoto/SelectedPhoto";
 
 const img0 =
@@ -124,17 +125,20 @@ const EachHouse = (props) => {
         />
         <div className={classes.page}>
           <div className={classes.head}>
-            <Tag
-              pagesTags={props.pagesTags}
-              setPagesTags={props.setPagesTags}
-            />
-            <HouseHead data={houseData} />
+            <div className={classes.content}>
+              <Tag
+                pagesTags={props.pagesTags}
+                setPagesTags={props.setPagesTags}
+              />
+              <HouseHead data={houseData} />
+            </div>
           </div>
 
           <div className={classes.inPage}>
             <div className={classes.main}>
               <div className={classes.content}>
                 <HouseProperty data={houseData} />
+                <Address data={houseData} />
               </div>
             </div>
             <div className={classes.sideWidgetBox}>
