@@ -5,9 +5,9 @@ const Grid = (props) => {
   return (
     <MainWidget>
       <div className={classes.container}>
-        <div className={classes.head}>ตำแหน่งที่ตั้ง</div>
+        <div className={classes.head}>{props.config.head}</div>
         <div className={classes.content}>
-          {props.config.map((e, i) => {
+          {props.config.data.map((e, i) => {
             return (
               <div className={classes.each}>
                 <div className={classes.label}>{e.label}:</div>
