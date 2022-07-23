@@ -6,8 +6,6 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 const PhotoShowcase = (props) => {
   const [photo, setPhoto] = useState(props.photo);
 
-  //img0, img1, img2, img3, img4
-  //img4, img3, img2, img0, img1,
   const reportWindowSize = () => {
     console.log(window.innerWidth);
   };

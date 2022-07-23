@@ -142,7 +142,10 @@ const EachHouse = (props) => {
                 <HouseProperty data={houseData} />
                 <Address data={houseData} />
                 <AllDetails data={houseData} />
-                <Map />
+                <Map
+                  setSelectedPhoto={setSelectedPhoto}
+                  setSelected={setSelected}
+                />
               </div>
             </div>
             <div className={classes.sideWidgetBox}>
