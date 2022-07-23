@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 8px;
 
   .head {
     display: flex;
@@ -24,15 +25,15 @@
       display: flex;
       flex-direction: row;
       width: 100%;
-      gap: 5px;
+      gap: 4px;
       height: 35px;
       .label {
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 600;
       }
 
       .val {
-        font-size: 14px;
+        font-size: 13px;
       }
     }
   }

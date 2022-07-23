@@ -16,6 +16,7 @@ import HouseHead from "../../components/Widgets/HouseHead/HouseHead";
 import HouseProperty from "../../components/Widgets/HousePropperty/HouseProperty";
 import Address from "../../components/Widgets/Address/Address";
 import AllDetails from "../../components/Widgets/AllDetails/AllDetails";
+import Map from "../../components/Widgets/Map/Map";
 import SelectedPhoto from "../../UI/EachPhoto/SelectedPhoto";
 
 const img0 =
@@ -141,6 +142,7 @@ const EachHouse = (props) => {
                 <HouseProperty data={houseData} />
                 <Address data={houseData} />
                 <AllDetails data={houseData} />
+                <Map />
               </div>
             </div>
             <div className={classes.sideWidgetBox}>
