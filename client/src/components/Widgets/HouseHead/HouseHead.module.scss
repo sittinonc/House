@@ -69,6 +69,7 @@
     }
 
     .functionGroup {
+      position: relative;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -80,7 +81,6 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 5px;
         border-radius: 5px;
         height: 30px;
         background-color: white;
@@ -88,21 +88,66 @@
         box-shadow: rgba(206, 206, 248, 0.6) 0px 16px 48px 0px;
         padding-right: 9px;
         padding-left: 9px;
+        user-select: none;
 
-        &:hover {
-          cursor: pointer;
-          color: brown;
+        .text {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+
+          &:hover {
+            cursor: pointer;
+            color: brown;
+          }
+
+          .icon {
+          }
+
+          span {
+          }
         }
-        .icon {
+        .dropDown {
+          box-shadow: rgba(206, 206, 248, 0.5) 1px 5px 34px;
+          border-radius: 3px;
+          position: absolute;
+          width: 128px;
+          top: 36px;
+          left: -54px;
+          .item {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+            align-items: center;
+            height: 32px;
+            width: 80%;
+            margin-left: 10%;
+            background-color: white;
+
+            &:hover {
+              color: rgba(139, 59, 59, 0.95);
+            }
+
+            .icon {
+              font-size: 16px;
+            }
+          }
         }
 
-        span {
+        .dropActive {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .dropUnactive {
+          display: none;
         }
       }
     }
   }
 }
-
+@media only screen and (min-width: 0px) and (max-width: 1023px) {
+}
 @media only screen and (min-width: 0px) and (max-width: 699px) {
   .container {
     width: 100%;

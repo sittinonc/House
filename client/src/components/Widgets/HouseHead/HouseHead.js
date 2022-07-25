@@ -4,10 +4,19 @@ import { BsShareFill } from "react-icons/bs";
 import { IoIosCopy } from "react-icons/io";
 import { AiOutlineDownload } from "react-icons/ai";
 
+import {
+  FacebookShareButton,
+  LineShareButton,
+  TwitterShareButton,
+  TelegramShareButton,
+} from "react-share";
+import { FaFacebook, FaLine, FaTwitter, FaTelegram } from "react-icons/fa";
+
 import classes from "./HouseHead.module.scss";
 import functions from "../../../function";
 
 const HouseHead = (props) => {
+  const [drop, setDrop] = useState(false);
   return (
     <div className={classes.container}>
       <div className={classes.left}>
@@ -28,17 +37,82 @@ const HouseHead = (props) => {
           {functions.priceFormat(5000000)} THB
         </div>
         <div className={classes.functionGroup}>
-          <div className={classes.each}>
-            <BsShareFill className={classes.icon} />
-            <span>แชร์</span>
+          <div id={classes.shareSocials} className={classes.each}>
+            <div
+              className={classes.text}
+              onClick={() => {
+                setDrop((prev) => {
+                  return !prev;
+                });
+              }}
+            >
+              <BsShareFill className={classes.icon} />
+              <span>แชร์</span>
+            </div>
+
+            <div
+              className={
+                classes.dropDown +
+                " " +
+                (drop ? classes.dropActive : classes.dropUnactive)
+              }
+            >
+              <FacebookShareButton
+                url="www.google.com"
+                quote="บ้านดี ราคาเหมาะสม"
+                hashtag="#QHouse"
+              >
+                <div className={classes.item}>
+                  <FaFacebook className={classes.icon} />
+                  Facebook
+                </div>
+              </FacebookShareButton>
+
+              <LineShareButton
+                url="www.google.com"
+                quote="บ้านดี ราคาเหมาะสม"
+                hashtag="#QHouse"
+              >
+                <div className={classes.item}>
+                  <FaLine className={classes.icon} />
+                  Line
+                </div>
+              </LineShareButton>
+
+              <TwitterShareButton
+                url="www.google.com"
+                quote="บ้านดี ราคาเหมาะสม"
+                hashtag="#QHouse"
+              >
+                <div className={classes.item}>
+                  <FaTwitter className={classes.icon} />
+                  Twitter
+                </div>
+              </TwitterShareButton>
+
+              <TelegramShareButton
+                url="www.google.com"
+                quote="บ้านดี ราคาเหมาะสม"
+                hashtag="#QHouse"
+              >
+                <div className={classes.item}>
+                  <FaTelegram className={classes.icon} />
+                  Telegram
+                </div>
+              </TelegramShareButton>
+            </div>
           </div>
           <div className={classes.each}>
-            <IoIosCopy className={classes.icon} />
-            <span>คัดลอกลิงก์</span>
+            <div className={classes.text}>
+              <IoIosCopy className={classes.icon} />
+              <span>คัดลอกลิงก์</span>
+            </div>
           </div>
           <div className={classes.each}>
-            <AiOutlineDownload className={classes.icon} />
-            <span>ดาวน์โหลด</span>
+            <div className={classes.text}>
+              <AiOutlineDownload className={classes.icon} />
+              <span>ดาวน์โหลด</span>
+            </div>
           </div>
         </div>
       </div>
