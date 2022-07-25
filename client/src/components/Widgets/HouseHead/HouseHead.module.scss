@@ -114,22 +114,22 @@
           width: 128px;
           top: 36px;
           left: -54px;
+          background-color: white;
           .item {
             display: flex;
             flex-direction: row;
-            gap: 6px;
+            gap: 7px;
             align-items: center;
             height: 32px;
             width: 80%;
             margin-left: 10%;
-            background-color: white;
 
             &:hover {
               color: rgba(139, 59, 59, 0.95);
             }
 
             .icon {
-              font-size: 16px;
+              font-size: 15px;
             }
           }
         }
@@ -147,6 +147,31 @@
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 1023px) {
+  .container {
+    .left {
+    }
+    .right {
+      .functionGroup {
+        gap: 13px;
+
+        .each {
+          .dropDown {
+            position: absolute;
+            width: 128px;
+            top: 36px;
+            left: 0px;
+            .item {
+              font-size: 12px;
+
+              .icon {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 @media only screen and (min-width: 0px) and (max-width: 699px) {
   .container {
