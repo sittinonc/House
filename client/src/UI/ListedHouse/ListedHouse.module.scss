@@ -159,23 +159,17 @@
             row-gap: 1px;
             .symbol {
               font-size: 14px;
-              width: 100%;
-              height: 50%;
-              display: flex;
-              flex-direction: row;
-              align-items: center;
               gap: 10px;
-              font-weight: 600;
 
               .icon {
-                font-size: 20px;
+                font-size: 19px;
               }
             }
             .text {
               font-weight: 500;
               height: 50%;
               width: 100%;
-              font-size: 14px;
+              font-size: 13px;
             }
           }
         }

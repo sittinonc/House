@@ -101,7 +101,7 @@
         height: 100%;
         width: 100%;
         .head {
-          font-size: 20px;
+          font-size: 16px;
           font-weight: 600;
 
           #logo {
@@ -109,10 +109,9 @@
           }
         }
         .text {
-          margin-top: 3%;
-          line-height: 25px;
-          font-size: 14px;
-          color: grey;
+          margin-top: 10px;
+          line-height: 20px;
+          font-size: 13px;
         }
         .subGroup {
           height: 100%;
@@ -122,8 +121,7 @@
           margin-top: 3%;
           row-gap: 6px;
           .sub {
-            color: grey;
-            font-size: 15px;
+            font-size: 13px;
 
             &:hover {
               cursor: pointer;
@@ -131,7 +129,7 @@
             }
 
             .logo {
-              padding-right: 4%;
+              padding-right: 2.7%;
             }
           }
         }
