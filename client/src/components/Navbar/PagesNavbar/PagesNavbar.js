@@ -40,7 +40,11 @@ const PagesNavbar = (props) => {
               />
               <span>096-1728911</span>
               <Link
-                style={{ textDecoration: "none", color: "white" }}
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  marginTop: "7px",
+                }}
                 to="/admin"
               >
                 <FaUserCircle

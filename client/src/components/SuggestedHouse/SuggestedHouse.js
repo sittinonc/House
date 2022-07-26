@@ -1,5 +1,6 @@
 import classes from "./SuggestedHouse.module.scss";
 import { FcHome } from "react-icons/fc";
+import { Link } from "react-router-dom";
 import ListedHouse from "../../UI/ListedHouse/ListedHouse";
 const Houses = ["h1", "h2", "h3"];
 const SuggestedHouse = () => {
@@ -12,7 +13,7 @@ const SuggestedHouse = () => {
               <FcHome className={classes.icon} />
             </div>
           </div>
-          <span >โครงการแนะนำ</span>
+          <span>โครงการแนะนำ</span>
         </div>
         <div className={classes.detail}>
           <div className={classes.textBox}>
@@ -33,7 +34,14 @@ const SuggestedHouse = () => {
         </div>
       </div>
       <div className={classes.buttonBox}>
-        <div className={classes.button}>ดูโครงการทั้งหมด</div>
+        <div className={classes.button}>
+          <Link
+            to="allprojects"
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            ดูโครงการทั้งหมด
+          </Link>
+        </div>
       </div>
     </div>
   );
