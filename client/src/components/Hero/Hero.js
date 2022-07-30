@@ -131,7 +131,11 @@ const Hero = (props) => {
               />
               <span
                 onClick={() => {
-                  window.scrollTo(0, 500);
+                  window.scroll({
+                    top: 780,
+                    left: 0,
+                    behavior: "smooth",
+                  });
                 }}
               >
                 เลื่อนลงเพื่อชมโครงการแนะนำของ Q-House
