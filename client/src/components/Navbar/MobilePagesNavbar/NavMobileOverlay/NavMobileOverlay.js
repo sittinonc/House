@@ -3,8 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { GoPrimitiveDot } from "react-icons/go";
 import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavMobileOverlay = (props) => {
+  let navigate = useNavigate();
+  const target = (path) => {
+    navigate(path);
+  };
   return (
     <>
       {ReactDOM.createPortal(
@@ -12,8 +18,10 @@ const NavMobileOverlay = (props) => {
           <div className={classes.box}>
             <div className={classes.content}>
               <div className={classes.menu}>
-                <div className={classes.item}>
-                  <span>หน้าแรก</span>
+                <div className={classes.item} onClick={target("/")}>
+                  <Link to="/" className={classes.link}>
+                    หน้าแรก
+                  </Link>
                   <GoPrimitiveDot
                     className={
                       props.currentPage === "home"
@@ -22,8 +30,10 @@ const NavMobileOverlay = (props) => {
                     }
                   />
                 </div>
-                <div className={classes.item}>
-                  <span>โครงการ</span>
+                <div className={classes.item} onClick={target("/allprojects")}>
+                  <Link to="/allprojects" className={classes.link}>
+                    โครงการ
+                  </Link>
                   <GoPrimitiveDot
                     className={
                       props.currentPage === "allProjects"
@@ -32,8 +42,10 @@ const NavMobileOverlay = (props) => {
                     }
                   />
                 </div>
-                <div className={classes.item}>
-                  <span>ข่าวสาร</span>
+                <div className={classes.item} onClick={target("/")}>
+                  <Link to="/" className={classes.link}>
+                    ข่าวสาร
+                  </Link>
                   <GoPrimitiveDot
                     className={
                       props.currentPage === "news"
@@ -42,8 +54,10 @@ const NavMobileOverlay = (props) => {
                     }
                   />
                 </div>
-                <div className={classes.item}>
-                  <span>ติดต่อเรา</span>
+                <div className={classes.item} onClick={target("/")}>
+                  <Link to="/" className={classes.link}>
+                    ติดต่อเรา
+                  </Link>
                   <GoPrimitiveDot
                     className={
                       props.currentPage === "contact"

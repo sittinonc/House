@@ -42,8 +42,10 @@
             cursor: pointer;
           }
 
-          span {
+          .link {
             margin-left: 8%;
+            color: black;
+            text-decoration: none;
           }
 
           .showIcon {
