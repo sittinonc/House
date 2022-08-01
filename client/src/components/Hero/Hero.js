@@ -1,5 +1,6 @@
 import classes from "./hero.module.scss";
 import Navbar from "../Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -24,6 +25,7 @@ const price = [
     label: "10 ล้าน",
   },
 ];
+
 const Hero = (props) => {
   const [dropdownCommand, setDropdownCommand] = useState(null);
   const [locationData, setLocationData] = useState([
@@ -37,6 +39,11 @@ const Hero = (props) => {
   const [selectedLocation, setSelectedLocation] = useState(locationData);
   const [selectedPrice, setSelectedPrice] = useState([]);
 
+  let navigate = useNavigate();
+  const target = () => {
+    let path = "/allprojects";
+    navigate(path);
+  };
   return (
     <div className={classes.hero}>
       <Navbar username={props.username} setUsername={props.setUsername} />
@@ -95,7 +102,6 @@ const Hero = (props) => {
                 <Button
                   onClick={() => {
                     if (selectedPrice.length === 0) {
-                      console.log("Price: ALL");
                     } else {
                       console.log(
                         `Price: ${selectedPrice[0]} - ${selectedPrice[1]}`
@@ -107,6 +113,7 @@ const Hero = (props) => {
                       console.log(`Location: ${selectedLocation.length}`);
                     }
                     console.log(`Category: ${selectedButton}`);
+                    target();
                   }}
                   className={classes.button}
                   style={{ borderRadius: "30px", backgroundColor: "darkblue" }}

@@ -33,10 +33,10 @@ const NavMobileOverlay = (props) => {
                   />
                 </div>
                 <div className={classes.item}>
-                  <span>ซื้อ</span>
+                  <span>ข่าวสาร</span>
                   <GoPrimitiveDot
                     className={
-                      props.currentPage === "buy"
+                      props.currentPage === "news"
                         ? classes.showIcon
                         : classes.hideIcon
                     }

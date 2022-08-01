@@ -29,10 +29,10 @@ const Navbar = (props) => {
             <Link className={classes.navLink} to="/allprojects">
               โครงการ
             </Link>
-            <Link className={classes.navLink} to="/allprojects">
-              ซื้อ
+            <Link className={classes.navLink} to="/">
+              ข่าวสาร
             </Link>
-            <Link className={classes.navLink} to="/allprojects">
+            <Link className={classes.navLink} to="/">
               ติดต่อเรา
             </Link>
           </div>

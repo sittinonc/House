@@ -24,8 +24,8 @@ const PagesNavbar = (props) => {
               <Link className={classes.navLink} to="/allprojects">
                 โครงการ
               </Link>
-              <Link className={classes.navLink} to="/allprojects">
-                ซื้อ
+              <Link className={classes.navLink} to="/">
+                ข่าวสาร
               </Link>
               <Link className={classes.navLink} to="/allprojects">
                 ติดต่อเรา
