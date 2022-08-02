@@ -1,5 +1,12 @@
 import Options from "../../../UI/SideWidget/Options/Options";
+import Button from "@mui/material/Button";
+import { useState } from "react";
 const Utility = () => {
+  const [bedroom, setBedroom] = useState();
+  const [restroom, setRestroom] = useState();
+  const [parklot, setParklot] = useState();
+  const [district, setDistrict] = useState();
+
   const config = {
     head: "คุณสมบัตร",
     each: [
@@ -10,7 +17,15 @@ const Utility = () => {
     ],
   };
 
-  return <Options config={config} />;
+  return (
+    <Options
+      config={config}
+      setBedroom={setBedroom}
+      setRestroom={setRestroom}
+      setParklot={setParklot}
+      setDistrict={setDistrict}
+    />
+  );
 };
 
 export default Utility;

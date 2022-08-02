@@ -5,7 +5,6 @@ import { GoPrimitiveDot } from "react-icons/go";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
 const NavMobileOverlay = (props) => {
   let navigate = useNavigate();
   const target = (path) => {
