@@ -30,9 +30,9 @@ const CardContent = styled.div`
     text-overflow: clip;
 `
 const Card = (props) => {
+
     return (
         <Main onClick={() => {
-            console.log(123);
             props.renderEditContent()
             props.setEditingContent(props.item)
         }}>
@@ -42,9 +42,9 @@ const Card = (props) => {
                 <h3>{props.item.websiteInfo.createAt.slice(0, 10)}</h3>
                 <h1>{props.item.name}</h1>
 
-                <p>{props.item.description.length > 100
-                    ? props.item.description.slice(0, 100) + '...'
-                    : props.item.description}</p>
+                <p>{props.item.location.moreDetails.length > 100
+                    ? props.item.location.moreDetails.slice(0, 100) + '...'
+                    : props.item.location.moreDetails}</p>
             </CardContent >
         </Main >
     )

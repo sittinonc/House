@@ -8,7 +8,7 @@ import uri from '../../components/config'
 import PreviewImg from './PreviewImg'
 import axios from 'axios'
 import Map from './Map'
-import provinceData from '../../components/province'
+import { provinceData, districtData, subDistrictData } from '../../components/province'
 
 
 const Main = styled.div`
@@ -91,6 +91,9 @@ const EditContent = (props) => {
     const [imgStore, setImageStore] = useState()
     const [latlon, setLatlon] = useState(props.data ? props.data.location.latlon : null)
     const [imgCategory, setImgCategory] = useState('default')
+    const [province, setProvince] = useState(props.data ? props.data.location.province : null)
+    const [district, setDistrict] = useState(props.data ? props.data.location.district : null)
+    const [subDistrict, setSubDistrict] = useState(props.data ? props.data.location.subDistrict : null)
     const [isSuggest, setIsSuggest] = useState(props.data ? props.data.websiteInfo.isSuggest : false)
     const [chooseImage, setChooseImage] = useState()
 
@@ -99,30 +102,38 @@ const EditContent = (props) => {
         let name = event.target.Name.value;
         let price = event.target.price.value;
         let status = event.target.status.value;
-        let startDate = event.target.startDate.value;
-        let endDate = event.target.endDate.value;
+        let start = event.target.start.value;
+        let finish = event.target.finish.value;
         let area = event.target.area.value;
         let usableArea = event.target.usableArea.value;
-        let bedroom = event.target.bedroom.value;
-        let bathroom = event.target.bathroom.value;
+        let bedRoom = event.target.bedRoom.value;
+        let bathRoom = event.target.bathRoom.value;
         let parkingLot = event.target.parkingLot.value;
-        let description = event.target.description.value;
-        let province = event.target.province.value;
+        let others = event.target.others.value;
+        let zipCode = event.target.zipCode.value;
+        let road = event.target.road.value;
+        let moreDetails = event.target.moreDetails.value;
         let createAt = props.data ? props.data.websiteInfo.createAt : null
         let houseDetails = {
             price,
             utility: {
                 area,
                 usableArea,
-                bedroom,
-                bathroom,
-                parkingLot
+                bedRoom,
+                bathRoom,
+                parkingLot,
+                others
             }
         }
 
         let location = {
-            latlon,
-            province
+            province,
+            district,
+            subDistrict,
+            road,
+            zipCode,
+            moreDetails,
+            latlon
         }
 
         let photos = {
@@ -131,8 +142,8 @@ const EditContent = (props) => {
         }
 
         let buildingInformation = {
-            startDate,
-            endDate
+            start,
+            finish
         }
 
         let websiteInfo = {
@@ -151,7 +162,6 @@ const EditContent = (props) => {
             photos,
             buildingInformation,
             websiteInfo,
-            description
 
         }
         axios.defaults.withCredentials = true;
@@ -164,7 +174,7 @@ const EditContent = (props) => {
 
             })
             .catch((err) => {
-                console.log(err);
+                alert(err.response.data.msg)
             });
     };
 
@@ -179,15 +189,37 @@ const EditContent = (props) => {
                 props.setEditingContent(null)
             })
             .catch((err) => {
+                alert(err.response.data.msg)
                 console.log(err);
             });
     }
 
     const generateProvince = () => {
         return provinceData.map((item, index) => {
-            return <option value={`${item.province}`}>{item.province}</option>
+            let data = { id: item.PROVINCE_ID, name: item.PROVINCE_NAME }
+            return <option value={JSON.stringify(data)}>{item.PROVINCE_NAME}</option>
         })
     }
+
+    const generateDistrict = () => {
+        return districtData.map((item, index) => {
+
+            if (item.PROVINCE_ID == province.id) {
+                let data = { id: item.DISTRICT_ID, name: item.DISTRICT_NAME }
+                return <option value={JSON.stringify(data)}>{item.DISTRICT_NAME}</option>
+            }
+        })
+    }
+
+    const generateSubDistrict = () => {
+        return subDistrictData.map((item, index) => {
+            if (item.DISTRICT_ID == district.id) {
+                let data = { id: item.SUB_DISTRICT_ID, name: item.SUB_DISTRICT_NAME }
+                return <option value={JSON.stringify(data)}>{item.SUB_DISTRICT_NAME}</option>
+            }
+        })
+    }
+
     return (
         <Main>
             <ImageStore
@@ -273,16 +305,22 @@ const EditContent = (props) => {
                                     <option value="listing">listing</option>
                                     <option value="inProgress">inProgress</option>
                                 </select>
+
+                            </div>
+                            <div style={{ marginTop: '1rem' }}>
                                 <select
-                                    style={{ width: '20%', marginLeft: '2rem' }}
                                     id="province"
+                                    onChange={(e) => {
+                                        let data = JSON.parse(e.target.value)
+                                        setProvince(data)
+                                    }}
                                     required
                                 >
                                     {props.data ?
                                         <option selected disabled hidden
-                                            value={props.data.location.province}
+                                            value={props.data.location.province.id}
                                         >
-                                            {props.data.location.province}
+                                            {props.data.location.province.name}
                                         </option >
                                         : <option selected disabled hidden
                                             value={null}
@@ -291,18 +329,102 @@ const EditContent = (props) => {
                                         </option>}
                                     {generateProvince()}
                                 </select>
+
+                                {province && <select
+                                    style={{ width: '20%', marginLeft: '2rem' }}
+                                    id="district"
+
+                                    onChange={(e) => {
+                                        let data = JSON.parse(e.target.value)
+                                        setDistrict(data)
+                                    }}
+                                    required
+                                >
+                                    {props.data ?
+                                        <option selected disabled hidden
+                                            value={props.data.location.district.id}
+                                        >
+                                            {props.data.location.district.name}
+                                        </option >
+                                        : <option selected disabled hidden
+                                            value={null}
+                                        >
+                                            เลือกอำเภอ
+                                        </option>}
+                                    {generateDistrict()}
+                                </select>}
+
+                                {district && <select
+                                    style={{ width: '20%', marginLeft: '2rem' }}
+                                    id="district"
+
+                                    onChange={(e) => {
+                                        let data = JSON.parse(e.target.value)
+                                        setSubDistrict(data)
+                                    }}
+                                    required
+                                >
+                                    {props.data ?
+                                        <option selected disabled hidden
+                                            value={props.data.location.subDistrict.id}
+                                        >
+                                            {props.data.location.subDistrict.name}
+                                        </option >
+                                        : <option selected disabled hidden
+                                            value={null}
+                                        >
+                                            เลือกตำบล
+                                        </option>}
+                                    {generateSubDistrict()}
+                                </select>}
+
                             </div>
+                            <div>
+                                <Input
+                                    name="zipCode"
+                                    placeholder='รหัสไปรษณีย์'
+                                    type="number"
+                                    min="0"
+                                    width='30%'
+                                    defaultValue={props.data ? props.data.location.zipCode : ''}
+
+                                    required
+                                />
+                                <Input
+                                    style={{ marginLeft: '2rem' }}
+                                    name="road"
+                                    placeholder='ถนน'
+                                    type="text"
+                                    width='30%'
+                                    defaultValue={props.data ? props.data.location.road : ''}
+
+                                />
+                            </div>
+                            <div style={{ marginTop: '1.5rem' }}>
+                                <label
+
+                                >รายละเอียดทึ่อยู่เพิ่มเติม</label>
+                                <textarea
+                                    style={{ marginTop: '0.5rem', borderRadius: '5px', padding: '5px', width: '100%' }}
+                                    defaultValue={props.data ? props.data.location.moreDetails : ''}
+
+                                    name="moreDetails"
+                                    type="text"
+                                    rows='10'
+                                />
+                            </div>
+
 
                             <div>
                                 <label>เริ่มสร้าง</label>
                                 <Input
                                     style={{ marginLeft: '1rem' }}
 
-                                    name="startDate"
+                                    name="start"
                                     placeholder='date'
                                     type="date"
                                     width='20%'
-                                    defaultValue={props.data ? props.data.buildingInformation.startDate : ''}
+                                    defaultValue={props.data ? props.data.buildingInformation.start : ''}
                                     required
                                 />
                                 <label style={{ marginLeft: '2rem' }}>
@@ -310,11 +432,11 @@ const EditContent = (props) => {
                                 </label>
                                 <Input
                                     style={{ marginLeft: '1rem' }}
-                                    name="endDate"
+                                    name="finish"
                                     placeholder='date'
                                     type="date"
                                     width='20%'
-                                    defaultValue={props.data ? props.data.buildingInformation.endDate : ''}
+                                    defaultValue={props.data ? props.data.buildingInformation.finish : ''}
                                 />
                             </div>
 
@@ -353,12 +475,12 @@ const EditContent = (props) => {
                             <label>ห้องนอน</label>
                             <Input
                                 style={{ marginLeft: '0.5rem' }}
-                                name="bedroom"
+                                name="bedRoom"
                                 placeholder='ห้องนอน'
                                 min="0"
                                 type="number"
                                 width='15%'
-                                defaultValue={props.data ? props.data.houseDetails.utility.bedroom : ''}
+                                defaultValue={props.data ? props.data.houseDetails.utility.bedRoom : ''}
                                 required
                             />
                             <label
@@ -366,12 +488,12 @@ const EditContent = (props) => {
                             >ห้องน้ำ</label>
                             <Input
                                 style={{ marginLeft: '0.5rem' }}
-                                name="bathroom"
+                                name="bathRoom"
                                 placeholder='ห้องน้ำ'
                                 type="number"
                                 min="0"
                                 width='15%'
-                                defaultValue={props.data ? props.data.houseDetails.utility.bathroom : ''}
+                                defaultValue={props.data ? props.data.houseDetails.utility.bathRoom : ''}
                                 required
                             />
                             <label
@@ -390,12 +512,12 @@ const EditContent = (props) => {
                         </div>
                         <label
                             style={{ marginTop: '2.5rem' }}
-                        >คำอธิบายเพิ่มเติม</label>
+                        >รายละเอียดเพิ่มเติม</label>
                         <textarea
                             style={{ marginTop: '0.5rem', borderRadius: '5px', padding: '5px' }}
-                            defaultValue={props.data ? props.data.description : ''}
+                            defaultValue={props.data ? props.data.houseDetails.utility.others : ''}
 
-                            name="description"
+                            name="others"
                             type="text"
                             rows='10'
                         />

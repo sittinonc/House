@@ -9,7 +9,7 @@ const PostHouse = (req, res) => {
             msg: '_id need to be null on post'
         })
     }
-    conn.collection('houses').find({ name: doc.name }).toArray((err, files) => {
+    conn.collection('houses').find({ name: doc.name, exist: true }).toArray((err, files) => {
         if (files.length > 0) {
             return res.status(500).json({
                 success: false,
@@ -22,7 +22,7 @@ const PostHouse = (req, res) => {
                 websiteInfo: {
                     ...doc.websiteInfo,
                     createAt: now,
-                    lastUpdate: now,
+                    lastedEdited: now,
                 },
                 exist: true
             }
@@ -44,29 +44,40 @@ const ListHouse = (req, res) => {
 
 const PatchHouse = (req, res) => {
     let { [`_id`]: _id, ...doc } = req.body
-    let websiteInfo = doc.websiteInfo
-    websiteInfo.lastUpdate = new Date().toISOString()
-    _id = ObjectId(_id)
-    let objId = { _id }
-    doc = {
-        ...doc,
-        websiteInfo
-    }
-
-    let newValue = { $set: doc };
-    conn.collection('houses').findOneAndUpdate(objId, newValue, (err, doc) => {
-        if (err) {
-            console.log(err);
+    conn.collection('houses').find({ name: doc.name, exist: true }).toArray((err, files) => {
+        if (files.length > 0 && files[0]._id.toString() !== _id) {
             return res.status(500).json({
                 success: false,
-                msg: err
+                msg: 'house name already exist'
             })
         }
-        return res.status(200).json({
-            success: true,
-            msg: 'house patched'
-        })
+        else {
+            let websiteInfo = doc.websiteInfo
+            websiteInfo.lastedEdited = new Date().toISOString()
+            _id = ObjectId(_id)
+            let objId = { _id }
+            doc = {
+                ...doc,
+                websiteInfo
+            }
+
+            let newValue = { $set: doc };
+            conn.collection('houses').findOneAndUpdate(objId, newValue, (err, doc) => {
+                if (err) {
+                    console.log(err);
+                    return res.status(500).json({
+                        success: false,
+                        msg: err
+                    })
+                }
+                return res.status(200).json({
+                    success: true,
+                    msg: 'house patched'
+                })
+            })
+        }
     })
+
 
 }
 
@@ -127,7 +138,7 @@ const DeleteHouse = (req, res) => {
     let newValue = {
         $set: {
             exist: false,
-            "websiteInfo.lastUpdate": new Date().toISOString()
+            "websiteInfo.lastedEdited": new Date().toISOString()
         }
     };
 
@@ -148,7 +159,11 @@ const DeleteHouse = (req, res) => {
 }
 
 const ListSuggest = (req, res) => {
-    conn.collection('houses').find({ exist: true, isSuggest: true }).toArray((err, files) => {
+    let searchData = {
+        exist: true,
+        "websiteInfo.isSuggest": true
+    }
+    conn.collection('houses').find(searchData).toArray((err, files) => {
         return res.status(200).json(files)
     })
 
