@@ -69,6 +69,7 @@
     }
 
     .functionGroup {
+      position: relative;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -80,7 +81,6 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 5px;
         border-radius: 5px;
         height: 30px;
         background-color: white;
@@ -88,15 +88,191 @@
         box-shadow: rgba(206, 206, 248, 0.6) 0px 16px 48px 0px;
         padding-right: 9px;
         padding-left: 9px;
+        user-select: none;
 
-        &:hover {
-          cursor: pointer;
-          color: brown;
+        .text {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+
+          &:hover {
+            cursor: pointer;
+            color: brown;
+          }
+
+          .icon {
+          }
+
+          span {
+          }
         }
+        .dropDown {
+          box-shadow: rgba(206, 206, 248, 0.5) 1px 5px 34px;
+          border-radius: 3px;
+          position: absolute;
+          width: 128px;
+          top: 36px;
+          left: -54px;
+          background-color: white;
+          .item {
+            display: flex;
+            flex-direction: row;
+            gap: 7px;
+            align-items: center;
+            height: 32px;
+            width: 80%;
+            margin-left: 10%;
+
+            &:hover {
+              color: rgba(139, 59, 59, 0.95);
+            }
+
+            .icon {
+              font-size: 15px;
+            }
+          }
+        }
+
+        .dropActive {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .dropUnactive {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 1023px) {
+  .container {
+    .left {
+    }
+    .right {
+      .functionGroup {
+        gap: 13px;
+
+        .each {
+          .dropDown {
+            position: absolute;
+            width: 128px;
+            top: 36px;
+            left: 0px;
+            .item {
+              font-size: 12px;
+
+              .icon {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 699px) {
+  .container {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 29px;
+    gap: 9px;
+    .left {
+      height: 100%;
+      width: 100%;
+
+      .group {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+
+        .each {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 27px;
+          width: 68px;
+          font-size: 12px;
+          border-radius: 6px;
+          color: rgb(244, 244, 244);
+          background-color: brown;
+          transition: 0.2s;
+
+          &:hover {
+            cursor: pointer;
+            transition: 0.4s;
+          }
+        }
+      }
+      .name {
+        h1 {
+          font-size: 30px;
+        }
+      }
+
+      .address {
+        display: flex;
+        flex-direction: row;
+        gap: 3px;
+
         .icon {
+          color: rgb(77, 77, 77);
+          font-size: 13px;
+          margin-top: 1px;
         }
-
         span {
+          color: rgb(77, 77, 77);
+          font-size: 13px;
+        }
+      }
+    }
+    .right {
+      width: 100%;
+      height: 100%;
+      gap: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .price {
+        color: brown;
+        font-size: 26px;
+      }
+
+      .functionGroup {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 13px;
+
+        .each {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+          min-width: 70px;
+          border-radius: 5px;
+          height: 30px;
+          font-size: 13px;
+          box-shadow: rgba(206, 206, 248, 0.6) 0px 16px 48px 0px;
+          padding-right: 9px;
+          padding-left: 9px;
+
+          &:hover {
+            cursor: pointer;
+            color: brown;
+          }
+          .icon {
+          }
+
+          span {
+          }
         }
       }
     }

@@ -49,6 +49,7 @@ const Utility = (props) => {
                         <div
                           className={classes.dropdownItem}
                           key={index}
+                          onChange={() => {}}
                           onClick={() => {
                             document.getElementById(e.label).innerText = event;
                           }}

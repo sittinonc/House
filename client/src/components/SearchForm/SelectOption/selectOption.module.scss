@@ -20,14 +20,13 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      font-size: 16px;
+      color: grey;
+      font-weight: 400;
       .icon {
         margin-right: 10px;
         font-size: 18px;
       }
-
-      font-size: 16px;
-      color: grey;
-      font-weight: 400;
 
       &:hover {
         cursor: pointer;
@@ -90,9 +89,9 @@
             background-color: rgba(226, 226, 223, 0.25);
           }
           span {
-            font-weight: 500;
+            font-weight: 400;
             color: rgba(7, 6, 6, 0.9);
-            font-size: 15px;
+            font-size: 14px;
             margin-left: 25%;
           }
 
@@ -131,13 +130,13 @@
           transition: 0.15s all;
           color: rgb(49, 47, 47);
           font-size: 13.5px;
-          font-weight: 300;
+          font-weight: 400;
         }
       }
       span {
         color: rgb(49, 47, 47);
         font-size: 13.5px;
-        font-weight: 300;
+        font-weight: 400;
       }
     }
     .unClear {

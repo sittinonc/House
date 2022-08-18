@@ -21,6 +21,10 @@
     "district": "อำเภอ",
     "zipCode": "102991",
     "road": "ถนน",
+<<<<<<< HEAD
+=======
+    "alley": "ซอย...",
+>>>>>>> 7a48fb72ed48553a6e066fa558fce80f084f8a34
     "moreDetails": "ห่างกับโลตัสนครปฐม 2km, ติดกับบ้านเดี่ยว...",
     "latlon": {
       "latitude": "123123123",
@@ -28,8 +32,15 @@
     }
   },
   "photos": {
-    "filenames": ["filename1", "filename2", "filename3"],
-    "blueprints": ["filename1", "filename2"]
+    "filenames": [
+      "filename1",
+      "filename2",
+      "filename3"
+    ],
+    "blueprints": [
+      "filename1",
+      "filename2"
+    ]
   },
   "buildingInformation": {
     "start": "12/05/2021",

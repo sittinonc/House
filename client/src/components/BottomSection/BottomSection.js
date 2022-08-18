@@ -15,7 +15,7 @@ const BottomSection = () => {
           <div className={classes.right}>
             <span className={classes.head}>
               <FontAwesomeIcon id={classes.logo} icon={faHouseChimney} />
-              QHOUSE
+              QHouse
             </span>
             <span className={classes.text}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.

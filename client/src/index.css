@@ -1,9 +1,10 @@
 body {
   margin: 0;
-  font-family: 'Roboto Flex', sans-serif;
+  /*default font*/
+  font-family: "Kanit";
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
