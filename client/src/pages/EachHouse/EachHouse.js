@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import classes from "./EachHouse.module.scss";
+import Axios from "axios";
+import SpinLoad from "../../components/SpinLoad/SpinLoad";
 
 import NavMobileOverlay from "../../components/Navbar/MobilePagesNavbar/NavMobileOverlay/NavMobileOverlay";
 import MobilePagesNavbar from "../../components/Navbar/MobilePagesNavbar/MobilePagesNavbar";
@@ -87,6 +89,9 @@ const EachHouse = (props) => {
     }
   };
   useEffect(() => {
+    Axios.get(`http://localhost:8080/api/${"props.data.name"}`).then(
+      (response) => {}
+    );
     props.setPagesTags(["หน้าแรก", "โครงการทั้งหมด", `โครงการ: ${id}`]);
     props.setCurrentPage("eachhouse");
     props.setCurrentPage("house");
