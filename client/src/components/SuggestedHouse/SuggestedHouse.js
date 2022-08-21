@@ -6,13 +6,12 @@ import { FcHome } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 import ShowHouse from "../../UI/ShowHouse/ShowHouse";
-const Houses = ["h1", "h2", "h3"];
 const SuggestedHouse = () => {
   const [houses, setHouses] = useState([]);
   useEffect(() => {
     Axios.get("http://localhost:8080/api/suggest").then((response) => {
       console.log(response.data);
-      setHouses(response);
+      setHouses(response.data);
     });
   }, []);
   if (houses.length !== 0) {
@@ -40,7 +39,7 @@ const SuggestedHouse = () => {
         </div>
         <div className={classes.house}>
           <div className={classes.box}>
-            {Houses.map((e, i) => {
+            {houses.map((e, i) => {
               return <ShowHouse data={e} />;
             })}
           </div>
