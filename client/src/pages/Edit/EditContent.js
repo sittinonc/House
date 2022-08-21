@@ -297,7 +297,7 @@ const EditContent = (props) => {
                                             {props.data.status}
                                         </option >
                                         : <option selected disabled hidden
-                                            value={null}
+                                            value=""
                                         >
                                             เลือกสถานะ
                                         </option>}
@@ -316,21 +316,21 @@ const EditContent = (props) => {
                                     }}
                                     required
                                 >
-                                    {props.data ?
+                                    {props.data && props.data.location.province ?
                                         <option selected disabled hidden
                                             value={props.data.location.province.id}
                                         >
                                             {props.data.location.province.name}
                                         </option >
                                         : <option selected disabled hidden
-                                            value={null}
+                                            value=""
                                         >
                                             เลือกจังหวัด
                                         </option>}
                                     {generateProvince()}
                                 </select>
 
-                                {province && <select
+                                <select
                                     style={{ width: '20%', marginLeft: '2rem' }}
                                     id="district"
 
@@ -338,45 +338,47 @@ const EditContent = (props) => {
                                         let data = JSON.parse(e.target.value)
                                         setDistrict(data)
                                     }}
+                                    disabled={province ? false : true}
                                     required
                                 >
-                                    {props.data ?
+                                    {props.data && props.data.location.district ?
                                         <option selected disabled hidden
                                             value={props.data.location.district.id}
                                         >
                                             {props.data.location.district.name}
                                         </option >
                                         : <option selected disabled hidden
-                                            value={null}
+                                            value=""
                                         >
                                             เลือกอำเภอ
                                         </option>}
-                                    {generateDistrict()}
-                                </select>}
+                                    {province && generateDistrict()}
+                                </select>
 
-                                {district && <select
+                                <select
                                     style={{ width: '20%', marginLeft: '2rem' }}
-                                    id="district"
+                                    id="subdistrict"
 
                                     onChange={(e) => {
                                         let data = JSON.parse(e.target.value)
                                         setSubDistrict(data)
                                     }}
+                                    disabled={district ? false : true}
                                     required
                                 >
-                                    {props.data ?
+                                    {props.data && props.data.location.subDistrict ?
                                         <option selected disabled hidden
                                             value={props.data.location.subDistrict.id}
                                         >
                                             {props.data.location.subDistrict.name}
                                         </option >
                                         : <option selected disabled hidden
-                                            value={null}
+                                            value=""
                                         >
                                             เลือกตำบล
                                         </option>}
-                                    {generateSubDistrict()}
-                                </select>}
+                                    {district && generateSubDistrict()}
+                                </select>
 
                             </div>
                             <div>

@@ -29,6 +29,7 @@ const AddHouse = () => {
         setRenderEditPage(true)
     }
     if (renderEditPage) {
+        window.scrollTo(0, 0)
         return <EditContent
             data={editingContent ? editingContent : null}
             setEditingContent={setEditingContent}
