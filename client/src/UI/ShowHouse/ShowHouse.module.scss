@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   .ListedHouse {
+    height: 400px;
     width: 100%;
     box-shadow: rgba(206, 206, 248, 0.4) 1px 4px 10px;
     &:hover {
@@ -103,6 +104,7 @@
     flex-direction: row;
     width: 100%;
     .ListedHouse {
+      height: 380px;
       display: flex;
       flex-direction: column;
       box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 45px 0px;
@@ -193,6 +195,7 @@
     flex-direction: row;
     width: 100%;
     .ListedHouse {
+      height: 360px;
       display: flex;
       flex-direction: column;
       box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 45px 0px;

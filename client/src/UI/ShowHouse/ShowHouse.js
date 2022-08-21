@@ -1,6 +1,4 @@
 import classes from "./ShowHouse.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBed } from "@fortawesome/free-solid-svg-icons";
 import { MdOutlineBed } from "react-icons/md";
 import { BiBath, BiArea } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";

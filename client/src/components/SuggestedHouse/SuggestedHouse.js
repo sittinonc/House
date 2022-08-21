@@ -4,7 +4,8 @@ import SpinLoad from "../SpinLoad/SpinLoad";
 import classes from "./SuggestedHouse.module.scss";
 import { FcHome } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import ListedHouse from "../../UI/ListedHouse/ListedHouse";
+
+import ShowHouse from "../../UI/ShowHouse/ShowHouse";
 const Houses = ["h1", "h2", "h3"];
 const SuggestedHouse = () => {
   const [houses, setHouses] = useState([]);
@@ -14,7 +15,7 @@ const SuggestedHouse = () => {
       setHouses(response);
     });
   }, []);
-  if (houses.length == 0) {
+  if (houses.length !== 0) {
     return (
       <div className={classes.SuggestedHouse}>
         <div className={classes.text}>
@@ -40,7 +41,7 @@ const SuggestedHouse = () => {
         <div className={classes.house}>
           <div className={classes.box}>
             {Houses.map((e, i) => {
-              return <ListedHouse data={e} />;
+              return <ShowHouse data={e} />;
             })}
           </div>
         </div>
