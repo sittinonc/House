@@ -2,20 +2,32 @@ import classes from "./AllDetails.module.scss";
 import Grid from "../../../UI/MainWidget/Grid/Grid";
 import functions from "../../../function";
 
-const AllDetails = () => {
+const AllDetails = (props) => {
   const config = {
     head: "รายละเอียดทั้งหมด",
     data: [
-      { label: "สถานนะ", val: "โครงการพร้อมอยู่" },
-      { label: "ประเภท", val: "บ้านเดี่ยว" },
-      { label: "ราคา", val: functions.priceFormat(5000000) },
-      { label: "พื้นที่ทั้งหมด", val: "200 ตารางเมตร" },
-      { label: "พื้นที่บ้าน", val: "120 ตารางเมตร" },
-      { label: "ห้องนอน", val: "3" },
-      { label: "ห้องน้ำ", val: "3" },
-      { label: "จอดรถ", val: "2 คัน" },
-      { label: "เริ่มสร้าง", val: "2021-02-15" },
-      { label: "สร้างเสร็จ", val: "2022-01-03" },
+      { label: "สถานนะ", val: props.data.status },
+      { label: "ประเภท", val: props.data.houseDetails.category },
+      {
+        label: "ราคา",
+        val: functions.priceFormat(props.data.houseDetails.price),
+      },
+      {
+        label: "พื้นที่ทั้งหมด",
+        val: props.data.houseDetails.area + " ตารางเมตร",
+      },
+      {
+        label: "พื้นที่บ้าน",
+        val: props.data.houseDetails.usableArea + " ตารางเมตร",
+      },
+      { label: "ห้องนอน", val: props.data.houseDetails.bedroom },
+      { label: "ห้องน้ำ", val: props.data.houseDetails.bathRoom },
+      {
+        label: "จอดรถ",
+        val: props.data.houseDetails.parkingLot + " คัน",
+      },
+      { label: "เริ่มสร้าง", val: props.data.buildingInformation.start },
+      { label: "สร้างเสร็จ", val: props.data.buildingInformation.finish },
     ],
   };
   return (

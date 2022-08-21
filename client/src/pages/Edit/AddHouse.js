@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { BsPlusLg } from 'react-icons/bs'
-import axios from 'axios'
-import './addhouse.css'
-import Card from './Card'
-import EditContent from './EditContent'
-import uri from '../../components/config'
+import React, { useEffect, useState } from "react";
+import { BsPlusLg } from "react-icons/bs";
+import axios from "axios";
+import "./addhouse.css";
+import Card from "./Card";
+import EditContent from "./EditContent";
+import uri from "../../components/config";
 const AddHouse = () => {
     const [renderEditPage, setRenderEditPage] = useState(false)
     const [allHouse, setAllHouse] = useState()
@@ -62,5 +62,4 @@ const AddHouse = () => {
         </div>
     )
 }
-
 export default AddHouse

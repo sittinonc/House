@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
+import Axios from "axios";
+import SpinLoad from "../../components/SpinLoad/SpinLoad";
 
 import PagesNavbar from "../../components/Navbar/PagesNavbar/PagesNavbar";
 import MobilePagesNavbar from "../../components/Navbar/MobilePagesNavbar/MobilePagesNavbar";
@@ -18,6 +20,7 @@ import Utility from "../../components/Widgets/Utility/Utility";
 import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
 
 const AllProjects = (props) => {
+  const [allHouses, setAllHouses] = useState([]);
   const [trigger550, setTrigger550] = useState(
     window.innerWidth > 550 ? "3%" : "0%"
   );
@@ -36,6 +39,10 @@ const AllProjects = (props) => {
     props.setPagesTags(["หน้าแรก", "โครงการทั้งหมด"]);
     props.setCurrentPage("allProjects");
     window.addEventListener("resize", reportWindowSize);
+    Axios.get("http://localhost:8080/api/list").then((response) => {
+      console.log(response.data);
+      setAllHouses(response.data);
+    });
   }, []);
   let count = { gridCount: 0, landscapeCount: 0 };
   //dummy data
@@ -62,198 +69,201 @@ const AllProjects = (props) => {
 
   const [dropdownCommand, setDropdownCommand] = useState(null);
   const [navMobileOverlay, setNavMobileOverlay] = useState(null);
-
-  return (
-    <>
-      <div className={classes.x}>
-        {navMobileOverlay ? (
-          <NavMobileOverlay
-            setCurrentPage={props.setCurrentPage}
-            currentPage={props.currentPage}
-            setNavMobileOverlay={setNavMobileOverlay}
-          />
-        ) : null}
-        <div className={classes.page}>
-          {screenStatus === "desktop" ? (
-            <PagesNavbar />
-          ) : (
-            <MobilePagesNavbar
-              navMobileOverlay={navMobileOverlay}
+  if (allHouses.legnth === 0) {
+    return <SpinLoad />;
+  } else {
+    return (
+      <>
+        <div className={classes.x}>
+          {navMobileOverlay ? (
+            <NavMobileOverlay
+              setCurrentPage={props.setCurrentPage}
+              currentPage={props.currentPage}
               setNavMobileOverlay={setNavMobileOverlay}
             />
-          )}
-          <div className={classes.inPage}>
-            <div className={classes.container}>
-              <div className={classes.wrapper}>
-                <Tag
-                  pagesTags={props.pagesTags}
-                  setPagesTags={props.setPagesTags}
-                />
-                <h1 className={classes.head}>โครงการทั้งหมด</h1>
-                <div className={classes.attributesSet}>
-                  <div
-                    className={classes.eachAttribute}
-                    style={{ marginLeft: trigger550 }}
-                  >
+          ) : null}
+          <div className={classes.page}>
+            {screenStatus === "desktop" ? (
+              <PagesNavbar />
+            ) : (
+              <MobilePagesNavbar
+                navMobileOverlay={navMobileOverlay}
+                setNavMobileOverlay={setNavMobileOverlay}
+              />
+            )}
+            <div className={classes.inPage}>
+              <div className={classes.container}>
+                <div className={classes.wrapper}>
+                  <Tag
+                    pagesTags={props.pagesTags}
+                    setPagesTags={props.setPagesTags}
+                  />
+                  <h1 className={classes.head}>โครงการทั้งหมด</h1>
+                  <div className={classes.attributesSet}>
                     <div
-                      className={classes.label}
-                      onClick={() => {
-                        if (dropdownCommand === "location") {
-                          setDropdownCommand(null);
-                        } else {
-                          setDropdownCommand("location");
+                      className={classes.eachAttribute}
+                      style={{ marginLeft: trigger550 }}
+                    >
+                      <div
+                        className={classes.label}
+                        onClick={() => {
+                          if (dropdownCommand === "location") {
+                            setDropdownCommand(null);
+                          } else {
+                            setDropdownCommand("location");
+                          }
+                        }}
+                      >
+                        <span>{location}</span>
+                        <FontAwesomeIcon
+                          className={classes.icon}
+                          icon={faAngleDown}
+                        />
+                      </div>
+                      <div
+                        className={
+                          dropdownCommand === "location"
+                            ? classes.dropdownActive
+                            : classes.dropdownNone
                         }
-                      }}
-                    >
-                      <span>{location}</span>
-                      <FontAwesomeIcon
-                        className={classes.icon}
-                        icon={faAngleDown}
-                      />
+                      >
+                        {locationArray.map((e, i) => {
+                          return (
+                            <div
+                              key={i}
+                              onClick={() => {
+                                setLocation(e);
+                                setDropdownCommand(null);
+                              }}
+                              className={classes.dropdownItem}
+                            >
+                              <span>{e}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
-                    <div
-                      className={
-                        dropdownCommand === "location"
-                          ? classes.dropdownActive
-                          : classes.dropdownNone
-                      }
-                    >
-                      {locationArray.map((e, i) => {
-                        return (
-                          <div
-                            key={i}
-                            onClick={() => {
-                              setLocation(e);
-                              setDropdownCommand(null);
-                            }}
-                            className={classes.dropdownItem}
-                          >
-                            <span>{e}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  <div className={classes.eachAttribute}>
-                    <div
-                      className={classes.label}
-                      onClick={() => {
-                        if (dropdownCommand === "project") {
-                          setDropdownCommand(null);
-                        } else {
-                          setDropdownCommand("project");
+                    <div className={classes.eachAttribute}>
+                      <div
+                        className={classes.label}
+                        onClick={() => {
+                          if (dropdownCommand === "project") {
+                            setDropdownCommand(null);
+                          } else {
+                            setDropdownCommand("project");
+                          }
+                        }}
+                      >
+                        <span>{project}</span>
+                        <FontAwesomeIcon
+                          className={classes.icon}
+                          icon={faAngleDown}
+                        />
+                      </div>
+                      <div
+                        className={
+                          dropdownCommand === "project"
+                            ? classes.dropdownActive
+                            : classes.dropdownNone
                         }
-                      }}
-                    >
-                      <span>{project}</span>
-                      <FontAwesomeIcon
-                        className={classes.icon}
-                        icon={faAngleDown}
-                      />
+                      >
+                        {projectArray.map((e, i) => {
+                          return (
+                            <div
+                              key={i}
+                              onClick={() => {
+                                setProject(e);
+                                setDropdownCommand(null);
+                              }}
+                              className={classes.dropdownItem}
+                            >
+                              <span>{e}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
-                    <div
-                      className={
-                        dropdownCommand === "project"
-                          ? classes.dropdownActive
-                          : classes.dropdownNone
-                      }
-                    >
-                      {projectArray.map((e, i) => {
-                        return (
-                          <div
-                            key={i}
-                            onClick={() => {
-                              setProject(e);
-                              setDropdownCommand(null);
-                            }}
-                            className={classes.dropdownItem}
-                          >
-                            <span>{e}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  <div className={classes.eachAttribute}>
-                    <div
-                      className={classes.label}
-                      onClick={() => {
-                        if (dropdownCommand === "sort") {
-                          setDropdownCommand(null);
-                        } else {
-                          setDropdownCommand("sort");
+                    <div className={classes.eachAttribute}>
+                      <div
+                        className={classes.label}
+                        onClick={() => {
+                          if (dropdownCommand === "sort") {
+                            setDropdownCommand(null);
+                          } else {
+                            setDropdownCommand("sort");
+                          }
+                        }}
+                      >
+                        <span>{sort}</span>
+                        <FontAwesomeIcon
+                          className={classes.icon}
+                          icon={faAngleDown}
+                        />
+                      </div>
+                      <div
+                        className={
+                          dropdownCommand === "sort"
+                            ? classes.dropdownActive
+                            : classes.dropdownNone
                         }
-                      }}
-                    >
-                      <span>{sort}</span>
-                      <FontAwesomeIcon
-                        className={classes.icon}
-                        icon={faAngleDown}
-                      />
+                      >
+                        {sortArray.map((e, i) => {
+                          return (
+                            <div
+                              key={i}
+                              onClick={() => {
+                                setSort(e);
+                                setDropdownCommand(null);
+                              }}
+                              className={classes.dropdownItem}
+                            >
+                              <span>{e}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
-                    <div
-                      className={
-                        dropdownCommand === "sort"
-                          ? classes.dropdownActive
-                          : classes.dropdownNone
-                      }
-                    >
-                      {sortArray.map((e, i) => {
-                        return (
-                          <div
-                            key={i}
-                            onClick={() => {
-                              setSort(e);
-                              setDropdownCommand(null);
-                            }}
-                            className={classes.dropdownItem}
-                          >
-                            <span>{e}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  <div className={classes.display}>
-                    <div
-                      className={classes.each}
-                      onClick={() => {
-                        count.landscapeCount = count.landscapeCount + 1;
-                      }}
-                    >
-                      <FaBars />
-                    </div>
-                    <div
-                      className={classes.each}
-                      onClick={() => {
-                        count.gridCount = count.gridCount + 1;
-                      }}
-                    >
-                      <BsFillGrid3X3GapFill />
+                    <div className={classes.display}>
+                      <div
+                        className={classes.each}
+                        onClick={() => {
+                          count.landscapeCount = count.landscapeCount + 1;
+                        }}
+                      >
+                        <FaBars />
+                      </div>
+                      <div
+                        className={classes.each}
+                        onClick={() => {
+                          count.gridCount = count.gridCount + 1;
+                        }}
+                      >
+                        <BsFillGrid3X3GapFill />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className={classes.house}>
-                <div className={classes.box}>
-                  {Houses.map((e, i) => {
-                    return <ShowHouse key={i} data={e} />;
-                  })}
+                <div className={classes.house}>
+                  <div className={classes.box}>
+                    {Houses.map((e, i) => {
+                      return <ShowHouse key={i} data={e} />;
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className={classes.sideWidgetBox}>
-              <Utility />
-              <Measurement />
-              <Reccommend />
+              <div className={classes.sideWidgetBox}>
+                <Utility />
+                <Measurement />
+                <Reccommend />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <BottomSection />
-    </>
-  );
+        <BottomSection />
+      </>
+    );
+  }
 };
 
 export default AllProjects;
