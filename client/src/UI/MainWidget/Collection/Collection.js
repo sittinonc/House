@@ -28,7 +28,7 @@ const Collection = (props) => {
             }}
           />
           <img
-            src={props.config.collection[controll]}
+            src={`${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/image/view/${props.config.collection[controll]}`}
             onClick={() => {
               props.setSelectedPhoto(props.config.collection[controll]);
               props.setSelected(true);
@@ -54,6 +54,7 @@ const Collection = (props) => {
           {props.config.collection.map((e, i) => {
             return (
               <BsCircleFill
+                key={i}
                 className={
                   i === controll
                     ? classes.icon + " " + classes.active

@@ -25,11 +25,21 @@ const HouseHead = (props) => {
           <div className={classes.each}>{"นนทบุรี"}</div>
         </div>
         <div className={classes.name}>
-          <h1>บ้านเดี่ยว นครปฐม...</h1>
+          <h1>{props.data.name}</h1>
         </div>
         <div className={classes.address}>
           <MdLocationPin className={classes.icon} />
-          <span>11/25 ซอยxx ถนนxx นครปฐม ตำบล อำเภอ 102931</span>
+          <span>
+            {props.data.location.road +
+              " " +
+              props.data.location.subDistrict.name +
+              " " +
+              props.data.location.district.name +
+              " " +
+              props.data.location.province.name +
+              " " +
+              props.data.location.moreDetails}
+          </span>
         </div>
       </div>
       <div className={classes.right}>

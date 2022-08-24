@@ -19,7 +19,7 @@ import HouseProperty from "../../components/Widgets/HousePropperty/HouseProperty
 import Address from "../../components/Widgets/Address/Address";
 import AllDetails from "../../components/Widgets/AllDetails/AllDetails";
 import Map from "../../components/Widgets/Map/Map";
-import SelectedPhoto from "../../UI/EachPhoto/SelectedPhoto";
+import SelectedPhoto from "../../UI/SelectedPhoto/SelectedPhoto";
 
 const img0 =
   "https://www.maisonvalentina.net/blog/wp-content/uploads/2020/12/Top-20-Interior-DesignersArchitects-from-Houston-TX-Benjamin-MV.jpg";
@@ -32,47 +32,9 @@ const img3 =
 const img4 =
   "https://cdn-images.prod.thinkofliving.com/wp-content/uploads/1/2022/03/18172737/6-1.jpg";
 const EachHouse = (props) => {
-  //API
-  const [houseData, setHouseData] = useState({
-    id: "ab123",
-    name: "บ้านเดี่ยว นครปฐม...",
-    status: "กำลังก่อสร้าง",
-    houseDetails: {
-      price: 5000000,
-      project: "โครงการ A นครปฐม",
-      category: "บ้านเดี่ยว",
-      utility: {
-        bedroom: 3,
-        bathRoom: 3,
-        parkingLot: 2,
-        area: 80,
-        usableArea: 55,
-        yearBuilt: 2020,
-        others: "ติดแอร์ทุกห้องนอน มีเฟอร์นิเจอร์พร้อมอยู่",
-      },
-    },
-    location: {
-      province: "นครปฐม",
-      main: "11/25 ซอยxx ถนนxx นครปฐม ตำบล อำเภอ 102931",
-      moreDetails: "ห่างกับโลตัสนครปฐม 2km, ติดกับบ้านเดี่ยว...",
-      latitude: "123123123",
-      longitude: "88312300",
-    },
-    photos: {
-      house: ["filename1", "filename2", "filename3"],
-      plan: ["filename1", "filename2"],
-    },
-    buildingInformation: {
-      start: "12/05/2021",
-      finish: "05/03/2022",
-    },
-    websiteInfo: {
-      suggested: 0,
-      firstTimeListed: "10/03/2022",
-      lastedEdited: "21/06/2022",
-    },
-  });
-  const [photo, setPhoto] = useState([img0, img1, img2, img3, img4]);
+  const [thisHouse, setThisHouse] = useState(null);
+  const [photo, setPhoto] = useState([]);
+  const [map, setMap] = useState([]);
   const { id } = useParams();
 
   const [selected, setSelected] = useState(false);
@@ -89,81 +51,92 @@ const EachHouse = (props) => {
     }
   };
   useEffect(() => {
-    Axios.get(`http://localhost:8080/api/${"props.data.name"}`).then(
-      (response) => {}
-    );
+    console.log(id);
+    Axios.get(
+      `${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/findbyname/${id}`
+    ).then((response) => {
+      console.log(response.data);
+      setPhoto(response.data.photos.filenames);
+      setMap(response.data.photos.blueprints);
+      setThisHouse(response.data);
+    });
     props.setPagesTags(["หน้าแรก", "โครงการทั้งหมด", `โครงการ: ${id}`]);
     props.setCurrentPage("eachhouse");
     props.setCurrentPage("house");
     window.addEventListener("resize", reportWindowSize);
   }, []);
-  return (
-    <>
-      <div className={classes.x}>
-        {screenStatus === "desktop" ? (
-          <PagesNavbar />
-        ) : (
-          <MobilePagesNavbar
-            navMobileOverlay={navMobileOverlay}
-            setNavMobileOverlay={setNavMobileOverlay}
-          />
-        )}
-        {navMobileOverlay ? (
-          <NavMobileOverlay
-            setCurrentPage={props.setCurrentPage}
-            currentPage={props.currentPage}
-            setNavMobileOverlay={setNavMobileOverlay}
-          />
-        ) : null}
-        {!selected ? null : (
-          <SelectedPhoto
-            selectedPhoto={selectedPhoto}
+  if (thisHouse === null || photo.length === 0) {
+    return <SpinLoad />;
+  } else {
+    return (
+      <>
+        <div className={classes.x}>
+          {screenStatus === "desktop" ? (
+            <PagesNavbar />
+          ) : (
+            <MobilePagesNavbar
+              navMobileOverlay={navMobileOverlay}
+              setNavMobileOverlay={setNavMobileOverlay}
+            />
+          )}
+          {navMobileOverlay ? (
+            <NavMobileOverlay
+              setCurrentPage={props.setCurrentPage}
+              currentPage={props.currentPage}
+              setNavMobileOverlay={setNavMobileOverlay}
+            />
+          ) : null}
+          {!selected ? null : (
+            <SelectedPhoto
+              selectedPhoto={selectedPhoto}
+              selected={selected}
+              setSelected={setSelected}
+            />
+          )}
+          <PhotoShowcase
             selected={selected}
             setSelected={setSelected}
+            screenStatus={screenStatus}
+            photo={photo}
+            setPhoto={setPhoto}
+            setSelectedPhoto={setSelectedPhoto}
           />
-        )}
-        <PhotoShowcase
-          selected={selected}
-          setSelected={setSelected}
-          screenStatus={screenStatus}
-          photo={photo}
-          setPhoto={setPhoto}
-          setSelectedPhoto={setSelectedPhoto}
-        />
-        <div className={classes.page}>
-          <div className={classes.head}>
-            <div className={classes.content}>
-              <Tag
-                pagesTags={props.pagesTags}
-                setPagesTags={props.setPagesTags}
-              />
-              <HouseHead data={houseData} />
-            </div>
-          </div>
-
-          <div className={classes.inPage}>
-            <div className={classes.main}>
+          <div className={classes.page}>
+            <div className={classes.head}>
               <div className={classes.content}>
-                <HouseProperty data={houseData} />
-                <Address data={houseData} />
-                <AllDetails data={houseData} />
-                <Map
-                  setSelectedPhoto={setSelectedPhoto}
-                  setSelected={setSelected}
+                <Tag
+                  pagesTags={props.pagesTags}
+                  setPagesTags={props.setPagesTags}
                 />
+                <HouseHead data={thisHouse} />
               </div>
             </div>
-            <div className={classes.sideWidgetBox}>
-              <Interest />
-              <Measurement />
-              <Reccommend />
+
+            <div className={classes.inPage}>
+              <div className={classes.main}>
+                <div className={classes.content}>
+                  <HouseProperty data={thisHouse} />
+                  <Address data={thisHouse} />
+                  <AllDetails data={thisHouse} />
+                  <Map
+                    data={map}
+                    setSelectedPhoto={setSelectedPhoto}
+                    setSelected={setSelected}
+                  />
+                </div>
+              </div>
+              <div className={classes.sideWidgetBox}>
+                <Interest />
+                <Measurement />
+                <Reccommend />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <BottomSection />
-    </>
-  );
+        <BottomSection />
+      </>
+    );
+  }
 };
 
 export default EachHouse;

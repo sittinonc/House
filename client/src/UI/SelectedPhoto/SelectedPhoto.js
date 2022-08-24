@@ -10,7 +10,10 @@ const SelectedPhoto = (props) => {
         <div className={classes.page}>
           <div className={classes.content}>
             <div className={classes.imgBox}>
-              <img className={classes.img} src={props.selectedPhoto} />
+              <img
+                className={classes.img}
+                src={`${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/image/view/${props.selectedPhoto}`}
+              />
             </div>
             <div
               className={classes.quit}

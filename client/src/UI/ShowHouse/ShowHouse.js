@@ -51,7 +51,7 @@ const ShowHouse = (props) => {
 
   let navigate = useNavigate();
   const target = () => {
-    let path = `/house/${house.id}`;
+    let path = `/house/${props.data.name}`;
     navigate(path);
   };
   return (
@@ -60,7 +60,7 @@ const ShowHouse = (props) => {
         <div className={classes.imgBox}>
           <img
             className={classes.img}
-            src={`http://localhost:8080/image/view/${props.data.photos.filenames[0]}`}
+            src={`${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/image/view/${props.data.photos.filenames[0]}`}
           />
         </div>
         <div className={classes.details}>
@@ -69,7 +69,7 @@ const ShowHouse = (props) => {
               {functions.priceFormat(props.data.houseDetails.price)} บาท
             </span>
             <span className={classes.minor}>
-              {props.data.location.road.name +
+              {props.data.location.road +
                 " " +
                 props.data.location.subDistrict.name +
                 " " +

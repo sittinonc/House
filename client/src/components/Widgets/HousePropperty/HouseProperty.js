@@ -12,9 +12,11 @@ const HouseProperty = (props) => {
         <div className={classes.down}>
           <div className={classes.latestUpdate}>
             <span className={classes.head}>อัพเดทล่าสุด:</span>
-            <span className={classes.detail}>21 พฤศจิกายน 2022</span>
+            <span className={classes.detail}>
+              {props.data.websiteInfo.lastedEdited}
+            </span>
           </div>
-          <PropertySet data={props.data.houseDetails.utility} />
+          <PropertySet data={props.data} />
         </div>
         <div className={classes.x}></div>
       </div>

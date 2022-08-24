@@ -5,6 +5,7 @@ import { BiArea } from "react-icons/bi";
 import { FiCalendar } from "react-icons/fi";
 
 const PropertySet = (props) => {
+  console.log(props.data);
   return (
     <div className={classes.container}>
       <div className={classes.each}>
@@ -12,7 +13,9 @@ const PropertySet = (props) => {
           <MdBed />
         </div>
         <div className={classes.text}>
-          <div className={classes.num}>{props.data.bedroom}</div>
+          <div className={classes.num}>
+            {props.data.houseDetails.utility.bedRoom}
+          </div>
           <div className={classes.label}>ห้องนอน</div>
         </div>
       </div>
@@ -21,7 +24,9 @@ const PropertySet = (props) => {
           <MdOutlineBathtub />
         </div>
         <div className={classes.text}>
-          <div className={classes.num}>{props.data.bathRoom}</div>
+          <div className={classes.num}>
+            {props.data.houseDetails.utility.bathRoom}
+          </div>
           <div className={classes.label}>ห้องน้ำ</div>
         </div>
       </div>
@@ -30,7 +35,9 @@ const PropertySet = (props) => {
           <AiFillCar />
         </div>
         <div className={classes.text}>
-          <div className={classes.num}>{props.data.parkingLot}</div>
+          <div className={classes.num}>
+            {props.data.houseDetails.utility.parkingLot}
+          </div>
           <div className={classes.label}>คัน</div>
         </div>
       </div>
@@ -39,7 +46,9 @@ const PropertySet = (props) => {
           <BiArea />
         </div>
         <div className={classes.text}>
-          <div className={classes.num}>{props.data.area}</div>
+          <div className={classes.num}>
+            {props.data.houseDetails.utility.area}
+          </div>
           <div className={classes.label}>{"ตารางเมตร"}</div>
         </div>
       </div>
@@ -48,8 +57,10 @@ const PropertySet = (props) => {
           <FiCalendar />
         </div>
         <div className={classes.text}>
-          <div className={classes.label}>ปีสร้าง:</div>
-          <div className={classes.num}>{props.data.yearBuilt}</div>
+          <div className={classes.label}>สร้าง:</div>
+          <div className={classes.num}>
+            {props.data.buildingInformation.start}
+          </div>
         </div>
       </div>
     </div>

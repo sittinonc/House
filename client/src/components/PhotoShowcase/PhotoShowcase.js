@@ -17,10 +17,10 @@ const PhotoShowcase = (props) => {
         <div className={classes.photoBox}>
           {photo.map((e, i) => {
             return (
-              <div className={classes.each}>
+              <div className={classes.each} key={i}>
                 <img
                   className={classes.img}
-                  src={photo[i]}
+                  src={`${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/image/view/${photo[i]}`}
                   onClick={() => {
                     props.setSelectedPhoto(photo[i]);
                     props.setSelected(true);
