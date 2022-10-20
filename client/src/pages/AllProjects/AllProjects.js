@@ -28,7 +28,6 @@ const AllProjects = (props) => {
     window.innerWidth < 1024 ? "mobile" : "desktop"
   );
   const reportWindowSize = (e) => {
-    //console.log(e.target.innerWidth);
     if (e.target.innerWidth < 1024) {
       setScreenStatus("mobile");
     } else {
@@ -245,7 +244,7 @@ const AllProjects = (props) => {
                 </div>
                 <div className={classes.house}>
                   <div className={classes.box}>
-                    {Houses.map((e, i) => {
+                    {allHouses.map((e, i) => {
                       return <ShowHouse key={i} data={e} />;
                     })}
                   </div>

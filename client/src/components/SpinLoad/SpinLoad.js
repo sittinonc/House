@@ -8,7 +8,7 @@ const SpinLoad = () => {
         justifyContent: "center",
       }}
     >
-      <Spin color="rgba(95,22,22,1)" size={"220"} speed={0.95} width={"4"} />
+      <Spin color="rgba(95,22,22,1)" size={220} speed={0.95} width={"4"} />
     </div>
   );
 };

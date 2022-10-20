@@ -144,7 +144,8 @@ const PriceSlider = (props) => {
                 <Grid item xs={10} sm={1}>
                   <TextField
                     required
-                    autoComplete={"false"}
+                    autoComplete={false}
+                    error={false}
                     size="small"
                     fullWidth
                     id="from"
@@ -168,6 +169,7 @@ const PriceSlider = (props) => {
                     required
                     fullWidth
                     autoComplete={false}
+                    error={false}
                     id="to"
                     defaultValue={Number(value[1]) + " ล้าน"}
                     onFocus={() => {

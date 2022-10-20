@@ -66,7 +66,7 @@ const EachHouse = (props) => {
     window.addEventListener("resize", reportWindowSize);
   }, []);
   if (thisHouse === null || photo.length === 0) {
-    return <SpinLoad />;
+    return <h1>chicken loading</h1>;
   } else {
     return (
       <>
