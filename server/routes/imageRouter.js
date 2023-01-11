@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const imageController = require('../controllers/imageController');
 const multer = require('multer');
-const checkAuth = require('./checkAuth');
+const checkAuth = require('../middlewares/checkAuth');
 
 // router.post('/upload/multiple', multer().array('file', 5), imageController.UploadMultiple)
 router.get('/view/:filename', imageController.View);

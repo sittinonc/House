@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const apiController = require('../controllers/apiController');
-const checkAuth = require('./checkAuth');
+const checkAuth = require('../middlewares/checkAuth');
 
 router.post('/post', checkAuth, apiController.PostHouse);
 router.post('/patch', checkAuth, apiController.PatchHouse);
