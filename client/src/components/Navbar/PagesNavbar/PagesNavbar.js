@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import classes from "./PagesNavbar.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaUserCircle } from "react-icons/fa";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
+import classes from './PagesNavbar.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaUserCircle } from 'react-icons/fa';
+import { BsFillTelephoneFill } from 'react-icons/bs';
+import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 
 const PagesNavbar = (props) => {
   return (
@@ -13,7 +13,7 @@ const PagesNavbar = (props) => {
           <div className={classes.left}>
             <div className={classes.brand}>
               <FontAwesomeIcon id={classes.logo} icon={faHouseChimney} />
-              <h2>QHouse</h2>
+              <h2>EngEach House</h2>
             </div>
           </div>
           <div className={classes.mid}>
@@ -36,20 +36,20 @@ const PagesNavbar = (props) => {
             <div className={classes.content}>
               <BsFillTelephoneFill
                 className={classes.icon}
-                style={{ fontSize: "16px" }}
+                style={{ fontSize: '16px' }}
               />
               <span>096-1728911</span>
               <Link
                 style={{
-                  textDecoration: "none",
-                  color: "white",
-                  marginTop: "7px",
+                  textDecoration: 'none',
+                  color: 'white',
+                  marginTop: '7px',
                 }}
                 to="/admin"
               >
                 <FaUserCircle
                   className={classes.icon}
-                  style={{ marginLeft: "18px" }}
+                  style={{ marginLeft: '18px' }}
                 />
               </Link>
             </div>

@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
-import classes from "./navbar.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
-import uri from "../config";
+import { Link } from 'react-router-dom';
+import classes from './navbar.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+import uri from '../config';
 
 const Navbar = (props) => {
   const logout = () => {
-    let url = uri + "/auth/logout";
+    let url = uri + '/auth/logout';
     axios.defaults.withCredentials = true;
     axios.post(url).then(() => {
       props.setUsername(null);
@@ -20,7 +20,7 @@ const Navbar = (props) => {
         <div className={classes.left}>
           <div className={classes.brand}>
             <FontAwesomeIcon id={classes.logo} icon={faHouseChimney} />
-            <h2>QHouse</h2>
+            <h2>EngEach House</h2>
           </div>
           <div className={classes.space}>
             <h2>|</h2>
@@ -28,9 +28,6 @@ const Navbar = (props) => {
           <div className={classes.menu}>
             <Link className={classes.navLink} to="/allprojects">
               โครงการ
-            </Link>
-            <Link className={classes.navLink} to="/">
-              ข่าวสาร
             </Link>
             <Link className={classes.navLink} to="/">
               ติดต่อเรา
@@ -42,7 +39,7 @@ const Navbar = (props) => {
             {!props.username && (
               <div className={classes.active}>
                 <Link
-                  style={{ textDecoration: "none", color: "white" }}
+                  style={{ textDecoration: 'none', color: 'white' }}
                   to="/admin"
                 >
                   <div>Admin</div>
@@ -52,7 +49,7 @@ const Navbar = (props) => {
             {props.username && (
               <>
                 <Link
-                  style={{ textDecoration: "none", color: "white" }}
+                  style={{ textDecoration: 'none', color: 'white' }}
                   to="/edit"
                 >
                   <div>Edit</div>

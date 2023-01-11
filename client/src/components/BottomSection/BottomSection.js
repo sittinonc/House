@@ -1,12 +1,12 @@
-import classes from "./BottomSection.module.scss";
-import Section from "../../UI/Section/Section";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classes from './BottomSection.module.scss';
+import Section from '../../UI/Section/Section';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHouseChimney,
   faPhoneFlip,
   faAt,
-} from "@fortawesome/free-solid-svg-icons";
-import { faLine } from "@fortawesome/free-brands-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
+import { faLine } from '@fortawesome/free-brands-svg-icons';
 const BottomSection = () => {
   return (
     <Section>
@@ -15,7 +15,7 @@ const BottomSection = () => {
           <div className={classes.right}>
             <span className={classes.head}>
               <FontAwesomeIcon id={classes.logo} icon={faHouseChimney} />
-              QHouse
+              EngEach House
             </span>
             <span className={classes.text}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -46,11 +46,11 @@ const BottomSection = () => {
               </span>
               <span className={classes.sub}>
                 <FontAwesomeIcon className={classes.logo} icon={faAt} />
-                qhouse@gmail.com
+                EngEach House@gmail.com
               </span>
               <span className={classes.sub}>
                 <FontAwesomeIcon className={classes.logo} icon={faLine} />
-                qhouse_official
+                EngEach House_official
               </span>
             </div>
           </div>
