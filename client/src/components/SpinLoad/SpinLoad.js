@@ -1,14 +1,14 @@
-import { Spin } from "react-loading-io";
+import { Spin } from 'react-loading-io';
 const SpinLoad = () => {
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
       }}
     >
-      <Spin color="rgba(95,22,22,1)" size={220} speed={0.95} width={"4"} />
+      <Spin color="rgba(224, 173, 61,1)" size={220} speed={0.95} width={'4'} />
     </div>
   );
 };
