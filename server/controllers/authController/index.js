@@ -1,7 +1,7 @@
-const { conn } = require("../../database");
+const { conn } = require('../../database');
 
 const Logout = (req, res) => {
-  console.log("logout", req.session.username);
+  console.log('logout', req.session.username);
   req.session.destroy((err) => {
     if (err) {
       console.log(err);
@@ -27,25 +27,28 @@ const postLogin = (req, res) => {
   const { username, password } = req.body;
   let query = { username, password };
   console.log(query);
+  console.log('test');
   conn
-    .collection("users")
+    .collection('users')
     .find(query)
     .toArray((err, files) => {
       if (err) {
         console.log(err);
-        return res.status(500).end("error");
+        return res.status(500).end('error');
       }
+      console.log(files);
       if (!files || files.length == 0) {
+        console.log('username and password doesnt match');
         return res.status(400).end(
           JSON.stringify({
-            status: "UnAuthorize",
+            status: 'UnAuthorize',
             msg: "username and password doesn't match",
           })
         );
       }
       req.session.username = files[0].username;
       let JSONdata = JSON.stringify({
-        status: "Authorized",
+        status: 'Authorized',
         username: req.session.username,
       });
 

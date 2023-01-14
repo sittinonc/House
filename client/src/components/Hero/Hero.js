@@ -1,38 +1,38 @@
-import classes from "./hero.module.scss";
-import Navbar from "../Navbar/Navbar";
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classes from './hero.module.scss';
+import Navbar from '../Navbar/Navbar';
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCircleDot,
   faCircleArrowDown,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
-import Button from "@mui/material/Button";
-import PriceSlider from "../SearchForm/Slider/PriceSlider";
-import SelectLocation from "../SearchForm/SelectOption/SelectLocation";
+import Button from '@mui/material/Button';
+import PriceSlider from '../SearchForm/Slider/PriceSlider';
+import SelectLocation from '../SearchForm/SelectOption/SelectLocation';
 const price = [
   {
     value: 0,
-    label: "0",
+    label: '0',
   },
   {
     value: 5,
-    label: "5 ล้าน",
+    label: '5 ล้าน',
   },
   {
     value: 10,
-    label: "10 ล้าน",
+    label: '10 ล้าน',
   },
 ];
 
 const Hero = (props) => {
   const [dropdownCommand, setDropdownCommand] = useState(null);
   const [locationData, setLocationData] = useState([
-    "กรุงเทพ",
-    "นนทบุรี",
-    "นครปฐม",
-    "ยะลา",
+    'กรุงเทพ',
+    'นนทบุรี',
+    'นครปฐม',
+    'ยะลา',
   ]);
   //api parameter
   const [selectedButton, setSelectedButton] = useState(1);
@@ -41,7 +41,7 @@ const Hero = (props) => {
 
   let navigate = useNavigate();
   const target = () => {
-    let path = "/allprojects";
+    let path = '/allprojects';
     navigate(path);
   };
   return (
@@ -60,7 +60,7 @@ const Hero = (props) => {
           <div className={classes.searchComponent}>
             <div className={classes.newOrAll}>
               <div
-                className={selectedButton == 1 ? classes.active : ""}
+                className={selectedButton == 1 ? classes.active : ''}
                 onClick={() => {
                   setSelectedButton(1);
                 }}
@@ -68,11 +68,11 @@ const Hero = (props) => {
                 <FontAwesomeIcon
                   className={classes.FontAwesomeIcon}
                   icon={faCircleDot}
-                />{" "}
+                />{' '}
                 <span className={classes.topic}>โครงการทั้งหมด</span>
               </div>
               <div
-                className={selectedButton == 2 ? classes.active : ""}
+                className={selectedButton == 2 ? classes.active : ''}
                 onClick={() => {
                   setSelectedButton(2);
                 }}
@@ -80,7 +80,7 @@ const Hero = (props) => {
                 <FontAwesomeIcon
                   className={classes.FontAwesomeIcon}
                   icon={faCircleDot}
-                />{" "}
+                />{' '}
                 <span className={classes.topic}>โครงการใหม่</span>
               </div>
             </div>
@@ -108,7 +108,7 @@ const Hero = (props) => {
                       );
                     }
                     if (selectedLocation.length === 0) {
-                      console.log("Location: ALL");
+                      console.log('Location: ALL');
                     } else {
                       console.log(`Location: ${selectedLocation.length}`);
                     }
@@ -116,7 +116,7 @@ const Hero = (props) => {
                     target();
                   }}
                   className={classes.button}
-                  style={{ borderRadius: "30px", backgroundColor: "darkblue" }}
+                  style={{ borderRadius: '30px', backgroundColor: 'darkblue' }}
                   variant="contained"
                   size="large"
                 >
@@ -128,10 +128,10 @@ const Hero = (props) => {
               className={
                 dropdownCommand == null
                   ? classes.scrollDown
-                  : classes.scrollDown + " " + classes.fade
+                  : classes.scrollDown + ' ' + classes.fade
               }
             >
-              {" "}
+              {' '}
               <FontAwesomeIcon
                 className={classes.FontAwesomeIcon}
                 icon={faCircleArrowDown}
@@ -141,11 +141,11 @@ const Hero = (props) => {
                   window.scroll({
                     top: 780,
                     left: 0,
-                    behavior: "smooth",
+                    behavior: 'smooth',
                   });
                 }}
               >
-                เลื่อนลงเพื่อชมโครงการแนะนำของ Q-House
+                เลื่อนลงเพื่อชมโครงการแนะนำของ EngEach
               </span>
             </div>
           </div>

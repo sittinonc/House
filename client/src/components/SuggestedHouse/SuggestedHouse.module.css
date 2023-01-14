@@ -225,7 +225,7 @@
   text-decoration: underline;
 }
 
-@media only screen and (min-width: 0px) and (max-width: 944px) {
+@media only screen and (min-width: 435px) and (max-width: 1024px) {
   .SuggestedHouse .text {
     width: 100%;
     display: -webkit-box;
@@ -256,7 +256,7 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    font-size: 22px;
+    font-size: 20px;
     color: black;
   }
   .SuggestedHouse .text .topic .bigCircle {
@@ -305,7 +305,7 @@
     font-size: 20px;
   }
   .SuggestedHouse .text .topic span {
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 600;
   }
   .SuggestedHouse .text .detail {
@@ -411,13 +411,14 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    font-size: 22px;
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
   }
   .SuggestedHouse .text .topic .bigCircle {
-    width: 42px;
-    height: 42px;
-    min-width: 35px;
-    min-height: 35px;
+    width: 29px;
+    height: 29px;
+    min-width: 0px;
+    min-height: 0px;
     border-radius: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -456,10 +457,10 @@
     background-color: white;
   }
   .SuggestedHouse .text .topic .bigCircle .smallCircle .icon {
-    font-size: 18px;
+    font-size: 15px;
   }
   .SuggestedHouse .text .topic span {
-    font-size: 22px;
+    font-size: 17px;
     font-weight: 600;
   }
   .SuggestedHouse .text .detail {
@@ -509,19 +510,25 @@
     height: 1px;
   }
   .SuggestedHouse .text .detail .textBox p {
+    font-size: 12px;
     text-align: center;
     color: grey;
     width: 80%;
   }
   .SuggestedHouse .house .box {
     margin-top: 2%;
-    display: -ms-grid;
-    display: grid;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 30px;
     padding: 0px;
   }
   .SuggestedHouse .buttonBox {
-    margin-top: 5.4%;
+    margin-top: 10.4%;
     height: 10px;
     width: 100%;
   }

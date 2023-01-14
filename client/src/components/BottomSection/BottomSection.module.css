@@ -19,6 +19,7 @@
 
 .container .separateLeft,
 .container .separateRight {
+  font-family: "Roboto Flex", sans-serif;
   margin-top: 3%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -176,7 +177,7 @@
   .container .separateLeft .right .head,
   .container .separateRight .item .head,
   .container .separateRight .right .head {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
   }
   .container .separateLeft .item .head #logo,
@@ -189,10 +190,9 @@
   .container .separateLeft .right .text,
   .container .separateRight .item .text,
   .container .separateRight .right .text {
-    margin-top: 3%;
-    line-height: 25px;
-    font-size: 14px;
-    color: grey;
+    margin-top: 10px;
+    line-height: 20px;
+    font-size: 13px;
   }
   .container .separateLeft .item .subGroup,
   .container .separateLeft .right .subGroup,
@@ -214,8 +214,7 @@
   .container .separateLeft .right .subGroup .sub,
   .container .separateRight .item .subGroup .sub,
   .container .separateRight .right .subGroup .sub {
-    color: grey;
-    font-size: 15px;
+    font-size: 13px;
   }
   .container .separateLeft .item .subGroup .sub:hover,
   .container .separateLeft .right .subGroup .sub:hover,
@@ -228,7 +227,7 @@
   .container .separateLeft .right .subGroup .sub .logo,
   .container .separateRight .item .subGroup .sub .logo,
   .container .separateRight .right .subGroup .sub .logo {
-    padding-right: 4%;
+    padding-right: 2.7%;
   }
   .container .separateLeft .right,
   .container .separateRight .right {

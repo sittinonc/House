@@ -1,6 +1,8 @@
 .hero {
+  scroll-behavior: smooth;
   width: 100%;
   height: 100vh;
+  max-height: 820px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,6 +44,7 @@
 }
 
 .hero .container .left .greetingBox {
+  font-family: "Roboto Flex", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -359,6 +362,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: white;
   width: 21%;
   height: 100%;
 }
@@ -560,7 +564,7 @@
   .hero .container .left .greetingBox .brandText {
     margin-top: 8px;
     width: 88%;
-    font-size: 44px;
+    font-size: 42px;
     font-weight: 600;
     line-height: 69px;
   }
@@ -670,12 +674,6 @@
   }
   .hero .container .left .searchComponent .scrollDown span {
     font-size: 14px;
-  }
-}
-
-@media only screen and (min-width: 0) and (max-width: 1024px) {
-  .hero {
-    display: none;
   }
 }
 

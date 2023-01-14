@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
-import Axios from "axios";
-import SpinLoad from "../SpinLoad/SpinLoad";
-import classes from "./SuggestedHouse.module.scss";
-import { FcHome } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import Axios from 'axios';
+import SpinLoad from '../SpinLoad/SpinLoad';
+import classes from './SuggestedHouse.module.scss';
+import { FcHome } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 
-import ShowHouse from "../../UI/ShowHouse/ShowHouse";
+import ShowHouse from '../../UI/ShowHouse/ShowHouse';
 const SuggestedHouse = () => {
   const [houses, setHouses] = useState([]);
   useEffect(() => {
-    Axios.get("http://localhost:8080/api/suggest").then((response) => {
-      console.log(response.data);
+    Axios.get(
+      `${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/suggest`
+    ).then((response) => {
       setHouses(response.data);
     });
   }, []);
@@ -30,9 +31,8 @@ const SuggestedHouse = () => {
             <div className={classes.textBox}>
               <div className={classes.spacer}></div>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam
-                excepturi consectetur mollitia quisquam sit aut veritatis
-                voluptatibus numquam delectus.
+                See our reccommended houses for you. We have a lot of houses for
+                you to choose from.
               </p>
             </div>
           </div>
@@ -48,7 +48,7 @@ const SuggestedHouse = () => {
           <div className={classes.button}>
             <Link
               to="allprojects"
-              style={{ color: "black", textDecoration: "none" }}
+              style={{ color: 'black', textDecoration: 'none' }}
             >
               ดูโครงการทั้งหมด
             </Link>

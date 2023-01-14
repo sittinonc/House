@@ -16,7 +16,25 @@ import classes from './HouseHead.module.scss';
 import functions from '../../../function';
 
 const HouseHead = (props) => {
+  const url = window.location.href;
   const [drop, setDrop] = useState(false);
+  const getUrl = () => {
+    navigator.clipboard.writeText(url);
+  };
+
+  const download = () => {
+    // eslint-disable-next-line no-restricted-globals
+    if (!confirm('Download HTML of this page?')) {
+      return;
+    }
+    var html = document.documentElement.outerHTML;
+    var blob = new Blob([html], { type: 'text/html' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'page.html';
+    a.click();
+  };
   return (
     <div className={classes.container}>
       <div className={classes.left}>
@@ -68,8 +86,8 @@ const HouseHead = (props) => {
               }
             >
               <FacebookShareButton
-                url="www.google.com"
-                quote="บ้านดี ราคาเหมาะสม"
+                url={url}
+                quote="EngEach House"
                 hashtag="#EngEach House"
               >
                 <div className={classes.item}>
@@ -79,7 +97,7 @@ const HouseHead = (props) => {
               </FacebookShareButton>
 
               <LineShareButton
-                url="www.google.com"
+                url={url}
                 quote="บ้านดี ราคาเหมาะสม"
                 hashtag="#EngEach House"
               >
@@ -90,7 +108,7 @@ const HouseHead = (props) => {
               </LineShareButton>
 
               <TwitterShareButton
-                url="www.google.com"
+                url={url}
                 quote="บ้านดี ราคาเหมาะสม"
                 hashtag="#EngEach House"
               >
@@ -101,7 +119,7 @@ const HouseHead = (props) => {
               </TwitterShareButton>
 
               <TelegramShareButton
-                url="www.google.com"
+                url={url}
                 quote="บ้านดี ราคาเหมาะสม"
                 hashtag="#EngEach House"
               >
@@ -113,13 +131,13 @@ const HouseHead = (props) => {
             </div>
           </div>
           <div className={classes.each}>
-            <div className={classes.text}>
+            <div className={classes.text} onClick={getUrl}>
               <IoIosCopy className={classes.icon} />
               <span>คัดลอกลิงก์</span>
             </div>
           </div>
           <div className={classes.each}>
-            <div className={classes.text}>
+            <div className={classes.text} onClick={download}>
               <AiOutlineDownload className={classes.icon} />
               <span>ดาวน์โหลด</span>
             </div>

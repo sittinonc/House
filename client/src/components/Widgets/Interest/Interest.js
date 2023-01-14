@@ -1,16 +1,16 @@
-import { useState } from "react";
-import classes from "./Interest.module.scss";
-import SideWidget from "../../../UI/SideWidget/SideWidget";
-import Button from "@mui/material/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLine } from "@fortawesome/free-brands-svg-icons";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { useState } from 'react';
+import classes from './Interest.module.scss';
+import SideWidget from '../../../UI/SideWidget/SideWidget';
+import Button from '@mui/material/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLine } from '@fortawesome/free-brands-svg-icons';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import {
   MdOutlineCheckBox,
   MdOutlineCheckBoxOutlineBlank,
-} from "react-icons/md";
+} from 'react-icons/md';
 
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const Interest = () => {
   const { palette } = createTheme();
@@ -18,15 +18,23 @@ const Interest = () => {
     palette: {
       myAwesomeColor: palette.augmentColor({
         color: {
-          main: "rgb(142, 86, 86)",
+          main: 'rgb(142, 86, 86)',
         },
       }),
     },
   });
   const [checkStatus, setCheckStatus] = useState(false);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [detail, setDetail] = useState("สนใจโครงการ");
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [detail, setDetail] = useState('สนใจโครงการ');
+
+  const call = () => {
+    var phoneNumber = `'tel:${process.env.REACT_APP_PHONE_NUMBER}`;
+    // eslint-disable-next-line no-restricted-globals
+    location.href = phoneNumber;
+  };
+
+  const submit = () => {};
   return (
     <SideWidget>
       <div className={classes.interest}>
@@ -84,7 +92,7 @@ const Interest = () => {
           <ThemeProvider theme={theme}>
             <div className={classes.whole}>
               <Button
-                style={{ width: "100%" }}
+                style={{ width: '100%' }}
                 variant="contained"
                 size="medium"
                 color="myAwesomeColor"
@@ -94,23 +102,23 @@ const Interest = () => {
             </div>
             <div className={classes.half}>
               <Button
-                style={{ width: "100%" }}
+                style={{ width: '100%' }}
                 variant="outlined"
                 size="medium"
                 color="myAwesomeColor"
               >
                 <div className={classes.icon}>
-                  <FontAwesomeIcon style={{ fontSize: "16px" }} icon={faLine} />
+                  <FontAwesomeIcon style={{ fontSize: '16px' }} icon={faLine} />
                   Line
                 </div>
               </Button>
               <Button
-                style={{ width: "100%" }}
+                style={{ width: '100%' }}
                 variant="outlined"
                 size="medium"
                 color="myAwesomeColor"
               >
-                <div className={classes.icon}>
+                <div className={classes.icon} onClick={call}>
                   <FontAwesomeIcon icon={faPhone} />
                   โทร
                 </div>

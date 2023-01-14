@@ -1,10 +1,12 @@
-import { useState } from "react";
-import classes from "./Collection.module.scss";
-import MainWidget from "../MainWidget";
-import { BsCircleFill } from "react-icons/bs";
-import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai";
+import { useState } from 'react';
+import classes from './Collection.module.scss';
+import MainWidget from '../MainWidget';
+import { BsCircleFill } from 'react-icons/bs';
+import { AiFillLeftCircle, AiFillRightCircle } from 'react-icons/ai';
 const Collection = (props) => {
   const [controll, setControll] = useState(0);
+  console.log('brooo123123');
+  console.log(props.config.collection);
   return (
     <MainWidget>
       <div className={classes.container}>
@@ -15,8 +17,8 @@ const Collection = (props) => {
           <AiFillLeftCircle
             className={
               controll === 0
-                ? classes.left + " " + classes.unable
-                : classes.left + " " + classes.controller
+                ? classes.left + ' ' + classes.unable
+                : classes.left + ' ' + classes.controller
             }
             onClick={() => {
               if (controll === 0) {
@@ -37,8 +39,8 @@ const Collection = (props) => {
           <AiFillRightCircle
             className={
               controll === props.config.collection.length - 1
-                ? classes.right + " " + classes.unable
-                : classes.right + " " + classes.controller
+                ? classes.right + ' ' + classes.unable
+                : classes.right + ' ' + classes.controller
             }
             onClick={() => {
               if (controll === props.config.collection.length - 1) {
@@ -57,8 +59,8 @@ const Collection = (props) => {
                 key={i}
                 className={
                   i === controll
-                    ? classes.icon + " " + classes.active
-                    : classes.icon + " " + classes.inActive
+                    ? classes.icon + ' ' + classes.active
+                    : classes.icon + ' ' + classes.inActive
                 }
               />
             );

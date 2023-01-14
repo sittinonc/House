@@ -18,7 +18,7 @@ const BottomSection = () => {
               EngEach House
             </span>
             <span className={classes.text}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              All of our products developed by high experiences team.
             </span>
           </div>
         </div>
@@ -42,7 +42,7 @@ const BottomSection = () => {
             <div className={classes.subGroup}>
               <span className={classes.sub}>
                 <FontAwesomeIcon className={classes.logo} icon={faPhoneFlip} />
-                095123123
+                {process.env.REACT_APP_PHONE_NUMBER}
               </span>
               <span className={classes.sub}>
                 <FontAwesomeIcon className={classes.logo} icon={faAt} />

@@ -1,73 +1,140 @@
-import classes from "./AllProjects.module.scss";
-import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { BsFillGrid3X3GapFill } from "react-icons/bs";
-import { FaBars } from "react-icons/fa";
-import Axios from "axios";
-import SpinLoad from "../../components/SpinLoad/SpinLoad";
+import classes from './AllProjects.module.scss';
+import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { BsFillGrid3X3GapFill } from 'react-icons/bs';
+import { FaBars } from 'react-icons/fa';
+import Axios from 'axios';
+import SpinLoad from '../../components/SpinLoad/SpinLoad';
 
-import PagesNavbar from "../../components/Navbar/PagesNavbar/PagesNavbar";
-import MobilePagesNavbar from "../../components/Navbar/MobilePagesNavbar/MobilePagesNavbar";
-import NavMobileOverlay from "../../components/Navbar/MobilePagesNavbar/NavMobileOverlay/NavMobileOverlay";
-import Tag from "../../UI/Tag/Tag";
-import ShowHouse from "../../UI/ShowHouse/ShowHouse";
-import BottomSection from "../../components/BottomSection/BottomSection";
+import PagesNavbar from '../../components/Navbar/PagesNavbar/PagesNavbar';
+import MobilePagesNavbar from '../../components/Navbar/MobilePagesNavbar/MobilePagesNavbar';
+import NavMobileOverlay from '../../components/Navbar/MobilePagesNavbar/NavMobileOverlay/NavMobileOverlay';
+import Tag from '../../UI/Tag/Tag';
+import ShowHouse from '../../UI/ShowHouse/ShowHouse';
+import BottomSection from '../../components/BottomSection/BottomSection';
 
 //widgets
-import Measurement from "../../components/Widgets/Measurement/Measurement";
-import Utility from "../../components/Widgets/Utility/Utility";
-import Reccommend from "../../components/Widgets/Reccommend/Reccommend";
+import Measurement from '../../components/Widgets/Measurement/Measurement';
+import Utility from '../../components/Widgets/Utility/Utility';
+import Reccommend from '../../components/Widgets/Reccommend/Reccommend';
 
 const AllProjects = (props) => {
   const [allHouses, setAllHouses] = useState([]);
-  const [trigger550, setTrigger550] = useState(
-    window.innerWidth > 550 ? "3%" : "0%"
-  );
+  const trigger550 = window.innerWidth > 550 ? '3%' : '0%';
   const [screenStatus, setScreenStatus] = useState(
-    window.innerWidth < 1024 ? "mobile" : "desktop"
+    window.innerWidth < 1024 ? 'mobile' : 'desktop'
   );
   const reportWindowSize = (e) => {
     if (e.target.innerWidth < 1024) {
-      setScreenStatus("mobile");
+      setScreenStatus('mobile');
     } else {
-      setScreenStatus("desktop");
+      setScreenStatus('desktop');
     }
   };
-  useEffect(() => {
-    props.setPagesTags(["หน้าแรก", "โครงการทั้งหมด"]);
-    props.setCurrentPage("allProjects");
-    window.addEventListener("resize", reportWindowSize);
-    Axios.get("http://localhost:8080/api/list").then((response) => {
-      console.log(response.data);
-      setAllHouses(response.data);
-    });
-  }, []);
-  let count = { gridCount: 0, landscapeCount: 0 };
-  //dummy data
-  const Houses = ["h1", "h2", "h3", "h4"];
-  const dummy = {
-    location: ["นนทบุรี", "กรุงเทพ", "ชลบุรี", "นครปฐม", "นครนายก"],
-    project: [
-      "โครงการทั้งหมด",
-      "โครงการใหม่",
-      "กำลังสร้าง",
-      "โครงการปกติ",
-      "ขายแล้ว",
-    ],
-    sort: ["ราคาต่ำไปสูง", "ราคาสูงไปต่ำ", "ใหม่ที่สุด", "เก่าที่สุด"],
-  };
-  //Data recieve from api, use dummy currently
-  const [locationArray, setLocationArray] = useState(dummy.location);
-  const [projectArray, setProjectArray] = useState(dummy.project);
-  const [sortArray, setSortArray] = useState(dummy.sort);
 
-  const [location, setLocation] = useState("พื้นที่");
-  const [project, setProject] = useState("โครงการทั้งหมด");
-  const [sort, setSort] = useState("ราคาต่ำไปสูง");
+  let count = { gridCount: 0, landscapeCount: 0 };
+  const projectArray = [
+    'โครงการทั้งหมด',
+    'โครงการใหม่',
+    'กำลังสร้าง',
+    'โครงการปกติ',
+    'ขายแล้ว',
+  ];
+  const sortArray = [
+    'ราคาต่ำไปสูง',
+    'ราคาสูงไปต่ำ',
+    'ใหม่ที่สุด',
+    'เก่าที่สุด',
+  ];
+  const [filteredHouse, setFilteredHouse] = useState([]);
+  const [locationChoice, setLocationChoice] = useState([]);
+  const [location, setLocation] = useState('พื้นที่ทั้งหมด');
+  const [project, setProject] = useState('โครงการทั้งหมด');
+  const [sort, setSort] = useState('ราคาต่ำไปสูง');
 
   const [dropdownCommand, setDropdownCommand] = useState(null);
   const [navMobileOverlay, setNavMobileOverlay] = useState(null);
+  const allLocation = (houses) => {
+    const allLocation = new Map();
+
+    houses.forEach((house) => {
+      if (allLocation.has(house.location.province.name)) {
+        allLocation.set(
+          house.location.province.name,
+          allLocation.get(house.location.province.name) + 1
+        );
+      } else {
+        allLocation.set(house.location.province.name, 1);
+      }
+    });
+    return ['พื้นที่ทั้งหมด', ...Array.from(allLocation.keys())];
+  };
+
+  const filter = (houses) => {
+    if (houses !== undefined && houses !== null && houses.length > 0) {
+      let filteredHouses = houses;
+
+      // filter by location
+      if (location !== 'พื้นที่ทั้งหมด') {
+        filteredHouses = filteredHouses.filter(
+          (house) => house.location.province.name === location
+        );
+      }
+
+      // filter by project
+      if (project !== 'โครงการทั้งหมด') {
+        console.log(filteredHouses[0].status === project);
+        filteredHouses = filteredHouses.filter(
+          (house) => house.status === project
+        );
+      }
+      // sorting
+      if (sort === 'ราคาต่ำไปสูง') {
+        filteredHouses.sort(
+          (a, b) =>
+            parseInt(a.houseDetails.price) - parseInt(b.houseDetails.price)
+        );
+      } else if (sort === 'ราคาสูงไปต่ำ') {
+        filteredHouses.sort(
+          (a, b) =>
+            parseInt(b.houseDetails.price) - parseInt(a.houseDetails.price)
+        );
+      } else if (sort === 'ใหม่ที่สุด') {
+        filteredHouses.sort(
+          (a, b) =>
+            new Date(b.buildingInformation.start) -
+            new Date(a.buildingInformation.start)
+        );
+      } else if (sort === 'เก่าที่สุด') {
+        filteredHouses.sort(
+          (a, b) =>
+            new Date(a.buildingInformation.start) -
+            new Date(b.buildingInformation.start)
+        );
+      }
+      setFilteredHouse([...filteredHouses]);
+    }
+  };
+
+  useEffect(() => {
+    props.setPagesTags(['หน้าแรก', 'โครงการทั้งหมด']);
+    props.setCurrentPage('allProjects');
+    window.addEventListener('resize', reportWindowSize);
+    Axios.get('http://localhost:8080/api/list').then((response) => {
+      setAllHouses(response.data);
+      setLocationChoice(allLocation(response.data));
+      filter(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    console.log('location', location);
+    console.log('project', project);
+    console.log('sort', sort);
+    filter(allHouses);
+  }, [location, project, sort]);
+
   if (allHouses.legnth === 0) {
     return <SpinLoad />;
   } else {
@@ -82,7 +149,7 @@ const AllProjects = (props) => {
             />
           ) : null}
           <div className={classes.page}>
-            {screenStatus === "desktop" ? (
+            {screenStatus === 'desktop' ? (
               <PagesNavbar />
             ) : (
               <MobilePagesNavbar
@@ -106,10 +173,10 @@ const AllProjects = (props) => {
                       <div
                         className={classes.label}
                         onClick={() => {
-                          if (dropdownCommand === "location") {
+                          if (dropdownCommand === 'location') {
                             setDropdownCommand(null);
                           } else {
-                            setDropdownCommand("location");
+                            setDropdownCommand('location');
                           }
                         }}
                       >
@@ -121,12 +188,12 @@ const AllProjects = (props) => {
                       </div>
                       <div
                         className={
-                          dropdownCommand === "location"
+                          dropdownCommand === 'location'
                             ? classes.dropdownActive
                             : classes.dropdownNone
                         }
                       >
-                        {locationArray.map((e, i) => {
+                        {locationChoice.map((e, i) => {
                           return (
                             <div
                               key={i}
@@ -146,10 +213,10 @@ const AllProjects = (props) => {
                       <div
                         className={classes.label}
                         onClick={() => {
-                          if (dropdownCommand === "project") {
+                          if (dropdownCommand === 'project') {
                             setDropdownCommand(null);
                           } else {
-                            setDropdownCommand("project");
+                            setDropdownCommand('project');
                           }
                         }}
                       >
@@ -161,7 +228,7 @@ const AllProjects = (props) => {
                       </div>
                       <div
                         className={
-                          dropdownCommand === "project"
+                          dropdownCommand === 'project'
                             ? classes.dropdownActive
                             : classes.dropdownNone
                         }
@@ -186,10 +253,10 @@ const AllProjects = (props) => {
                       <div
                         className={classes.label}
                         onClick={() => {
-                          if (dropdownCommand === "sort") {
+                          if (dropdownCommand === 'sort') {
                             setDropdownCommand(null);
                           } else {
-                            setDropdownCommand("sort");
+                            setDropdownCommand('sort');
                           }
                         }}
                       >
@@ -201,7 +268,7 @@ const AllProjects = (props) => {
                       </div>
                       <div
                         className={
-                          dropdownCommand === "sort"
+                          dropdownCommand === 'sort'
                             ? classes.dropdownActive
                             : classes.dropdownNone
                         }
@@ -244,15 +311,19 @@ const AllProjects = (props) => {
                 </div>
                 <div className={classes.house}>
                   <div className={classes.box}>
-                    {allHouses.map((e, i) => {
-                      return <ShowHouse key={i} data={e} />;
-                    })}
+                    {filteredHouse.length > 0 ? (
+                      filteredHouse.map((e, i) => {
+                        return <ShowHouse key={i} data={e} />;
+                      })
+                    ) : (
+                      <p>ไม่พอข้อมูล...</p>
+                    )}
                   </div>
                 </div>
               </div>
 
               <div className={classes.sideWidgetBox}>
-                <Utility />
+                {/* <Utility /> */}
                 <Measurement />
                 <Reccommend />
               </div>

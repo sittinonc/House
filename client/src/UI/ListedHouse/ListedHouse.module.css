@@ -134,8 +134,12 @@
   font-weight: 600;
 }
 
+.container .ListedHouse .details .bottom .property .symbol .icon {
+  font-size: 21px;
+}
+
 .container .ListedHouse .details .bottom .property .text {
-  font-weight: 500;
+  font-weight: 400;
   height: 50%;
   width: 100%;
   font-size: 14px;
@@ -143,6 +147,13 @@
 
 @media only screen and (min-width: 0px) and (max-width: 435px) {
   .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     width: 100%;
   }
   .container .ListedHouse {
@@ -154,7 +165,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%;
-    min-height: 365px;
+    min-height: 350px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 45px 0px;
             box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 45px 0px;
   }
@@ -207,14 +218,14 @@
   }
   .container .ListedHouse .details .top .major {
     margin-left: 18px;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 600;
   }
   .container .ListedHouse .details .top .minor {
     margin-left: 18px;
     color: grey;
     margin-top: 2%;
-    font-size: 13px;
+    font-size: 12px;
   }
   .container .ListedHouse .details .bottom {
     height: 100%;
@@ -248,26 +259,17 @@
     row-gap: 1px;
   }
   .container .ListedHouse .details .bottom .property .symbol {
-    width: 100%;
-    height: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    font-size: 14px;
     gap: 10px;
-    font-weight: 600;
+  }
+  .container .ListedHouse .details .bottom .property .symbol .icon {
+    font-size: 19px;
   }
   .container .ListedHouse .details .bottom .property .text {
     font-weight: 500;
     height: 50%;
     width: 100%;
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 /*# sourceMappingURL=ListedHouse.module.css.map */
