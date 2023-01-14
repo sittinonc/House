@@ -25,6 +25,8 @@ yarn-error.log*
 
 ### Sass ###
 .sass-cache/
+*.module.css
+*.css
 *.css.map
 *.sass.map
 *.scss.map
