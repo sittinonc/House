@@ -3,10 +3,9 @@ import classes from './Collection.module.scss';
 import MainWidget from '../MainWidget';
 import { BsCircleFill } from 'react-icons/bs';
 import { AiFillLeftCircle, AiFillRightCircle } from 'react-icons/ai';
+import uri from '../../../components/config';
 const Collection = (props) => {
   const [controll, setControll] = useState(0);
-  console.log('brooo123123');
-  console.log(props.config.collection);
   return (
     <MainWidget>
       <div className={classes.container}>
@@ -30,7 +29,7 @@ const Collection = (props) => {
             }}
           />
           <img
-            src={`${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/image/view/${props.config.collection[controll]}`}
+            src={`${uri}/image/view/${props.config.collection[controll]}`}
             onClick={() => {
               props.setSelectedPhoto(props.config.collection[controll]);
               props.setSelected(true);

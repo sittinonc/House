@@ -1,3 +1,3 @@
-const uri = `${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}`
+const uri = `${process.env.REACT_APP_API_URL}`;
 
-module.exports = uri
+module.exports = uri;

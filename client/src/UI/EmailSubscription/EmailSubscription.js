@@ -3,6 +3,7 @@ import classes from './EmailSubscription.module.scss';
 import Button from '@mui/material/Button';
 import Axios from 'axios';
 import Swal from 'sweetalert2';
+import uri from '../../components/config';
 
 const EmailSubscription = () => {
   const [email, setEmail] = useState('');
@@ -16,12 +17,9 @@ const EmailSubscription = () => {
 
   const handleSubmit = () => {
     if (isValid)
-      Axios.post(
-        `${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/subscribe`,
-        {
-          email: email,
-        }
-      )
+      Axios.post(`${uri}/api/subscribe`, {
+        email: email,
+      })
         .then((res) => {
           console.log(res.status);
           if (res.status === 200) {

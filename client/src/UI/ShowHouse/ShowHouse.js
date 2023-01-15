@@ -3,7 +3,7 @@ import { MdOutlineBed } from 'react-icons/md';
 import { BiBath, BiArea } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 import functions from '../../function';
-
+import uri from '../../components/config';
 const ShowHouse = (props) => {
   let navigate = useNavigate();
   const target = () => {
@@ -18,7 +18,7 @@ const ShowHouse = (props) => {
             className={classes.img}
             src={
               props.data.photos.filenames[0] !== ''
-                ? `${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/image/view/${props.data.photos.filenames[0]}`
+                ? `${uri}/image/view/${props.data.photos.filenames[0]}`
                 : 'https://www.rocketmortgage.com/resources-cmsassets/RocketMortgage.com/Article_Images/Large_Images/TypesOfHomes/types-of-homes-hero.jpg'
             }
           />

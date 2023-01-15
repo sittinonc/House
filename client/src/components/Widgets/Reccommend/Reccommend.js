@@ -4,15 +4,13 @@ import classes from './Reccommend.module.scss';
 import SideWidget from '../../../UI/SideWidget/SideWidget';
 import EachReccommend from './EachReccommend/EachReccommend';
 import Axios from 'axios';
-
+import uri from '../../config';
 const Reccommend = () => {
   //API
   const [recHouses, setRecHouses] = useState([]);
 
   useEffect(() => {
-    Axios.get(
-      `${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/suggest`
-    ).then((response) => {
+    Axios.get(`${uri}/api/suggest`).then((response) => {
       setRecHouses(response.data);
     });
   }, []);

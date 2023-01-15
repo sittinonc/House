@@ -1,7 +1,8 @@
-import classes from "./SelectedPhoto.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import ReactDOM from "react-dom";
+import classes from './SelectedPhoto.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import ReactDOM from 'react-dom';
+import uri from '../../components/config';
 
 const SelectedPhoto = (props) => {
   return (
@@ -12,7 +13,7 @@ const SelectedPhoto = (props) => {
             <div className={classes.imgBox}>
               <img
                 className={classes.img}
-                src={`${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/image/view/${props.selectedPhoto}`}
+                src={`${uri}/image/view/${props.selectedPhoto}`}
               />
             </div>
             <div
@@ -25,7 +26,7 @@ const SelectedPhoto = (props) => {
             </div>
           </div>
         </div>,
-        document.getElementById("selectedPhotoOverlay")
+        document.getElementById('selectedPhotoOverlay')
       )}
     </>
   );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-
 import classes from './PhotoShowcase.module.scss';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import uri from '../config';
 
 const PhotoShowcase = (props) => {
   const [photo, setPhoto] = useState(props.photo);
@@ -18,7 +18,7 @@ const PhotoShowcase = (props) => {
               <div className={classes.each} key={i}>
                 <img
                   className={classes.img}
-                  src={`${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/image/view/${photo[i]}`}
+                  src={`${uri}/image/view/${photo[i]}`}
                   onClick={() => {
                     props.setSelectedPhoto(photo[i]);
                     props.setSelected(true);

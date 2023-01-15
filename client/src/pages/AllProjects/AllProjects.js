@@ -6,7 +6,7 @@ import { BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { FaBars } from 'react-icons/fa';
 import Axios from 'axios';
 import SpinLoad from '../../components/SpinLoad/SpinLoad';
-
+import uri from '../../components/config';
 import PagesNavbar from '../../components/Navbar/PagesNavbar/PagesNavbar';
 import MobilePagesNavbar from '../../components/Navbar/MobilePagesNavbar/MobilePagesNavbar';
 import NavMobileOverlay from '../../components/Navbar/MobilePagesNavbar/NavMobileOverlay/NavMobileOverlay';
@@ -121,7 +121,7 @@ const AllProjects = (props) => {
     props.setPagesTags(['หน้าแรก', 'โครงการทั้งหมด']);
     props.setCurrentPage('allProjects');
     window.addEventListener('resize', reportWindowSize);
-    Axios.get('http://localhost:8080/api/list').then((response) => {
+    Axios.get(`${uri}/api/list`).then((response) => {
       setAllHouses(response.data);
       setLocationChoice(allLocation(response.data));
       filter(response.data);

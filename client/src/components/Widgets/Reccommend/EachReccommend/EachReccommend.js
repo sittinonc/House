@@ -1,5 +1,5 @@
 import classes from './EachReccommend.module.scss';
-
+import uri from '../../../config';
 import { useNavigate } from 'react-router-dom';
 import functions from '../../../../function';
 
@@ -14,7 +14,7 @@ const EachReccommend = (props) => {
       <div className={classes.imgBox}>
         <img
           className={classes.img}
-          src={`${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/image/view/${props.data.photos.filenames[0]}`}
+          src={`${uri}/image/view/${props.data.photos.filenames[0]}`}
         />
       </div>
       <div className={classes.details}>

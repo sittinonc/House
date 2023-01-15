@@ -12,6 +12,7 @@ import {
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Axios from 'axios';
 import Swal from 'sweetalert2';
+import uri from '../../config';
 
 const Interest = (props) => {
   const { palette } = createTheme();
@@ -36,16 +37,13 @@ const Interest = (props) => {
   };
 
   const handleSubmit = () => {
-    Axios.post(
-      `${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/interest`,
-      {
-        name: name,
-        email: 'dummy@email.com',
-        phone: phone,
-        details: detail,
-        _id: props.data._id,
-      }
-    )
+    Axios.post(`${uri}/api/interest`, {
+      name: name,
+      email: 'dummy@email.com',
+      phone: phone,
+      details: detail,
+      _id: props.data._id,
+    })
       .then((res) => {
         if (res.status === 200)
           Swal.fire({

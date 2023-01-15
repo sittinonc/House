@@ -13,7 +13,7 @@ import BottomSection from '../../components/BottomSection/BottomSection';
 import Interest from '../../components/Widgets/Interest/Interest';
 import Measurement from '../../components/Widgets/Measurement/Measurement';
 import Reccommend from '../../components/Widgets/Reccommend/Reccommend';
-
+import uri from '../../components/config';
 import HouseHead from '../../components/Widgets/HouseHead/HouseHead';
 import HouseProperty from '../../components/Widgets/HousePropperty/HouseProperty';
 import Address from '../../components/Widgets/Address/Address';
@@ -41,9 +41,7 @@ const EachHouse = (props) => {
     }
   };
   useEffect(() => {
-    Axios.get(
-      `${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/findbyname/${id}`
-    ).then((response) => {
+    Axios.get(`${uri}/api/findbyname/${id}`).then((response) => {
       setPhoto(response.data.photos.filenames);
       setMap(response.data.photos.blueprints);
       setThisHouse(response.data);
