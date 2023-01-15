@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import classes from './EmailSubscription.module.scss';
 import Button from '@mui/material/Button';
+import Axios from 'axios';
+import Swal from 'sweetalert2';
 
 const EmailSubscription = () => {
   const [email, setEmail] = useState('');
@@ -12,11 +14,42 @@ const EmailSubscription = () => {
     setIsValid(emailRegex.test(email));
   };
 
+  const handleSubmit = () => {
+    if (isValid)
+      Axios.post(
+        `${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/subscribe`,
+        {
+          email: email,
+        }
+      )
+        .then((res) => {
+          console.log(res.status);
+          if (res.status === 200) {
+            Swal.fire({
+              title: 'Success!',
+              text: 'You have successfully subscribed!',
+              icon: 'success',
+              confirmButtonText: 'OK',
+            });
+          }
+        })
+        .catch((error) => {
+          if (error.response.status === 409) {
+            Swal.fire({
+              title: 'Error!',
+              text: 'This email is already subscribed!',
+              icon: 'error',
+              confirmButtonText: 'OK',
+            });
+          }
+        });
+  };
   return (
     <div className={classes.EmailSubscription}>
       <div className={classes.container}>
         <div className={classes.input}>
           <input
+            value={email}
             type="text"
             placeholder="email@mail.com"
             onChange={(e) => {
@@ -29,10 +62,9 @@ const EmailSubscription = () => {
         </div>
         <div className={classes.button}>
           <Button
-            onClick={(e) => {
+            onClick={() => {
               setEmail('');
-              alert('Email: ' + email);
-              console.log('Click');
+              handleSubmit();
             }}
             className={classes.button}
             variant="contained"

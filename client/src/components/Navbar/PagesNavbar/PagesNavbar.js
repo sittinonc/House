@@ -35,7 +35,7 @@ const PagesNavbar = (props) => {
                 className={classes.icon}
                 style={{ fontSize: '16px' }}
               />
-              <span>096-1728911</span>
+              <span>{process.env.REACT_APP_PHONE_NUMBER}</span>
               <Link
                 style={{
                   textDecoration: 'none',

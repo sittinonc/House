@@ -9,10 +9,11 @@ import {
   MdOutlineCheckBox,
   MdOutlineCheckBoxOutlineBlank,
 } from 'react-icons/md';
-
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Axios from 'axios';
+import Swal from 'sweetalert2';
 
-const Interest = () => {
+const Interest = (props) => {
   const { palette } = createTheme();
   const theme = createTheme({
     palette: {
@@ -26,7 +27,7 @@ const Interest = () => {
   const [checkStatus, setCheckStatus] = useState(false);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [detail, setDetail] = useState('สนใจโครงการ');
+  const [detail, setDetail] = useState(`สนใจโครงการ ${props.data.name}`);
 
   const call = () => {
     var phoneNumber = `'tel:${process.env.REACT_APP_PHONE_NUMBER}`;
@@ -34,7 +35,36 @@ const Interest = () => {
     location.href = phoneNumber;
   };
 
-  const submit = () => {};
+  const handleSubmit = () => {
+    Axios.post(
+      `${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/interest`,
+      {
+        name: name,
+        email: 'dummy@email.com',
+        phone: phone,
+        details: detail,
+        _id: props.data._id,
+      }
+    )
+      .then((res) => {
+        if (res.status === 200)
+          Swal.fire({
+            title: 'Success!',
+            text: 'Your message has been sent',
+            icon: 'success',
+            confirmButtonText: 'OK',
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          title: 'Error!',
+          text: 'All fields in the form are required',
+          icon: 'error',
+          confirmButtonText: 'OK',
+        });
+      });
+  };
   return (
     <SideWidget>
       <div className={classes.interest}>
@@ -92,6 +122,7 @@ const Interest = () => {
           <ThemeProvider theme={theme}>
             <div className={classes.whole}>
               <Button
+                onClick={handleSubmit}
                 style={{ width: '100%' }}
                 variant="contained"
                 size="medium"

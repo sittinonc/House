@@ -44,11 +44,7 @@ const EachHouse = (props) => {
     Axios.get(
       `${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/findbyname/${id}`
     ).then((response) => {
-      console.log(response.data);
       setPhoto(response.data.photos.filenames);
-      console.log('broooo');
-      console.log(response.data.photos.blueprints);
-
       setMap(response.data.photos.blueprints);
       setThisHouse(response.data);
     });
@@ -118,7 +114,7 @@ const EachHouse = (props) => {
                 </div>
               </div>
               <div className={classes.sideWidgetBox}>
-                <Interest />
+                <Interest data={thisHouse} />
                 <Measurement />
                 {/* <Reccommend /> */}
               </div>

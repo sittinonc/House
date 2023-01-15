@@ -16,21 +16,22 @@ const Reccommend = () => {
       setRecHouses(response.data);
     });
   }, []);
-
-  return (
-    <SideWidget>
-      <div className={classes.reccommend}>
-        <div className={classes.head}>
-          <span>โครงการแนะนำ</span>
+  if (recHouses.length > 0) {
+    return (
+      <SideWidget>
+        <div className={classes.reccommend}>
+          <div className={classes.head}>
+            <span>โครงการแนะนำ</span>
+          </div>
+          <div className={classes.box}>
+            {recHouses.map((e, i) => {
+              return <EachReccommend key={i} data={e} />;
+            })}
+          </div>
         </div>
-        <div className={classes.box}>
-          {recHouses.map((e, i) => {
-            return <EachReccommend key={i} data={e} />;
-          })}
-        </div>
-      </div>
-    </SideWidget>
-  );
+      </SideWidget>
+    );
+  }
 };
 
 export default Reccommend;
