@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config(options = { path: "/etc/secret/.env" });
 
 const express = require("express");
 const app = express();
@@ -15,7 +15,7 @@ const uri = require("./database/config");
 let port = process.env.PORT || 8080;
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://engeach-web.vercel.app"],
     methods: ["GET", "POST", "DELETE"],
     credentials: true,
   })
