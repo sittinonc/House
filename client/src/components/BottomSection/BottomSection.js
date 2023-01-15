@@ -44,13 +44,10 @@ const BottomSection = () => {
                 <FontAwesomeIcon className={classes.logo} icon={faPhoneFlip} />
                 {process.env.REACT_APP_PHONE_NUMBER}
               </span>
-              <span className={classes.sub}>
-                <FontAwesomeIcon className={classes.logo} icon={faAt} />
-                EngEach House@gmail.com
-              </span>
+              <span className={classes.sub}>househouseproperty@gmail.com</span>
               <span className={classes.sub}>
                 <FontAwesomeIcon className={classes.logo} icon={faLine} />
-                EngEach House_official
+                engeachhouse
               </span>
             </div>
           </div>
