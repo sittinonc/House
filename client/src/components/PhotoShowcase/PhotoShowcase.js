@@ -1,15 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import classes from "./PhotoShowcase.module.scss";
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import classes from './PhotoShowcase.module.scss';
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
 const PhotoShowcase = (props) => {
   const [photo, setPhoto] = useState(props.photo);
 
-  const reportWindowSize = () => {
-    console.log(window.innerWidth);
-  };
-  useEffect(() => {}, window.addEventListener("resize", reportWindowSize));
+  const reportWindowSize = () => {};
+  useEffect(() => {}, window.addEventListener('resize', reportWindowSize));
 
   if (photo) {
     return (
@@ -39,19 +37,14 @@ const PhotoShowcase = (props) => {
                 let last = photo[photo.length - 1];
                 while (i < photo.length) {
                   if (i === 0) {
-                    console.log("first");
-                    console.log(last);
                     array.push(last);
                     array.push(photo[i]);
                   } else if (i === photo.length - 1) {
-                    console.log("last position, skip it");
                   } else {
-                    console.log("normal case");
                     array.push(photo[i]);
                   }
                   i++;
                 }
-                console.log(array);
                 setPhoto(array);
               }}
             >
@@ -67,7 +60,7 @@ const PhotoShowcase = (props) => {
                   console.log(i);
                   if (i === 0) {
                     first = photo[i];
-                    console.log("First:", first);
+                    console.log('First:', first);
                   } else {
                     array.push(photo[i]);
                   }
